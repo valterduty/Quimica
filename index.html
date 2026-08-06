@@ -12,3 +12,417 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 01 — Condições para ocorrência de reações químicas</title>
+<style>
+    :root{
+        --azul:#0f4c81;
+        --verde:#2e7d32;
+        --laranja:#ef6c00;
+        --cinza:#f4f6f8;
+        --texto:#222;
+    }
+    body{
+        margin:0;
+        font-family:Arial, Helvetica, sans-serif;
+        background:var(--cinza);
+        color:var(--texto);
+        line-height:1.6;
+    }
+    header{
+        background:linear-gradient(135deg,var(--azul),#1565c0);
+        color:white;
+        padding:40px 20px;
+        text-align:center;
+    }
+    header h1{margin:0;font-size:2.2em;}
+    header p{margin-top:10px;font-size:1.1em;}
+    main{
+        max-width:1000px;
+        margin:30px auto;
+        background:white;
+        padding:30px;
+        border-radius:14px;
+        box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    section{margin-bottom:42px;}
+    h2{
+        color:var(--azul);
+        border-left:6px solid var(--azul);
+        padding-left:12px;
+    }
+    .grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:24px;
+        align-items:center;
+    }
+    .card{
+        background:#fafafa;
+        border:1px solid #e2e8f0;
+        border-radius:12px;
+        padding:18px;
+    }
+    ul{padding-left:22px;}
+    .svgbox{
+        background:#fff;
+        border:1px solid #dbe3ea;
+        border-radius:12px;
+        padding:10px;
+    }
+    table{
+        width:100%;
+        border-collapse:collapse;
+        margin-top:12px;
+    }
+    th,td{
+        border:1px solid #d7dee6;
+        padding:10px;
+        text-align:left;
+    }
+    th{background:#eef5fb;}
+    .highlight{
+        background:#fff8e1;
+        border-left:5px solid #f9a825;
+        padding:14px;
+        border-radius:8px;
+    }
+    footer{
+        background:#0d2f4d;
+        color:white;
+        text-align:center;
+        padding:18px;
+        font-weight:bold;
+        margin-top:30px;
+    }
+    @media (max-width:760px){
+        .grid{grid-template-columns:1fr;}
+        header h1{font-size:1.7em;}
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Aula 01 — Condições para ocorrência de reações químicas</h1>
+    <p>Transformações químicas, teoria das colisões, energia de ativação e fatores que influenciam a velocidade das reações.</p>
+</header>
+
+<main>
+
+<section>
+    <h2>Superfície de contato e rapidez da reação</h2>
+    <div class="grid">
+        <div>
+            <p>Um comprimido triturado reage mais rapidamente com a água porque possui <strong>maior superfície de contato</strong>. Assim, mais partículas ficam expostas ao mesmo tempo, aumentando o número de colisões com a água e acelerando a reação que libera dióxido de carbono (CO₂).</p>
+            <div class="highlight"><strong>Conclusão:</strong> maior área de contato → mais colisões → reação mais rápida.</div>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 320 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="20" width="100" height="170" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+                <rect x="190" y="20" width="100" height="170" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+                <circle cx="80" cy="95" r="18" fill="#ffffff" stroke="#78909c" stroke-width="2"/>
+                <circle cx="240" cy="78" r="6" fill="#ffffff" stroke="#78909c"/>
+                <circle cx="224" cy="94" r="5" fill="#ffffff" stroke="#78909c"/>
+                <circle cx="254" cy="98" r="5" fill="#ffffff" stroke="#78909c"/>
+                <circle cx="232" cy="112" r="4" fill="#ffffff" stroke="#78909c"/>
+                <circle cx="248" cy="118" r="4" fill="#ffffff" stroke="#78909c"/>
+                <circle cx="218" cy="126" r="4" fill="#ffffff" stroke="#78909c"/>
+                <g fill="#90caf9">
+                    <circle cx="58" cy="150" r="3"/>
+                    <circle cx="78" cy="160" r="3"/>
+                    <circle cx="98" cy="146" r="3"/>
+                    <circle cx="220" cy="148" r="3"/>
+                    <circle cx="240" cy="160" r="3"/>
+                    <circle cx="260" cy="150" r="3"/>
+                </g>
+                <text x="80" y="205" text-anchor="middle" font-size="12" fill="#1565c0">Inteiro</text>
+                <text x="240" y="205" text-anchor="middle" font-size="12" fill="#1565c0">Triturado</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>O que acontece em uma reação química?</h2>
+    <div class="grid">
+        <div class="card">
+            <ul>
+                <li>Reagentes transformam-se em <strong>produtos</strong>.</li>
+                <li>Os átomos <strong>não são criados nem destruídos</strong>; apenas se reorganizam.</li>
+                <li>A massa total permanece constante (Lei da Conservação da Massa).</li>
+            </ul>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 200" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="70" cy="70" r="16" fill="#42a5f5"/>
+                <circle cx="105" cy="92" r="16" fill="#ef5350"/>
+                <circle cx="70" cy="120" r="16" fill="#66bb6a"/>
+                <path d="M140 96 H205" stroke="#546e7a" stroke-width="3" marker-end="url(#arrow)"/>
+                <circle cx="250" cy="70" r="16" fill="#42a5f5"/>
+                <circle cx="278" cy="88" r="16" fill="#66bb6a"/>
+                <circle cx="235" cy="118" r="16" fill="#ef5350"/>
+                <circle cx="295" cy="122" r="16" fill="#ffca28"/>
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#546e7a"/>
+                    </marker>
+                </defs>
+                <text x="84" y="170" text-anchor="middle" font-size="13" fill="#37474f">Reagentes</text>
+                <text x="268" y="170" text-anchor="middle" font-size="13" fill="#37474f">Produtos</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Como identificar uma reação química?</h2>
+    <div class="grid">
+        <div>
+            <ul>
+                <li>Mudança de cor</li>
+                <li>Liberação de gás (bolhas)</li>
+                <li>Formação de um sólido (precipitado)</li>
+                <li>Emissão de luz</li>
+                <li>Alteração de temperatura</li>
+            </ul>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="70" height="150" rx="8" fill="#ede7f6" stroke="#7e57c2"/>
+                <rect x="100" y="20" width="70" height="150" rx="8" fill="#e8f5e9" stroke="#43a047"/>
+                <rect x="180" y="20" width="70" height="150" rx="8" fill="#fff3e0" stroke="#fb8c00"/>
+                <rect x="260" y="20" width="60" height="150" rx="8" fill="#e3f2fd" stroke="#1e88e5"/>
+                <circle cx="135" cy="55" r="5" fill="#43a047"/>
+                <circle cx="122" cy="72" r="4" fill="#43a047"/>
+                <circle cx="147" cy="82" r="4" fill="#43a047"/>
+                <polygon points="214,42 224,66 250,68 230,84 236,110 214,96 192,110 198,84 178,68 204,66" fill="#ffca28" stroke="#fb8c00"/>
+                <path d="M290 40 L300 64 L314 64 L302 76 L308 94 L290 84 L272 94 L278 76 L266 64 L280 64 Z" fill="#90caf9" stroke="#1e88e5"/>
+                <text x="55" y="192" text-anchor="middle" font-size="12">Cor</text>
+                <text x="135" y="192" text-anchor="middle" font-size="12">Gás</text>
+                <text x="215" y="192" text-anchor="middle" font-size="12">Luz</text>
+                <text x="290" y="192" text-anchor="middle" font-size="12">Calor</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Transformação física × transformação química</h2>
+    <table>
+        <tr><th>Transformação física</th><th>Transformação química</th></tr>
+        <tr><td>Altera apenas estado ou forma da matéria.</td><td>Forma novas substâncias.</td></tr>
+        <tr><td>Ex.: gelo derretendo.</td><td>Ex.: papel queimando.</td></tr>
+        <tr><td>Composição permanece a mesma.</td><td>Composição é alterada.</td></tr>
+    </table>
+</section>
+
+<section>
+    <h2>Teoria das colisões</h2>
+    <div class="grid">
+        <div>
+            <p>Uma reação química ocorre somente quando as partículas dos reagentes realizam <strong>colisões eficazes</strong>, isto é, com energia suficiente e orientação correta.</p>
+            <div class="card">
+                <strong>Resumo:</strong>
+                <ul>
+                    <li>Colisão + energia suficiente + orientação correta = reação.</li>
+                    <li>Sem energia suficiente → não ocorre reação.</li>
+                    <li>Orientação incorreta → também não ocorre reação.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="70" cy="80" r="18" fill="#42a5f5"/>
+                <circle cx="130" cy="80" r="18" fill="#ef5350"/>
+                <line x1="88" y1="80" x2="112" y2="80" stroke="#546e7a" stroke-width="3"/>
+                <text x="100" y="48" text-anchor="middle" font-size="12">Colisão</text>
+
+                <circle cx="220" cy="80" r="18" fill="#42a5f5"/>
+                <circle cx="278" cy="80" r="18" fill="#ef5350"/>
+                <line x1="238" y1="80" x2="260" y2="80" stroke="#2e7d32" stroke-width="3"/>
+                <circle cx="248" cy="132" r="16" fill="#66bb6a"/>
+                <line x1="248" y1="96" x2="248" y2="116" stroke="#2e7d32" stroke-width="3"/>
+                <text x="248" y="164" text-anchor="middle" font-size="12" fill="#2e7d32">Produtos</text>
+
+                <text x="98" y="196" text-anchor="middle" font-size="12" fill="#c62828">Sem energia suficiente</text>
+                <text x="248" y="196" text-anchor="middle" font-size="12" fill="#2e7d32">Energia + orientação correta</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Condições para que a reação ocorra</h2>
+    <div class="grid">
+        <div class="card">
+            <ol>
+                <li><strong>Contato entre os reagentes</strong></li>
+                <li><strong>Colisões efetivas</strong></li>
+                <li><strong>Energia de ativação (Ea)</strong></li>
+                <li><strong>Condições do meio</strong> (temperatura, pressão, concentração e superfície de contato)</li>
+                <li><strong>Catalisador</strong>, quando necessário</li>
+            </ol>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <line x1="28" y1="178" x2="316" y2="178" stroke="#546e7a" stroke-width="2"/>
+                <line x1="42" y1="188" x2="42" y2="26" stroke="#546e7a" stroke-width="2"/>
+                <path d="M42 178 Q110 154 150 78 T300 58" fill="none" stroke="#ef6c00" stroke-width="4"/>
+                <line x1="150" y1="78" x2="150" y2="178" stroke="#ef6c00" stroke-dasharray="5,4"/>
+                <text x="158" y="72" font-size="12" fill="#ef6c00">Ea</text>
+                <path d="M42 178 Q120 160 172 108 T300 92" fill="none" stroke="#2e7d32" stroke-width="4"/>
+                <text x="186" y="118" font-size="12" fill="#2e7d32">Com catalisador</text>
+                <text x="54" y="26" font-size="12" fill="#37474f">Energia</text>
+                <text x="250" y="198" font-size="12" fill="#37474f">Caminho da reação</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Energia nas reações químicas</h2>
+    <div class="grid">
+        <div>
+            <ul>
+                <li><strong>Quebra de ligações:</strong> absorve energia.</li>
+                <li><strong>Formação de ligações:</strong> libera energia.</li>
+                <li><strong>Exotérmica:</strong> libera calor (ΔH &lt; 0).</li>
+                <li><strong>Endotérmica:</strong> absorve calor (ΔH &gt; 0).</li>
+            </ul>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <line x1="34" y1="182" x2="306" y2="182" stroke="#546e7a" stroke-width="2"/>
+                <line x1="46" y1="194" x2="46" y2="28" stroke="#546e7a" stroke-width="2"/>
+                <path d="M46 156 Q120 126 174 70 T300 44" fill="none" stroke="#ef5350" stroke-width="4"/>
+                <path d="M46 64 Q120 94 174 144 T300 170" fill="none" stroke="#1e88e5" stroke-width="4"/>
+                <text x="208" y="54" font-size="12" fill="#ef5350">Endotérmica</text>
+                <text x="206" y="164" font-size="12" fill="#1e88e5">Exotérmica</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Fatores que influenciam a rapidez da reação</h2>
+    <div class="grid">
+        <div>
+            <table>
+                <tr><th>Fator</th><th>Efeito</th></tr>
+                <tr><td>Temperatura</td><td>↑ energia das partículas</td></tr>
+                <tr><td>Concentração</td><td>↑ frequência de colisões</td></tr>
+                <tr><td>Superfície de contato</td><td>↑ área exposta</td></tr>
+                <tr><td>Pressão (gases)</td><td>↑ aproximação das partículas</td></tr>
+                <tr><td>Catalisador</td><td>↓ energia de ativação</td></tr>
+            </table>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="26" y="22" width="126" height="72" rx="10" fill="#fff3e0" stroke="#fb8c00"/>
+                <rect x="188" y="22" width="126" height="72" rx="10" fill="#e8f5e9" stroke="#43a047"/>
+                <rect x="26" y="122" width="126" height="72" rx="10" fill="#e3f2fd" stroke="#1e88e5"/>
+                <rect x="188" y="122" width="126" height="72" rx="10" fill="#f3e5f5" stroke="#8e24aa"/>
+
+                <g stroke="#fb8c00" stroke-width="2" stroke-linecap="round">
+                    <line x1="52" y1="76" x2="74" y2="54"/>
+                    <line x1="74" y1="54" x2="96" y2="70"/>
+                    <line x1="88" y1="44" x2="108" y2="36"/>
+                </g>
+                <text x="89" y="36" text-anchor="middle" font-size="11" fill="#ef6c00">Temperatura</text>
+
+                <g fill="#43a047">
+                    <circle cx="218" cy="58" r="5"/>
+                    <circle cx="236" cy="44" r="5"/>
+                    <circle cx="254" cy="58" r="5"/>
+                    <circle cx="272" cy="44" r="5"/>
+                    <circle cx="290" cy="58" r="5"/>
+                    <circle cx="228" cy="72" r="5"/>
+                    <circle cx="264" cy="72" r="5"/>
+                </g>
+                <text x="251" y="36" text-anchor="middle" font-size="11" fill="#2e7d32">Concentração</text>
+
+                <g stroke="#1e88e5" stroke-width="2">
+                    <circle cx="58" cy="158" r="10" fill="#bbdefb"/>
+                    <circle cx="92" cy="158" r="6" fill="#bbdefb"/>
+                    <circle cx="118" cy="158" r="4" fill="#bbdefb"/>
+                    <circle cx="134" cy="158" r="3" fill="#bbdefb"/>
+                </g>
+                <text x="89" y="138" text-anchor="middle" font-size="11" fill="#1565c0">Superfície</text>
+
+                <g stroke="#8e24aa" stroke-width="2">
+                    <rect x="210" y="146" width="82" height="28" rx="6" fill="#ede7f6"/>
+                    <line x1="224" y1="160" x2="278" y2="160"/>
+                    <line x1="238" y1="150" x2="238" y2="170"/>
+                    <line x1="264" y1="150" x2="264" y2="170"/>
+                </g>
+                <text x="251" y="138" text-anchor="middle" font-size="11" fill="#6a1b9a">Pressão</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Exemplos de reações do cotidiano</h2>
+    <div class="grid">
+        <div>
+            <ul>
+                <li>Ferrugem no ferro</li>
+                <li>Queima de madeira ou papel</li>
+                <li>Cozimento dos alimentos</li>
+                <li>Digestão dos alimentos</li>
+                <li>Fotossíntese</li>
+                <li>Respiração celular</li>
+            </ul>
+            <div class="highlight">As reações químicas estão presentes em processos naturais e em atividades do dia a dia, como cozinhar, respirar, enferrujar objetos e queimar materiais.</div>
+        </div>
+        <div class="svgbox">
+            <svg viewBox="0 0 340 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="24" y="28" width="64" height="150" rx="8" fill="#eceff1" stroke="#607d8b"/>
+                <rect x="48" y="40" width="16" height="124" fill="#8d6e63"/>
+                <circle cx="56" cy="72" r="11" fill="#bf360c"/>
+                <circle cx="64" cy="86" r="9" fill="#d84315"/>
+                <circle cx="50" cy="94" r="8" fill="#ff7043"/>
+                <rect x="108" y="120" width="86" height="18" rx="4" fill="#8d6e63"/>
+                <path d="M118 120 Q128 96 142 120 Q154 84 166 120 Q178 92 186 120" fill="#ffb74d" stroke="#ef6c00" stroke-width="2"/>
+                <circle cx="252" cy="74" r="28" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+                <g stroke="#f9a825" stroke-width="2">
+                    <line x1="252" y1="28" x2="252" y2="12"/>
+                    <line x1="252" y1="120" x2="252" y2="136"/>
+                    <line x1="206" y1="74" x2="190" y2="74"/>
+                    <line x1="298" y1="74" x2="314" y2="74"/>
+                    <line x1="222" y1="44" x2="210" y2="32"/>
+                    <line x1="282" y1="104" x2="294" y2="116"/>
+                    <line x1="282" y1="44" x2="294" y2="32"/>
+                    <line x1="222" y1="104" x2="210" y2="116"/>
+                </g>
+                <rect x="214" y="142" width="78" height="26" rx="6" fill="#a5d6a7" stroke="#2e7d32"/>
+                <path d="M232 142 Q244 120 252 142 Q262 114 274 142" fill="none" stroke="#2e7d32" stroke-width="2"/>
+                <text x="56" y="196" text-anchor="middle" font-size="11">Ferrugem</text>
+                <text x="151" y="196" text-anchor="middle" font-size="11">Combustão</text>
+                <text x="252" y="196" text-anchor="middle" font-size="11">Fotossíntese</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Resumo final</h2>
+    <div class="card">
+        <p>Uma reação química ocorre quando os reagentes entram em contato e realizam <strong>colisões eficazes</strong>, com energia suficiente para superar a <strong>energia de ativação</strong> e com orientação favorável. Temperatura, concentração, superfície de contato, pressão e catalisadores influenciam diretamente a ocorrência e a velocidade das reações químicas.</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    Prof Valter @2026
+</footer>
+
+</body>
+</html>
+""")
