@@ -872,3 +872,26 @@
 
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador</title>
+</head>
+<body>
+  <p>Visitas nesta sessão: <span id="contador">0</span></p>
+
+  <script>
+    // Pega o valor salvo ou inicia com 0
+    let visitas = localStorage.getItem('visitas') || 0;
+    visitas++;
+    // Salva o novo valor
+    localStorage.setItem('visitas', visitas);
+    // Mostra na tela
+    document.getElementById('contador').innerText = visitas;
+  </script>
+</body>
+</html>
