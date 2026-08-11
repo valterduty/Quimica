@@ -12,8 +12,452 @@
 </html>
 
 
-
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas - Conteúdo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 2.5rem;
+        }
+
+        .lista-aulas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .botao-aula {
+            padding: 1rem 1.2rem;
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .botao-aula:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .botao-aula.ativa {
+            background-color: #2f855a;
+            box-shadow: 0 4px 14px rgba(47,133,90,0.3);
+        }
+
+        .conteudo-aula {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            min-height: 200px;
+            display: none;
+        }
+
+        .conteudo-aula.visivel {
+            display: block;
+            animation: aparece 0.4s ease;
+        }
+
+        .conteudo-aula h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        @keyframes aparece {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Lista de Aulas</h1>
+
+    <!-- Lista dos botões das aulas -->
+    <div class="lista-aulas">
+        <button class="botao-aula" data-aula="1">Aula 01</button>
+        <button class="botao-aula" data-aula="2">Aula 02</button>
+        <button class="botao-aula" data-aula="3">Aula 03</button>
+        <button class="botao-aula" data-aula="4">Aula 04</button>
+        <button class="botao-aula" data-aula="5">Aula 05</button>
+        <button class="botao-aula" data-aula="6">Aula 06</button>
+        <button class="botao-aula" data-aula="7">Aula 07</button>
+        <button class="botao-aula" data-aula="8">Aula 08</button>
+        <button class="botao-aula" data-aula="9">Aula 09</button>
+        <button class="botao-aula" data-aula="10">Aula 10</button>
+        <button class="botao-aula" data-aula="11">Aula 11</button>
+        <button class="botao-aula" data-aula="12">Aula 12</button>
+        <button class="botao-aula" data-aula="13">Aula 13</button>
+        <button class="botao-aula" data-aula="14">Aula 14</button>
+    </div>
+
+    <!-- Área onde o conteúdo será exibido -->
+    <div id="conteudo-exibicao">
+        <div class="conteudo-aula" id="aula-1">
+            <h2>Aula 01: Condições para Ocorrência de Reações Químicas</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01: Condições para Ocorrência de Reações Químicas</title>
+    <style>
+        :root {
+            --primaria: #2c3e50;
+            --secundaria: #3498db;
+            --destaque: #e74c3c;
+            --sucesso: #27ae60;
+            --fundo: #f8fafc;
+            --cartao: #ffffff;
+            --borda: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--fundo); color: var(--primaria); line-height: 1.6; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; padding: 30px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 12px; margin-bottom: 30px; }
+        h1 { font-size: 1.8rem; margin-bottom: 10px; }
+        h2 { color: var(--secundaria); border-bottom: 2px solid var(--secundaria); padding-bottom: 8px; margin: 35px 0 20px; font-size: 1.3rem; }
+        h3 { color: var(--primaria); margin: 20px 0 10px; font-size: 1.1rem; }
+        .cartao { background: var(--cartao); padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; border-left: 4px solid var(--secundaria); }
+        .resumo { background-color: #ecfdf5; border-left-color: var(--sucesso); }
+        .exemplo { background-color: #fff9e6; border-left-color: #f59e0b; }
+        .alerta { background-color: #fef2f2; border-left-color: var(--destaque); }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .esquema { display: flex; justify-content: center; margin: 20px 0; overflow-x: auto; }
+        svg { max-width: 100%; height: auto; }
+        .comparativo { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        @media (max-width: 600px) { .comparativo { grid-template-columns: 1fr; } }
+        .coluna { padding: 15px; border-radius: 8px; }
+        .fisica { background-color: #e0f2fe; }
+        .quimica { background-color: #fecaca; }
+        .formula { font-family: 'Consolas', monospace; background: #f1f5f9; padding: 12px; border-radius: 6px; text-align: center; font-size: 1.1rem; margin: 15px 0; }
+        .grade-indicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 15px 0; }
+        .indicio { text-align: center; padding: 10px; background: #f0f4f8; border-radius: 8px; font-size: 0.95rem; }
+        .check { color: var(--sucesso); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>⚗️ Aula 01: Condições para Ocorrência de Reações Químicas</h1>
+    <p>Transformações da matéria, colisões, energia e velocidade</p>
+</header>
+
+<!-- Seção 1 -->
+<section class="cartao">
+    <h2>📌 Reação Química e Transformação da Matéria</h2>
+    <p>Uma reação química é o processo em que uma ou mais substâncias se transformam em <strong>novas substâncias</strong> com propriedades diferentes.</p>
+
+    <h3>O que acontece em uma reação química?</h3>
+    <ul>
+        <li>As substâncias iniciais (<em>reagentes</em>) são transformadas em novas substâncias (<em>produtos</em>).</li>
+        <li>Os átomos <strong>não são criados nem destruídos</strong> — apenas se reorganizam para formar novas moléculas.</li>
+    </ul>
+
+    <h3>Como identificar uma reação química?</h3>
+    <div class="grade-indicios">
+        <div class="indicio">🎨 Mudança de cor</div>
+        <div class="indicio">💨 Liberação de gás</div>
+        <div class="indicio">🔽 Formação de precipitado</div>
+        <div class="indicio">💡 Emissão de luz</div>
+        <div class="indicio">🌡️ Alteração de temperatura</div>
+    </div>
+
+    <h3>Exemplos de transformações químicas</h3>
+    <ul>
+        <li>Ferro enferrujando</li>
+        <li>Queima de madeira</li>
+        <li>Cozimento de um ovo</li>
+        <li>Digestão dos alimentos</li>
+    </ul>
+
+    <h3>Transformação Física × Química</h3>
+    <div class="comparativo">
+        <div class="coluna fisica">
+            <strong>🔹 Física</strong>
+            <p>Altera apenas o estado ou a forma da matéria, sem formar novas substâncias.<br><em>Exemplo: gelo derretendo.</em></p>
+        </div>
+        <div class="coluna quimica">
+            <strong>🔹 Química</strong>
+            <p>Forma novas substâncias.<br><em>Exemplo: papel queimando.</em></p>
+        </div>
+    </div>
+
+    <div class="esquema">
+        <svg width="520" height="140" viewBox="0 0 520 140">
+            <rect x="10" y="40" width="120" height="60" rx="8" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <text x="70" y="65" text-anchor="middle" fill="white" font-size="14">Reagentes</text>
+            <text x="70" y="88" text-anchor="middle" fill="white" font-size="11">Substâncias iniciais</text>
+            
+            <path d="M145 70 L185 70 L180 62 M185 70 L180 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
+            <text x="165" y="55" text-anchor="middle" font-size="11">Reorganização</text>
+
+            <rect x="200" y="40" width="120" height="60" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <text x="260" y="65" text-anchor="middle" fill="white" font-size="14">Produtos</text>
+            <text x="260" y="88" text-anchor="middle" fill="white" font-size="11">Novas substâncias</text>
+
+            <path d="M345 70 L385 70 L380 62 M385 70 L380 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
+            <text x="365" y="55" text-anchor="middle" font-size="11">Átomos não se criam<br>nem se destroem</text>
+        </svg>
+    </div>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong> A reação química produz novas substâncias pela reorganização dos átomos dos reagentes, enquanto a quantidade total de matéria permanece a mesma (<em>Lei da Conservação da Massa</em>).
+    </div>
+</section>
+
+<!-- Seção 2 -->
+<section class="cartao">
+    <h2>💥 Teoria das Colisões: Energia de Ativação e Orientação</h2>
+    <p>Uma reação química só ocorre quando as partículas dos reagentes colidem de forma <strong>eficaz</strong>.</p>
+
+    <h3>Condições para colisão eficaz:</h3>
+    <ul>
+        <li><strong>Energia de ativação (Eₐ):</strong> é a energia mínima necessária para que a reação aconteça. Colisões com energia menor que Eₐ não formam produtos. Quanto maior a temperatura, mais partículas têm energia suficiente.</li>
+        <li><strong>Orientação favorável:</strong> as partículas devem colidir na posição correta para romper ligações e formar novas. Mesmo com energia suficiente, orientação errada = sem reação.</li>
+    </ul>
+
+    <div class="esquema">
+        <svg width="600" height="220" viewBox="0 0 600 220">
+            <!-- Colisão sem energia -->
+            <circle cx="70" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <circle cx="130" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <path d="M100 95 L100 105" stroke="#c0392b" stroke-width="3"/>
+            <text x="100" y="130" text-anchor="middle" font-size="12">Sem energia suficiente</text>
+            <text x="100" y="150" text-anchor="middle" font-size="11" fill="#c0392b">❌ Não reage</text>
+
+            <!-- Colisão com energia mas orientação errada -->
+            <circle cx="270" cy="50" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <circle cx="310" cy="90" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <path d="M300 125 L300 135" stroke="#f39c12" stroke-width="3"/>
+            <text x="300" y="160" text-anchor="middle" font-size="12">Energia ✅ / Orientação ❌</text>
+            <text x="300" y="180" text-anchor="middle" font-size="11" fill="#c0392b">❌ Não reage</text>
+
+            <!-- Colisão eficaz -->
+            <circle cx="470" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+            <circle cx="530" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <path d="M490 45 L510 45 L510 75 L490 75 Z" fill="#27ae60"/>
+            <text x="500" y="115" text-anchor="middle" font-size="12">Energia ✅ + Orientação ✅</text>
+            <text x="500" y="135" text-anchor="middle" font-size="11" fill="#27ae60">✅ Reação!</text>
+        </svg>
+    </div>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong>
+        <p>Colisão + energia suficiente + orientação correta = ✅ reação química.<br>
+        Colisão sem energia suficiente → ❌ não ocorre.<br>
+        Colisão com energia, mas orientação incorreta → ❌ também não ocorre.</p>
+        <p style="margin-top:8px"><em>Exemplo:</em> Na combustão, moléculas de combustível e oxigênio precisam colidir com energia e orientação adequadas para formar CO₂ e H₂O.</p>
+    </div>
+</section>
+
+<!-- Seção 3 -->
+<section class="cartao">
+    <h2>✅ Condições para que uma Reação Química Ocorra</h2>
+    <ul>
+        <li><strong>Contato entre os reagentes:</strong> as substâncias precisam se encontrar para que suas partículas colidam.</li>
+        <li><strong>Colisões efetivas:</strong> energia ≥ Eₐ e orientação favorável.</li>
+        <li><strong>Energia de ativação (Eₐ):</strong> energia mínima para iniciar a reação — pode vir de calor, luz, eletricidade etc.</li>
+        <li><strong>Condições adequadas do meio:</strong> temperatura, pressão (gases), concentração e superfície de contato.</li>
+        <li><strong>Presença de catalisador (quando necessário):</strong> acelera a reação reduzindo Eₐ, sem ser consumido.</li>
+    </ul>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong>
+        <p class="check">✔️ Reagentes em contato</p>
+        <p class="check">✔️ Colisões com energia suficiente</p>
+        <p class="check">✔️ Partículas com orientação correta</p>
+        <p class="check">✔️ Condições favoráveis (temperatura, pressão, concentração...)</p>
+        <p class="check">✔️ Catalisador (quando necessário)</p>
+    </div>
+</section>
+
+<!-- Seção 4 -->
+<section class="cartao">
+    <h2>🔥 Energia Envolvida nas Reações</h2>
+    <p>A energia está ligada à quebra e formação de ligações químicas:</p>
+    <ul>
+        <li>🔸 <strong>Quebra de ligações</strong> → absorve energia</li>
+        <li>🔸 <strong>Formação de ligações</strong> → libera energia</li>
+    </ul>
+    <p>O saldo entre energia absorvida e liberada define o tipo de reação.</p>
+
+    <div class="comparativo">
+        <div class="coluna fisica">
+            <strong>🔵 Exotérmica</strong>
+            <p>Libera energia (calor, luz...)<br>Produtos têm MENOS energia que reagentes.<br>ΔH &lt; 0</p>
+            <em>Exemplos: combustão, respiração celular.</em>
+        </div>
+        <div class="coluna quimica">
+            <strong>🔴 Endotérmica</strong>
+            <p>Absorve energia do ambiente.<br>Produtos têm MAIS energia que reagentes.<br>ΔH &gt; 0</p>
+            <em>Exemplos: fotossíntese, decomposição térmica.</em>
+        </div>
+    </div>
+
+    <div class="esquema">
+        <svg width="580" height="240" viewBox="0 0 580 240">
+            <!-- Gráfico Ea -->
+            <text x="20" y="30" font-size="12">Energia →</text>
+            <line x1="60" y1="210" x2="60" y2="30" stroke="#94a3b8" stroke-width="2"/>
+            <line x1="60" y1="210" x2="560" y2="210" stroke="#94a3b8" stroke-width="2"/>
+            <text x="570" y="215" font-size="12">Caminho da reação →</text>
+
+            <!-- Reagentes -->
+            <path d="M60 150 L160 150 L260 60 L360 150 L460 170 L560 170" stroke="#e74c3c" stroke-width="3" fill="none" stroke-linejoin="round"/>
+            <text x="110" y="145" font-size="11">Reagentes</text>
+            <text x="500" y="165" font-size="11">Produtos</text>
+            <line x1="260" y1="60" x2="260" y2="150" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="270" y="110" fill="#d97706" font-size="11">Eₐ</text>
+            <text x="400" y="195" fill="#c0392b" font-size="11">Reação Exotérmica (ΔH &lt; 0)</text>
+
+            <path d="M60 170 L160 170 L260 80 L360 170 L460 140 L560 140" stroke="#3498db" stroke-width="3" fill="none" stroke-linejoin="round" transform="translate(0,0)"/>
+            <text x="500" y="135" font-size="11">Produtos ↑</text>
+            <text x="400" y="215" fill="#2980b9" font-size="11">Reação Endotérmica (ΔH &gt; 0)</text>
+        </svg>
+    </div>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong>
+        <p>Quebrar ligações → absorve energia | Formar ligações → libera energia.<br>
+        Exotérmica → libera calor (ΔH &lt; 0) | Endotérmica → absorve calor (ΔH &gt; 0).<br>
+        Energia de ativação (Eₐ) → energia mínima para iniciar a reação.</p>
+    </div>
+</section>
+
+<!-- Seção 5 -->
+<section class="cartao">
+    <h2>📐 Rapidez Média de uma Reação</h2>
+    <p>Indica quanto a concentração varia ao longo do tempo.</p>
+
+    <div class="formula">
+        v = Δconcentração ÷ Δt
+    </div>
+
+    <p><strong>Interpretação:</strong> concentração de reagentes diminui; de produtos aumenta. Maior velocidade = reação mais rápida.</p>
+
+    <div class="cartao exemplo">
+        <strong>📌 Exemplo:</strong> A concentração de um reagente cai de 1,0 para 0,4 mol/L em 3 segundos.<br>
+        Δconcentração = 1,0 − 0,4 = 0,6 mol/L<br>
+        Δt = 3 s<br>
+        v = 0,6 ÷ 3 = <strong>0,2 mol/L·s</strong>
+    </div>
+
+    <h3>Fatores que influenciam a velocidade:</h3>
+    <ul>
+        <li>🌡️ Temperatura</li>
+        <li>🧪 Concentração dos reagentes</li>
+        <li>📐 Superfície de contato</li>
+        <li>🔵 Pressão (em gases)</li>
+        <li>⚡ Presença de catalisadores</li>
+    </ul>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong> A rapidez média mede a variação da concentração por unidade de tempo. Temperatura, concentração, superfície, pressão e catalisadores alteram a velocidade das reações.
+    </div>
+</section>
+
+<!-- Seção 6 -->
+<section class="cartao">
+    <h2>🏠 Reações no Cotidiano</h2>
+    <ul>
+        <li><strong>Ferrugem:</strong> ferro + oxigênio + umidade → ferrugem.</li>
+        <li><strong>Queima:</strong> combustão libera calor e luz.</li>
+        <li><strong>Cozimento:</strong> calor provoca transformações químicas nos alimentos.</li>
+        <li><strong>Digestão:</strong> enzimas quebram alimentos em substâncias absorvíveis.</li>
+        <li><strong>Fotossíntese:</strong> plantas usam luz, água e CO₂ → glicose e oxigênio.</li>
+        <li><strong>Respiração celular:</strong> glicose + oxigênio → energia + CO₂ + H₂O.</li>
+    </ul>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong> Reações químicas estão presentes em processos naturais e no dia a dia: enferrujar, cozinhar, queimar, respirar...
+    </div>
+</section>
+
+<!-- Seção 7 -->
+<section class="cartao">
+    <h2>🔗 Relação entre Condições e Ocorrência</h2>
+    <p>A reação depende de colisões eficazes: energia ≥ Eₐ e orientação correta. Os fatores abaixo influenciam diretamente:</p>
+
+    <div class="esquema">
+        <svg width="560" height="200" viewBox="0 0 560 200">
+            <rect x="180" y="80" width="200" height="50" rx="10" fill="#27ae60" stroke="#166534" stroke-width="2"/>
+            <text x="280" y="110" text-anchor="middle" fill="white" font-size="14">Reação Química ✅</text>
+
+            <path d="M100 60 L180 80" stroke="#3498db" stroke-width="2"/>
+            <text x="70" y="60" font-size="11">🌡️ Temperatura</text>
+
+            <path d="M230 40 L260 80" stroke="#3498db" stroke-width="2"/>
+            <text x="210" y="30" font-size="11">🧪 Concentração</text>
+
+            <path d="M330 40 L300 80" stroke="#3498db" stroke-width="2"/>
+            <text x="340" y="30" font-size="11">📐 Superfície</text>
+
+            <path d="M460 60 L380 80" stroke="#3498db" stroke-width="2"/>
+            <text x="470" y="60" font-size="11">🔵 Pressão</text>
+
+            <path d="M280 150 L280 130" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
+            <text x="280" y="175" text-anchor="middle" fill="#b45309" font-size="11">⚡ Catalisador reduz Eₐ</text>
+        </svg>
+    </div>
+
+    <ul>
+        <li><strong>Temperatura:</strong> aumenta a energia das partículas → mais colisões eficazes.</li>
+        <li><strong>Concentração:</strong> mais partículas → mais colisões.</li>
+        <li><strong>Superfície de contato:</strong> maior área → mais colisões.</li>
+        <li><strong>Pressão (gases):</strong> aproxima partículas → mais colisões.</li>
+        <li><strong>Catalisadores:</strong> reduzem Eₐ → aceleram sem ser consumidos.</li>
+    </ul>
+
+    <div class="cartao resumo">
+        <strong>📝 Resumo:</strong> A reação ocorre quando há condições favoráveis a colisões eficazes. Temperatura, concentração, superfície, pressão e catalisadores são os principais fatores que influenciam a ocorrência e a velocidade das reações.
+    </div>
+</section>
+
+</body>
+</html>
+</p>
+        </div>
+
+
+
+
+
+
+
+
+        
+        <div class="conteudo-aula" id="aula-2">
+            <h2>Aula 02: Fatores que influenciam a rapidez de uma reação
+</h2>
+            <p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -529,332 +973,111 @@
 
 </body>
 </html>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 01: Condições para Ocorrência de Reações Químicas</title>
-    <style>
-        :root {
-            --primaria: #2c3e50;
-            --secundaria: #3498db;
-            --destaque: #e74c3c;
-            --sucesso: #27ae60;
-            --fundo: #f8fafc;
-            --cartao: #ffffff;
-            --borda: #e2e8f0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-        body { background-color: var(--fundo); color: var(--primaria); line-height: 1.6; padding: 20px; max-width: 1000px; margin: 0 auto; }
-        header { text-align: center; padding: 30px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 12px; margin-bottom: 30px; }
-        h1 { font-size: 1.8rem; margin-bottom: 10px; }
-        h2 { color: var(--secundaria); border-bottom: 2px solid var(--secundaria); padding-bottom: 8px; margin: 35px 0 20px; font-size: 1.3rem; }
-        h3 { color: var(--primaria); margin: 20px 0 10px; font-size: 1.1rem; }
-        .cartao { background: var(--cartao); padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; border-left: 4px solid var(--secundaria); }
-        .resumo { background-color: #ecfdf5; border-left-color: var(--sucesso); }
-        .exemplo { background-color: #fff9e6; border-left-color: #f59e0b; }
-        .alerta { background-color: #fef2f2; border-left-color: var(--destaque); }
-        ul, ol { margin-left: 25px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; }
-        .esquema { display: flex; justify-content: center; margin: 20px 0; overflow-x: auto; }
-        svg { max-width: 100%; height: auto; }
-        .comparativo { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-        @media (max-width: 600px) { .comparativo { grid-template-columns: 1fr; } }
-        .coluna { padding: 15px; border-radius: 8px; }
-        .fisica { background-color: #e0f2fe; }
-        .quimica { background-color: #fecaca; }
-        .formula { font-family: 'Consolas', monospace; background: #f1f5f9; padding: 12px; border-radius: 6px; text-align: center; font-size: 1.1rem; margin: 15px 0; }
-        .grade-indicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 15px 0; }
-        .indicio { text-align: center; padding: 10px; background: #f0f4f8; border-radius: 8px; font-size: 0.95rem; }
-        .check { color: var(--sucesso); font-weight: bold; }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>⚗️ Aula 01: Condições para Ocorrência de Reações Químicas</h1>
-    <p>Transformações da matéria, colisões, energia e velocidade</p>
-</header>
-
-<!-- Seção 1 -->
-<section class="cartao">
-    <h2>📌 Reação Química e Transformação da Matéria</h2>
-    <p>Uma reação química é o processo em que uma ou mais substâncias se transformam em <strong>novas substâncias</strong> com propriedades diferentes.</p>
-
-    <h3>O que acontece em uma reação química?</h3>
-    <ul>
-        <li>As substâncias iniciais (<em>reagentes</em>) são transformadas em novas substâncias (<em>produtos</em>).</li>
-        <li>Os átomos <strong>não são criados nem destruídos</strong> — apenas se reorganizam para formar novas moléculas.</li>
-    </ul>
-
-    <h3>Como identificar uma reação química?</h3>
-    <div class="grade-indicios">
-        <div class="indicio">🎨 Mudança de cor</div>
-        <div class="indicio">💨 Liberação de gás</div>
-        <div class="indicio">🔽 Formação de precipitado</div>
-        <div class="indicio">💡 Emissão de luz</div>
-        <div class="indicio">🌡️ Alteração de temperatura</div>
-    </div>
-
-    <h3>Exemplos de transformações químicas</h3>
-    <ul>
-        <li>Ferro enferrujando</li>
-        <li>Queima de madeira</li>
-        <li>Cozimento de um ovo</li>
-        <li>Digestão dos alimentos</li>
-    </ul>
-
-    <h3>Transformação Física × Química</h3>
-    <div class="comparativo">
-        <div class="coluna fisica">
-            <strong>🔹 Física</strong>
-            <p>Altera apenas o estado ou a forma da matéria, sem formar novas substâncias.<br><em>Exemplo: gelo derretendo.</em></p>
+</p>
         </div>
-        <div class="coluna quimica">
-            <strong>🔹 Química</strong>
-            <p>Forma novas substâncias.<br><em>Exemplo: papel queimando.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- Repita o padrão para as demais aulas -->
+        <div class="conteudo-aula" id="aula-3">
+            <h2>Aula 03</h2>
+            <p>Conteúdo da Aula 03...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-4">
+            <h2>Aula 04</h2>
+            <p>Conteúdo da Aula 04...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-5">
+            <h2>Aula 05</h2>
+            <p>Conteúdo da Aula 05...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-6">
+            <h2>Aula 06</h2>
+            <p>Conteúdo da Aula 06...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-7">
+            <h2>Aula 07</h2>
+            <p>Conteúdo da Aula 07...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-8">
+            <h2>Aula 08</h2>
+            <p>Conteúdo da Aula 08...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-9">
+            <h2>Aula 09</h2>
+            <p>Conteúdo da Aula 09...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-10">
+            <h2>Aula 10</h2>
+            <p>Conteúdo da Aula 10...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-11">
+            <h2>Aula 11</h2>
+            <p>Conteúdo da Aula 11...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-12">
+            <h2>Aula 12</h2>
+            <p>Conteúdo da Aula 12...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-13">
+            <h2>Aula 13</h2>
+            <p>Conteúdo da Aula 13...</p>
+        </div>
+        <div class="conteudo-aula" id="aula-14">
+            <h2>Aula 14</h2>
+            <p>Conteúdo da Aula 14...</p>
         </div>
     </div>
 
-    <div class="esquema">
-        <svg width="520" height="140" viewBox="0 0 520 140">
-            <rect x="10" y="40" width="120" height="60" rx="8" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-            <text x="70" y="65" text-anchor="middle" fill="white" font-size="14">Reagentes</text>
-            <text x="70" y="88" text-anchor="middle" fill="white" font-size="11">Substâncias iniciais</text>
+<script>
+    // Seleciona todos os botões e conteúdos
+    const botoes = document.querySelectorAll('.botao-aula');
+    const conteudos = document.querySelectorAll('.conteudo-aula');
+
+    // Adiciona o clique em cada botão
+    botoes.forEach(botao => {
+        botao.addEventListener('click', () => {
+            // Remove destaque de todos os botões e esconde todos os conteúdos
+            botoes.forEach(btn => btn.classList.remove('ativa'));
+            conteudos.forEach(ctd => ctd.classList.remove('visivel'));
+
+            // Pega o número da aula clicada
+            const numeroAula = botao.getAttribute('data-aula');
             
-            <path d="M145 70 L185 70 L180 62 M185 70 L180 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
-            <text x="165" y="55" text-anchor="middle" font-size="11">Reorganização</text>
-
-            <rect x="200" y="40" width="120" height="60" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-            <text x="260" y="65" text-anchor="middle" fill="white" font-size="14">Produtos</text>
-            <text x="260" y="88" text-anchor="middle" fill="white" font-size="11">Novas substâncias</text>
-
-            <path d="M345 70 L385 70 L380 62 M385 70 L380 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
-            <text x="365" y="55" text-anchor="middle" font-size="11">Átomos não se criam<br>nem se destroem</text>
-        </svg>
-    </div>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong> A reação química produz novas substâncias pela reorganização dos átomos dos reagentes, enquanto a quantidade total de matéria permanece a mesma (<em>Lei da Conservação da Massa</em>).
-    </div>
-</section>
-
-<!-- Seção 2 -->
-<section class="cartao">
-    <h2>💥 Teoria das Colisões: Energia de Ativação e Orientação</h2>
-    <p>Uma reação química só ocorre quando as partículas dos reagentes colidem de forma <strong>eficaz</strong>.</p>
-
-    <h3>Condições para colisão eficaz:</h3>
-    <ul>
-        <li><strong>Energia de ativação (Eₐ):</strong> é a energia mínima necessária para que a reação aconteça. Colisões com energia menor que Eₐ não formam produtos. Quanto maior a temperatura, mais partículas têm energia suficiente.</li>
-        <li><strong>Orientação favorável:</strong> as partículas devem colidir na posição correta para romper ligações e formar novas. Mesmo com energia suficiente, orientação errada = sem reação.</li>
-    </ul>
-
-    <div class="esquema">
-        <svg width="600" height="220" viewBox="0 0 600 220">
-            <!-- Colisão sem energia -->
-            <circle cx="70" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-            <circle cx="130" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-            <path d="M100 95 L100 105" stroke="#c0392b" stroke-width="3"/>
-            <text x="100" y="130" text-anchor="middle" font-size="12">Sem energia suficiente</text>
-            <text x="100" y="150" text-anchor="middle" font-size="11" fill="#c0392b">❌ Não reage</text>
-
-            <!-- Colisão com energia mas orientação errada -->
-            <circle cx="270" cy="50" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-            <circle cx="310" cy="90" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-            <path d="M300 125 L300 135" stroke="#f39c12" stroke-width="3"/>
-            <text x="300" y="160" text-anchor="middle" font-size="12">Energia ✅ / Orientação ❌</text>
-            <text x="300" y="180" text-anchor="middle" font-size="11" fill="#c0392b">❌ Não reage</text>
-
-            <!-- Colisão eficaz -->
-            <circle cx="470" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-            <circle cx="530" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-            <path d="M490 45 L510 45 L510 75 L490 75 Z" fill="#27ae60"/>
-            <text x="500" y="115" text-anchor="middle" font-size="12">Energia ✅ + Orientação ✅</text>
-            <text x="500" y="135" text-anchor="middle" font-size="11" fill="#27ae60">✅ Reação!</text>
-        </svg>
-    </div>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong>
-        <p>Colisão + energia suficiente + orientação correta = ✅ reação química.<br>
-        Colisão sem energia suficiente → ❌ não ocorre.<br>
-        Colisão com energia, mas orientação incorreta → ❌ também não ocorre.</p>
-        <p style="margin-top:8px"><em>Exemplo:</em> Na combustão, moléculas de combustível e oxigênio precisam colidir com energia e orientação adequadas para formar CO₂ e H₂O.</p>
-    </div>
-</section>
-
-<!-- Seção 3 -->
-<section class="cartao">
-    <h2>✅ Condições para que uma Reação Química Ocorra</h2>
-    <ul>
-        <li><strong>Contato entre os reagentes:</strong> as substâncias precisam se encontrar para que suas partículas colidam.</li>
-        <li><strong>Colisões efetivas:</strong> energia ≥ Eₐ e orientação favorável.</li>
-        <li><strong>Energia de ativação (Eₐ):</strong> energia mínima para iniciar a reação — pode vir de calor, luz, eletricidade etc.</li>
-        <li><strong>Condições adequadas do meio:</strong> temperatura, pressão (gases), concentração e superfície de contato.</li>
-        <li><strong>Presença de catalisador (quando necessário):</strong> acelera a reação reduzindo Eₐ, sem ser consumido.</li>
-    </ul>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong>
-        <p class="check">✔️ Reagentes em contato</p>
-        <p class="check">✔️ Colisões com energia suficiente</p>
-        <p class="check">✔️ Partículas com orientação correta</p>
-        <p class="check">✔️ Condições favoráveis (temperatura, pressão, concentração...)</p>
-        <p class="check">✔️ Catalisador (quando necessário)</p>
-    </div>
-</section>
-
-<!-- Seção 4 -->
-<section class="cartao">
-    <h2>🔥 Energia Envolvida nas Reações</h2>
-    <p>A energia está ligada à quebra e formação de ligações químicas:</p>
-    <ul>
-        <li>🔸 <strong>Quebra de ligações</strong> → absorve energia</li>
-        <li>🔸 <strong>Formação de ligações</strong> → libera energia</li>
-    </ul>
-    <p>O saldo entre energia absorvida e liberada define o tipo de reação.</p>
-
-    <div class="comparativo">
-        <div class="coluna fisica">
-            <strong>🔵 Exotérmica</strong>
-            <p>Libera energia (calor, luz...)<br>Produtos têm MENOS energia que reagentes.<br>ΔH &lt; 0</p>
-            <em>Exemplos: combustão, respiração celular.</em>
-        </div>
-        <div class="coluna quimica">
-            <strong>🔴 Endotérmica</strong>
-            <p>Absorve energia do ambiente.<br>Produtos têm MAIS energia que reagentes.<br>ΔH &gt; 0</p>
-            <em>Exemplos: fotossíntese, decomposição térmica.</em>
-        </div>
-    </div>
-
-    <div class="esquema">
-        <svg width="580" height="240" viewBox="0 0 580 240">
-            <!-- Gráfico Ea -->
-            <text x="20" y="30" font-size="12">Energia →</text>
-            <line x1="60" y1="210" x2="60" y2="30" stroke="#94a3b8" stroke-width="2"/>
-            <line x1="60" y1="210" x2="560" y2="210" stroke="#94a3b8" stroke-width="2"/>
-            <text x="570" y="215" font-size="12">Caminho da reação →</text>
-
-            <!-- Reagentes -->
-            <path d="M60 150 L160 150 L260 60 L360 150 L460 170 L560 170" stroke="#e74c3c" stroke-width="3" fill="none" stroke-linejoin="round"/>
-            <text x="110" y="145" font-size="11">Reagentes</text>
-            <text x="500" y="165" font-size="11">Produtos</text>
-            <line x1="260" y1="60" x2="260" y2="150" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5"/>
-            <text x="270" y="110" fill="#d97706" font-size="11">Eₐ</text>
-            <text x="400" y="195" fill="#c0392b" font-size="11">Reação Exotérmica (ΔH &lt; 0)</text>
-
-            <path d="M60 170 L160 170 L260 80 L360 170 L460 140 L560 140" stroke="#3498db" stroke-width="3" fill="none" stroke-linejoin="round" transform="translate(0,0)"/>
-            <text x="500" y="135" font-size="11">Produtos ↑</text>
-            <text x="400" y="215" fill="#2980b9" font-size="11">Reação Endotérmica (ΔH &gt; 0)</text>
-        </svg>
-    </div>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong>
-        <p>Quebrar ligações → absorve energia | Formar ligações → libera energia.<br>
-        Exotérmica → libera calor (ΔH &lt; 0) | Endotérmica → absorve calor (ΔH &gt; 0).<br>
-        Energia de ativação (Eₐ) → energia mínima para iniciar a reação.</p>
-    </div>
-</section>
-
-<!-- Seção 5 -->
-<section class="cartao">
-    <h2>📐 Rapidez Média de uma Reação</h2>
-    <p>Indica quanto a concentração varia ao longo do tempo.</p>
-
-    <div class="formula">
-        v = Δconcentração ÷ Δt
-    </div>
-
-    <p><strong>Interpretação:</strong> concentração de reagentes diminui; de produtos aumenta. Maior velocidade = reação mais rápida.</p>
-
-    <div class="cartao exemplo">
-        <strong>📌 Exemplo:</strong> A concentração de um reagente cai de 1,0 para 0,4 mol/L em 3 segundos.<br>
-        Δconcentração = 1,0 − 0,4 = 0,6 mol/L<br>
-        Δt = 3 s<br>
-        v = 0,6 ÷ 3 = <strong>0,2 mol/L·s</strong>
-    </div>
-
-    <h3>Fatores que influenciam a velocidade:</h3>
-    <ul>
-        <li>🌡️ Temperatura</li>
-        <li>🧪 Concentração dos reagentes</li>
-        <li>📐 Superfície de contato</li>
-        <li>🔵 Pressão (em gases)</li>
-        <li>⚡ Presença de catalisadores</li>
-    </ul>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong> A rapidez média mede a variação da concentração por unidade de tempo. Temperatura, concentração, superfície, pressão e catalisadores alteram a velocidade das reações.
-    </div>
-</section>
-
-<!-- Seção 6 -->
-<section class="cartao">
-    <h2>🏠 Reações no Cotidiano</h2>
-    <ul>
-        <li><strong>Ferrugem:</strong> ferro + oxigênio + umidade → ferrugem.</li>
-        <li><strong>Queima:</strong> combustão libera calor e luz.</li>
-        <li><strong>Cozimento:</strong> calor provoca transformações químicas nos alimentos.</li>
-        <li><strong>Digestão:</strong> enzimas quebram alimentos em substâncias absorvíveis.</li>
-        <li><strong>Fotossíntese:</strong> plantas usam luz, água e CO₂ → glicose e oxigênio.</li>
-        <li><strong>Respiração celular:</strong> glicose + oxigênio → energia + CO₂ + H₂O.</li>
-    </ul>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong> Reações químicas estão presentes em processos naturais e no dia a dia: enferrujar, cozinhar, queimar, respirar...
-    </div>
-</section>
-
-<!-- Seção 7 -->
-<section class="cartao">
-    <h2>🔗 Relação entre Condições e Ocorrência</h2>
-    <p>A reação depende de colisões eficazes: energia ≥ Eₐ e orientação correta. Os fatores abaixo influenciam diretamente:</p>
-
-    <div class="esquema">
-        <svg width="560" height="200" viewBox="0 0 560 200">
-            <rect x="180" y="80" width="200" height="50" rx="10" fill="#27ae60" stroke="#166534" stroke-width="2"/>
-            <text x="280" y="110" text-anchor="middle" fill="white" font-size="14">Reação Química ✅</text>
-
-            <path d="M100 60 L180 80" stroke="#3498db" stroke-width="2"/>
-            <text x="70" y="60" font-size="11">🌡️ Temperatura</text>
-
-            <path d="M230 40 L260 80" stroke="#3498db" stroke-width="2"/>
-            <text x="210" y="30" font-size="11">🧪 Concentração</text>
-
-            <path d="M330 40 L300 80" stroke="#3498db" stroke-width="2"/>
-            <text x="340" y="30" font-size="11">📐 Superfície</text>
-
-            <path d="M460 60 L380 80" stroke="#3498db" stroke-width="2"/>
-            <text x="470" y="60" font-size="11">🔵 Pressão</text>
-
-            <path d="M280 150 L280 130" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4"/>
-            <text x="280" y="175" text-anchor="middle" fill="#b45309" font-size="11">⚡ Catalisador reduz Eₐ</text>
-        </svg>
-    </div>
-
-    <ul>
-        <li><strong>Temperatura:</strong> aumenta a energia das partículas → mais colisões eficazes.</li>
-        <li><strong>Concentração:</strong> mais partículas → mais colisões.</li>
-        <li><strong>Superfície de contato:</strong> maior área → mais colisões.</li>
-        <li><strong>Pressão (gases):</strong> aproxima partículas → mais colisões.</li>
-        <li><strong>Catalisadores:</strong> reduzem Eₐ → aceleram sem ser consumidos.</li>
-    </ul>
-
-    <div class="cartao resumo">
-        <strong>📝 Resumo:</strong> A reação ocorre quando há condições favoráveis a colisões eficazes. Temperatura, concentração, superfície, pressão e catalisadores são os principais fatores que influenciam a ocorrência e a velocidade das reações.
-    </div>
-</section>
+            // Adiciona destaque ao botão clicado e mostra o conteúdo correspondente
+            botao.classList.add('ativa');
+            document.getElementById(`aula-${numeroAula}`).classList.add('visivel');
+        });
+    });
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
