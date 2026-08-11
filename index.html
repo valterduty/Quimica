@@ -991,8 +991,428 @@
         <!-- Repita o padrão para as demais aulas -->
         <div class="conteudo-aula" id="aula-3">
             <h2>Aula 03</h2>
-            <p>Conteúdo da Aula 03...</p>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Equilíbrio Químico: Interpretando o Kc</title>
+    <style>
+        :root {
+            --cor-primaria: #2c5282;
+            --cor-secundaria: #2f855a;
+            --cor-destaque: #ed8936;
+            --cor-fundo: #f7fafc;
+            --cor-texto: #2d3748;
+            --cor-cartao: #ffffff;
+            --borda-suave: #e2e8f0;
+            --sombra: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.7;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 { color: var(--cor-primaria); margin-bottom: 1rem; line-height: 1.3; }
+        h1 { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--cor-primaria); }
+        .secao {
+            background: var(--cor-cartao);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+            border-left: 5px solid var(--cor-primaria);
+        }
+        .destaque { background-color: #ebf8ff; border-left-color: #3182ce; }
+        .resumo { background-color: #f0fff4; border-left-color: var(--cor-secundaria); }
+        .alerta { background-color: #fffaf0; border-left-color: var(--cor-destaque); }
+        p { margin-bottom: 1rem; }
+        .equacao {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.15rem;
+            text-align: center;
+            padding: 0.8rem;
+            background-color: #f7fafc;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        svg { display: block; margin: 1rem auto; max-width: 100%; height: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+        }
+        th, td {
+            border: 1px solid var(--borda-suave);
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th { background-color: var(--cor-primaria); color: white; }
+        tr:nth-child(even) { background-color: #f7fafc; }
+        .legenda { text-align: center; font-size: 0.92rem; color: #4a5568; margin-top: 0.5rem; }
+        .bloco-svg { margin: 1.5rem 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Aula 03 — Equilíbrio Químico: Interpretando o Kc</h1>
+
+    <!-- SEÇÃO: Equilíbrio na Respiração -->
+    <section class="secao">
+        <h2>🌬️ Equilíbrio Químico na Respiração</h2>
+        <p><strong>Se há troca contínua de gases, por que dizemos que o sistema está em equilíbrio?</strong></p>
+        <p>Porque equilíbrio químico não significa que as reações pararam. Em um <strong>equilíbrio dinâmico</strong>, as reações direta e inversa continuam acontecendo, mas suas velocidades se igualam, mantendo as concentrações relativamente estáveis.</p>
+
+        <div class="equacao">
+            CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻
         </div>
+
+        <p>Quando as condições mudam — como durante exercício físico, quando há maior produção de CO₂ — o equilíbrio pode se deslocar. A ventilação pulmonar também aumenta, eliminando mais CO₂ e ajudando a restabelecer o equilíbrio.</p>
+
+        <div class="bloco-svg">
+            <svg width="720" height="220" viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="fundoResp" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ebf8ff"/>
+                        <stop offset="100%" stop-color="#e3f2fd"/>
+                    </linearGradient>
+                    <marker id="setaDir" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#2b6cb0"/>
+                    </marker>
+                    <marker id="setaEsq" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                        <polygon points="10 0, 0 3.5, 10 7" fill="#2f855a"/>
+                    </marker>
+                </defs>
+                <rect x="10" y="10" width="700" height="200" rx="12" fill="url(#fundoResp)" stroke="#90cdf4" stroke-width="2"/>
+                <text x="360" y="40" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c5282">Equilíbrio Dinâmico no Sangue</text>
+                
+                <!-- Reagentes -->
+                <rect x="40" y="80" width="140" height="70" rx="8" fill="#bee3f8" stroke="#3182ce" stroke-width="2"/>
+                <text x="110" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#2a4365">CO₂ + H₂O</text>
+
+                <!-- Seta dupla 1 -->
+                <line x1="190" y1="100" x2="270" y2="100" stroke="#2b6cb0" stroke-width="3" marker-end="url(#setaDir)"/>
+                <line x1="270" y1="115" x2="190" y2="115" stroke="#2f855a" stroke-width="3" marker-end="url(#setaEsq)"/>
+
+                <!-- Meio -->
+                <rect x="290" y="80" width="130" height="70" rx="8" fill="#c6f6d5" stroke="#38a169" stroke-width="2"/>
+                <text x="355" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#22543d">H₂CO₃</text>
+
+                <!-- Seta dupla 2 -->
+                <line x1="430" y1="100" x2="510" y2="100" stroke="#2b6cb0" stroke-width="3" marker-end="url(#setaDir)"/>
+                <line x1="510" y1="115" x2="430" y2="115" stroke="#2f855a" stroke-width="3" marker-end="url(#setaEsq)"/>
+
+                <!-- Produtos -->
+                <rect x="530" y="80" width="150" height="70" rx="8" fill="#fefcbf" stroke="#d69e2e" stroke-width="2"/>
+                <text x="605" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#744210">H⁺ + HCO₃⁻</text>
+
+                <text x="360" y="185" text-anchor="middle" font-size="13" fill="#4a5568">
+                    ➜ Reação direta (formação) &nbsp;|&nbsp; ⟵ Reação inversa (regresso) &nbsp; Velocidades iguais = Concentrações estáveis
+                </text>
+            </svg>
+        </div>
+        <p class="legenda">O equilíbrio é dinâmico: as transformações ocorrem nos dois sentidos com a mesma velocidade, mantendo as concentrações constantes.</p>
+
+        <div class="resumo">
+            <strong>Resumo:</strong> o organismo está constantemente trocando gases, mas as reações químicas envolvidas podem atingir equilíbrios dinâmicos, permitindo que o pH e as concentrações dos componentes sejam regulados.
+        </div>
+    </section>
+
+    <!-- SEÇÃO: Equilíbrio Dinâmico -->
+    <section class="secao">
+        <h2>⚖️ Equilíbrio Químico Dinâmico</h2>
+        <p>O equilíbrio químico dinâmico acontece em uma <strong>reação reversível</strong>, quando as reações direta e inversa continuam ocorrendo, mas acontecem na mesma velocidade.</p>
+
+        <div class="equacao">
+            A ⇌ B<br>
+            A → B: reação direta<br>
+            B → A: reação inversa
+        </div>
+        <p><strong>No equilíbrio:</strong> velocidade direta = velocidade inversa</p>
+        <p>Isso não significa que a reação parou. As partículas continuam reagindo, mas as concentrações de A e B permanecem aproximadamente constantes.</p>
+
+        <div class="bloco-svg">
+            <svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="graficoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#90cdf4"/>
+                        <stop offset="100%" stop-color="#48bb78"/>
+                    </linearGradient>
+                </defs>
+                <!-- Eixos -->
+                <line x1="60" y1="220" x2="560" y2="220" stroke="#333" stroke-width="2"/>
+                <line x1="60" y1="30" x2="60" y2="220" stroke="#333" stroke-width="2"/>
+                <text x="575" y="225" font-size="14">Tempo</text>
+                <text x="20" y="45" transform="rotate(-90,20,45)" font-size="14">Concentração</text>
+                <!-- Linha A -->
+                <path d="M70,55 L160,55 L220,95 L280,115 L340,125 L550,125" stroke="#3182ce" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <!-- Linha B -->
+                <path d="M70,200 L160,200 L220,160 L280,140 L340,130 L550,130" stroke="#38a169" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <!-- Linha equilíbrio -->
+                <line x1="340" y1="40" x2="340" y2="215" stroke="#a0aec0" stroke-width="2" stroke-dasharray="8,4"/>
+                <text x="350" y="60" font-size="13" fill="#718096">Equilíbrio atingido</text>
+                <!-- Legenda -->
+                <rect x="440" y="50" width="20" height="12" fill="#3182ce" rx="2"/>
+                <text x="465" y="61" font-size="13"> [A]</text>
+                <rect x="440" y="70" width="20" height="12" fill="#38a169" rx="2"/>
+                <text x="465" y="81" font-size="13"> [B]</text>
+                <text x="180" y="245" text-anchor="middle" font-size="13" fill="#4a5568">
+                    As concentrações se estabilizam — reações continuam, mas sem variação líquida
+                </text>
+            </svg>
+        </div>
+
+        <p><strong>Um exemplo importante na respiração:</strong></p>
+        <div class="equacao">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻</div>
+        <p>Esse equilíbrio ajuda a regular a quantidade de CO₂ e H⁺ no sangue, contribuindo para a manutenção do pH.</p>
+
+        <div class="destaque">
+            <strong>Ideia principal:</strong> equilíbrio dinâmico = as reações continuam acontecendo, mas sem mudança líquida nas concentrações quando o sistema está em equilíbrio.
+        </div>
+    </section>
+
+    <!-- SEÇÃO: Reações Reversíveis x Irreversíveis -->
+    <section class="secao">
+        <h2>🔄 Reações Reversíveis e Irreversíveis</h2>
+
+        <h3>Reação Reversível</h3>
+        <p>É aquela que pode acontecer nos dois sentidos: os produtos podem voltar a formar os reagentes.</p>
+        <div class="equacao">A + B ⇌ C + D</div>
+        <p>No equilíbrio químico, a reação direta e a inversa continuam acontecendo.</p>
+        <p><em>Exemplo na respiração:</em> CO₂ + H₂O ⇌ H₂CO₃ — o dióxido de carbono pode formar ácido carbônico, e o ácido carbônico pode voltar a formar CO₂ e água.</p>
+
+        <h3>Reação Irreversível</h3>
+        <p>É aquela que, nas condições consideradas, ocorre predominantemente em um único sentido.</p>
+        <div class="equacao">A + B → C + D</div>
+        <p>Os produtos não retornam aos reagentes de maneira significativa nas mesmas condições.</p>
+
+        <h3>Comparação</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Reversível</th>
+                    <th>Irreversível</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sentido da reação</td>
+                    <td>Acontece nos dois sentidos</td>
+                    <td>Predomina em um sentido</td>
+                </tr>
+                <tr>
+                    <td>Representação</td>
+                    <td>Usa ⇌ (seta dupla)</td>
+                    <td>Usa → (seta simples)</td>
+                </tr>
+                <tr>
+                    <td>Equilíbrio químico</td>
+                    <td>Pode estabelecer</td>
+                    <td>Não estabelece</td>
+                </tr>
+                <tr>
+                    <td>Exemplo</td>
+                    <td>CO₂ + H₂O ⇌ H₂CO₃</td>
+                    <td>Combustão (ex.: madeira → cinzas + gases)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resumo">
+            <strong>Resumo:</strong><br>
+            ✅ <strong>Reversível:</strong> vai e volta (seta dupla)<br>
+            ❌ <strong>Irreversível:</strong> ocorre essencialmente em uma direção
+        </div>
+    </section>
+
+    <!-- SEÇÃO: Representação do Equilíbrio -->
+    <section class="secao">
+        <h2>✏️ Representação do Equilíbrio Químico</h2>
+        <p>O equilíbrio químico é representado por uma <strong>seta dupla (⇌)</strong>, indicando que a reação pode ocorrer nos dois sentidos:</p>
+        <div class="equacao">Reagentes ⇌ Produtos</div>
+
+        <div class="bloco-svg">
+            <svg width="600" height="160" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="sd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#2b6cb0"/>
+                    </marker>
+                    <marker id="se" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+                        <polygon points="10 0, 0 3.5, 10 7" fill="#e53e3e"/>
+                    </marker>
+                </defs>
+                <rect x="20" y="30" width="160" height="100" rx="10" fill="#ebf8ff" stroke="#3182ce" stroke-width="2"/>
+                <text x="100" y="70" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c5282">Reagentes</text>
+                <text x="100" y="95" text-anchor="middle" font-size="12" fill="#4a5568">CO₂ + H₂O</text>
+
+                <line x1="200" y1="55" x2="360" y2="55" stroke="#2b6cb0" stroke-width="4" marker-end="url(#sd)"/>
+                <text x="280" y="45" text-anchor="middle" font-size="12" fill="#2b6cb0">→ direta</text>
+
+                <line x1="360" y1="85" x2="200" y2="85" stroke="#e53e3e" stroke-width="4" marker-end="url(#se)"/>
+                <text x="280" y="110" text-anchor="middle" font-size="12" fill="#e53e3e">← inversa</text>
+
+                <rect x="420" y="30" width="160" height="100" rx="10" fill="#f0fff4" stroke="#38a169" stroke-width="2"/>
+                <text x="500" y="70" text-anchor="middle" font-size="18" font-weight="bold" fill="#22543d">Produtos</text>
+                <text x="500" y="95" text-anchor="middle" font-size="12" fill="#4a5568">H₂CO₃</text>
+
+                <text x="300" y="148" text-anchor="middle" font-size="13" fill="#4a5568">
+                    No equilíbrio: velocidade direta = velocidade inversa
+                </text>
+            </svg>
+        </div>
+
+        <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+            <li><strong>→</strong> representa a reação direta (formação dos produtos)</li>
+            <li><strong>←</strong> representa a reação inversa (formação dos reagentes)</li>
+            <li><strong>⇌</strong> indica que as duas reações acontecem simultaneamente</li>
+        </ul>
+
+        <div class="alerta">
+            <strong>⚠️ Importante:</strong> equilíbrio <em>não</em> significa que as quantidades de reagentes e produtos são iguais. Significa que suas concentrações ficam constantes ao longo do tempo, enquanto as duas reações continuam ocorrendo.
+        </div>
+
+        <div class="resumo" style="margin-top:1rem;">
+            <strong>Resumo:</strong> Equilíbrio químico = reação direta ⇌ reação inversa, com velocidades iguais.
+        </div>
+    </section>
+
+    <!-- SEÇÃO: Constante de Equilíbrio Kc -->
+    <section class="secao">
+        <h2>🔢 Constante de Equilíbrio — Kc</h2>
+        <p>A constante de equilíbrio (<strong>Kc</strong>) é um número que indica a relação entre as concentrações dos produtos e reagentes quando uma reação está em equilíbrio, a uma temperatura determinada.</p>
+
+        <p><strong>Para uma reação geral:</strong></p>
+        <div class="equacao">aA + bB ⇌ cC + dD</div>
+
+        <p><strong>Expressão de Kc:</strong></p>
+        <div class="equacao">
+            Kc = [C]<sup>c</sup> · [D]<sup>d</sup> / [A]<sup>a</sup> · [B]<sup>b</sup>
+        </div>
+
+        <h3>Como interpretar o valor de Kc?</h3>
+        <div class="bloco-svg">
+            <svg width="680" height="220" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fundo e barra -->
+                <rect x="30" y="70" width="620" height="60" rx="30" fill="url(#gradK)"/>
+                <defs>
+                    <linearGradient id="gradK" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#fef2f2"/>
+                        <stop offset="25%" stop-color="#fef2f2"/>
+                        <stop offset="45%" stop-color="#fefce8"/>
+                        <stop offset="55%" stop-color="#f0fdf4"/>
+                        <stop offset="100%" stop-color="#eff6ff"/>
+                    </linearGradient>
+                </defs>
+                <!-- Marcadores -->
+                <line x1="340" y1="55" x2="340" y2="155" stroke="#78716c" stroke-width="2" stroke-dasharray="6,3"/>
+                <text x="340" y="45" text-anchor="middle" font-size="16" font-weight="bold" fill="#44403c">Kc ≈ 1</text>
+
+                <text x="120" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#dc2626">Kc ≪ 1</text>
+                <text x="120" y="130" text-anchor="middle" font-size="11" fill="#7f1d1d">Reagentes predominam</text>
+
+                <text x="560" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#16a34a">Kc ≫ 1</text>
+                <text x="560" y="130" text-anchor="middle" font-size="11" fill="#14532d">Produtos predominam</text>
+
+                <text x="340" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#ca8a04">Kc ≈ 1</text>
+                <text x="340" y="130" text-anchor="middle" font-size="11" fill="#713f12">Proporções semelhantes</text>
+
+                <text x="30" y="185" font-size="13" fill="#57534e">→ Valor pequeno: favorece reagentes</text>
+                <text x="500" y="185" font-size="13" fill="#57534e">Valor grande: favorece produtos ←</text>
+            </svg>
+        </div>
+
+        <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+            <li><strong>Kc > 1</strong> → maior quantidade relativa de produtos no equilíbrio</li>
+            <li><strong>Kc < 1</strong> → maior quantidade relativa de reagentes no equilíbrio</li>
+            <li><strong>Kc ≈ 1</strong> → reagentes e produtos em proporções comparáveis</li>
+        </ul>
+
+        <div class="alerta">
+            <strong>Importante:</strong> Kc <em>não</em> indica que as concentrações são iguais. Ele representa a <em>relação</em> entre elas no equilíbrio. Sólidos e líquidos puros (como H₂O) não entram na expressão de Kc.
+        </div>
+
+        <p><em>Exemplo na respiração:</em> para CO₂ + H₂O ⇌ H₂CO₃, a água é líquido puro e não entra em Kc → Kc = [H₂CO₃] / [CO₂]</p>
+
+        <div class="resumo">
+            <strong>Resumo:</strong> Kc mede a relação entre produtos e reagentes no estado de equilíbrio, em temperatura fixa.
+        </div>
+    </section>
+
+    <!-- SEÇÃO: Interpretação e Extensão da Reação -->
+    <section class="secao">
+        <h2>📘 Interpretação de Kc e Extensão da Reação</h2>
+
+        <p>A Kc indica para qual lado o equilíbrio está mais favorecido e o <strong>quão extensa</strong> é a reação (o quanto ela avança na direção dos produtos).</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Valor de Kc</th>
+                    <th>O que significa</th>
+                    <th>Exemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Kc ≫ 1</strong></td>
+                    <td>Reação muito extensa → predominam produtos</td>
+                    <td>Kc = 100 → formação de produtos é fortemente favorecida</td>
+                </tr>
+                <tr>
+                    <td><strong>Kc ≈ 1</strong></td>
+                    <td>Reação intermediária → quantidades comparáveis</td>
+                    <td>Kc = 1 → quantidades semelhantes de reagentes e produtos</td>
+                </tr>
+                <tr>
+                    <td><strong>Kc ≪ 1</strong></td>
+                    <td>Pouca conversão → predominam reagentes</td>
+                    <td>Kc = 0,01 → reagentes são favorecidos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Exemplo prático (A ⇌ B):</strong></p>
+        <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+            <li>Kc = 1000 → grande parte de A se transforma em B</li>
+            <li>Kc = 0,001 → apenas uma pequena parte de A se transforma em B</li>
+            <li>Kc ≈ 1 → quantidades comparáveis de A e B permanecem</li>
+        </ul>
+
+        <div class="destaque">
+            <strong>⚠️ Atenção:</strong> Kc <em>não é medida de velocidade</em>! A reação pode ser rápida ou lenta — Kc indica a <em>posição do equilíbrio</em>, não a rapidez com que ele é atingido.
+        </div>
+
+        <div class="resumo" style="margin-top:1rem;">
+            <strong>Resumo para memorizar:</strong><br>
+            ✅ Kc grande → produtos favorecidos → reação extensa<br>
+            ✅ Kc pequeno → reagentes favorecidos → pouca conversão<br>
+            ✅ Kc ≈ 1 → proporções semelhantes
+        </div>
+    </section>
+
+</body>
+</html> 
+</p>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
         <div class="conteudo-aula" id="aula-4">
             <h2>Aula 04</h2>
             <p>Conteúdo da Aula 04...</p>
