@@ -1779,32 +1779,3 @@
 
 
 
-<!-- Contador de Acessos -->
-<div style="font-family: Arial, sans-serif; padding: 15px; background: #f5f5f5; border-radius: 8px; display: inline-block;">
-  <h4 style="margin: 0 0 8px 0; color: #333;">Total de Acessos</h4>
-  <p style="font-size: 28px; font-weight: bold; color: #2563eb; margin: 0;">
-    <span id="contador">0</span>
-  </p>
-</div>
-
-<script>
-  // Função para atualizar e salvar contador
-  function atualizarContador() {
-    // Pega o valor salvo ou começa em 0
-    let contagem = parseInt(localStorage.getItem('contadorAcessos') || '0');
-    
-    // Verifica se o usuário já foi contado nesta sessão
-    if (!sessionStorage.getItem('jaContado')) {
-      contagem++; // Incrementa apenas uma vez por sessão
-      localStorage.setItem('contadorAcessos', contagem);
-      sessionStorage.setItem('jaContado', 'true'); // Marca como contado
-    }
-
-    // Exibe o valor na página
-    document.getElementById('contador').textContent = contagem.toLocaleString('pt-BR');
-  }
-
-  // Executa ao carregar a página
-  atualizarContador();
-</script>
-<!-- Fim do Contador de Acessos -->
