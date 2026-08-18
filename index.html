@@ -1678,10 +1678,209 @@
 </html> 
 </p>
         </div>
+
+
+
+        
         <div class="conteudo-aula" id="aula-5">
-            <h2>Aula 05</h2>
-            <p>Conteúdo da Aula 05...</p>
+            <h2>Aula 05: Princípio de Le Chatelier</h2>
+            <p><!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aula 05 — Princípio de Le Chatelier</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#172033;--muted:#5f6b7a;--card:#fff;--accent:#3157d5;--line:#dfe5ef;--good:#16855b;--warn:#c97800}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,#182b65,#3157d5);color:white;padding:56px 7vw 48px}
+header h1{font-size:clamp(2rem,5vw,4rem);margin:.1em 0}.subtitle{font-size:1.15rem;max-width:850px;opacity:.92}
+main{max-width:1150px;margin:auto;padding:32px 20px 70px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 8px 25px #17203310;margin-bottom:22px}
+h2{font-size:1.55rem;margin-top:0;color:#20366f} h3{margin-bottom:.45rem}.tag{display:inline-block;padding:5px 10px;border-radius:999px;background:#e9efff;color:#2847ad;font-weight:700;font-size:.8rem}
+.summary{border-left:5px solid var(--accent);background:#eef3ff;padding:14px 16px;border-radius:10px;font-weight:650}
+.flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:18px 0}.box{padding:13px 18px;border:2px solid #b8c5e8;border-radius:14px;background:#f8faff;font-weight:700;text-align:center}.arrow{font-size:1.8rem;color:var(--accent)}
+table{width:100%;border-collapse:collapse;margin-top:12px}th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{background:#f0f3f9}
+.callout{background:#fff8e8;border:1px solid #f0d49b;border-radius:15px;padding:16px}.green{color:var(--good)}.orange{color:#d96b00}
+svg{width:100%;height:auto;display:block}.diagram{background:#fafcff;border:1px solid var(--line);border-radius:16px;padding:10px;margin:16px 0}
+small{color:var(--muted)} ul{padding-left:1.3rem}.quote{font-size:1.15rem;font-weight:700;text-align:center;padding:18px}
+</style>
+</head>
+<body>
+<header>
+  <span class="tag">QUÍMICA • AULA 05</span>
+  <h1>Princípio de Le Chatelier</h1>
+  <p class="subtitle">Como concentração, temperatura e pressão deslocam o equilíbrio — e por que um catalisador acelera a reação sem mudar o equilíbrio.</p>
+</header>
+<main>
+
+<section class="card">
+<h2>1. Refrigerante: pressão e CO₂</h2>
+<p>Dentro da lata fechada, a pressão é alta e ajuda a manter o CO₂ dissolvido. Ao abrir, a pressão diminui e o equilíbrio favorece a formação de gás.</p>
+<div class="diagram">
+<svg viewBox="0 0 900 260" role="img" aria-label="Comparação entre lata fechada e lata aberta">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect x="80" y="35" width="250" height="175" rx="24" fill="#dbe7ff" stroke="#3157d5" stroke-width="5"/>
+<text x="205" y="25" text-anchor="middle" font-size="24" font-weight="700">Lata fechada</text>
+<text x="205" y="80" text-anchor="middle" font-size="22">PRESSÃO ALTA</text>
+<circle cx="145" cy="135" r="10" fill="#3157d5"/><circle cx="190" cy="160" r="10" fill="#3157d5"/><circle cx="250" cy="130" r="10" fill="#3157d5"/>
+<text x="205" y="190" text-anchor="middle" font-size="18">CO₂ dissolvido</text>
+<line x1="350" y1="122" x2="545" y2="122" stroke="#3157d5" stroke-width="5" marker-end="url(#a)"/>
+<text x="448" y="105" text-anchor="middle" font-size="18">abrir → ↓ pressão</text>
+<rect x="570" y="35" width="250" height="175" rx="24" fill="#e8fbf3" stroke="#16855b" stroke-width="5"/>
+<text x="695" y="25" text-anchor="middle" font-size="24" font-weight="700">Lata aberta</text>
+<text x="695" y="80" text-anchor="middle" font-size="22">PRESSÃO BAIXA</text>
+<circle cx="635" cy="160" r="10" fill="#16855b"/><circle cx="690" cy="145" r="10" fill="#16855b"/>
+<circle cx="675" cy="125" r="6" fill="#16855b"/><circle cx="730" cy="90" r="7" fill="#16855b"/>
+<circle cx="765" cy="60" r="8" fill="#16855b"/>
+<text x="695" y="190" text-anchor="middle" font-size="18">CO₂ sai → borbulhas</text>
+</svg>
+</div>
+<div class="summary">Pressão alta → gás fica dissolvido. &nbsp;|&nbsp; Pressão baixa → gás é liberado.</div>
+</section>
+
+<section class="card">
+<h2>2. O que acontece quando o refrigerante é aquecido?</h2>
+<p>A dissolução do CO₂ é tratada como um processo exotérmico. Ao fornecer calor, o sistema favorece o sentido endotérmico, reduzindo a quantidade de gás dissolvido.</p>
+<div class="flow"><div class="box">🔥 Aumenta a temperatura</div><div class="arrow">→</div><div class="box">sentido endotérmico</div><div class="arrow">→</div><div class="box">CO₂ escapa</div></div>
+<p class="summary">Quanto mais quente o refrigerante, menos CO₂ tende a permanecer dissolvido.</p>
+</section>
+
+<section class="card">
+<h2>3. O que é equilíbrio químico?</h2>
+<p>Em uma reação reversível, os reagentes viram produtos e os produtos voltam a reagentes. No equilíbrio, as duas velocidades são iguais. Por isso, ele é <strong>dinâmico</strong>: as transformações continuam acontecendo.</p>
+<div class="diagram">
+<svg viewBox="0 0 900 190" aria-label="Equilíbrio dinâmico">
+<defs><marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<text x="450" y="35" text-anchor="middle" font-size="22" font-weight="700">Equilíbrio dinâmico</text>
+<rect x="90" y="75" width="220" height="70" rx="16" fill="#edf1ff"/><text x="200" y="118" text-anchor="middle" font-size="24">REAGENTES</text>
+<line x1="330" y1="92" x2="570" y2="92" stroke="#3157d5" stroke-width="5" marker-end="url(#b)"/>
+<line x1="570" y1="128" x2="330" y2="128" stroke="#3157d5" stroke-width="5" marker-end="url(#b)"/>
+<rect x="590" y="75" width="220" height="70" rx="16" fill="#e8fbf3"/><text x="700" y="118" text-anchor="middle" font-size="24">PRODUTOS</text>
+</svg>
+</div>
+</section>
+
+<section class="card">
+<h2>4. Princípio de Le Chatelier</h2>
+<p class="quote">“Quando um sistema em equilíbrio sofre uma perturbação, ele se desloca no sentido que tende a anular essa perturbação, procurando um novo equilíbrio.”</p>
+<div class="grid">
+<div class="callout"><strong>Você muda algo</strong><br>↓<br>O sistema responde no sentido que reduz o efeito da mudança.</div>
+<div class="callout"><strong>Analogia</strong><br>Como tanques conectados: se a quantidade de água muda de um lado, ela se redistribui até atingir um novo equilíbrio.</div>
+</div>
+</section>
+
+<section class="card">
+<h2>5. Fatores que provocam o deslocamento</h2>
+<div class="grid">
+<div><h3>Concentração</h3><p>Aumentou uma substância? O sistema tende a consumi-la. Diminuiu? Tende a repô-la.</p></div>
+<div><h3>Temperatura</h3><p>Aumentou? Favorece o sentido endotérmico. Diminuiu? Favorece o exotérmico.</p></div>
+<div><h3>Pressão</h3><p>Em sistemas com gases: aumentou a pressão → lado com menos moléculas gasosas.</p></div>
+<div><h3>Catalisador</h3><p>Acelera os dois sentidos, mas não desloca o equilíbrio nem altera Kc.</p></div>
+</div>
+</section>
+
+<section class="card">
+<h2>6. Variação da concentração — cromato ⇄ dicromato</h2>
+<p><strong>K₂CrO₄ + 2 H⁺ ⇄ K₂Cr₂O₇ + H₂O</strong></p>
+<div class="diagram">
+<svg viewBox="0 0 900 230" aria-label="Mudança de cor do cromato para dicromato">
+<rect x="50" y="55" width="250" height="120" rx="20" fill="#fff3a6" stroke="#c9a900" stroke-width="4"/>
+<text x="175" y="105" text-anchor="middle" font-size="25" font-weight="700">CROMATO</text><text x="175" y="140" text-anchor="middle" font-size="20">amarelo</text>
+<line x1="335" y1="115" x2="565" y2="115" stroke="#3157d5" stroke-width="6" marker-end="url(#b)"/>
+<text x="450" y="90" text-anchor="middle" font-size="18">+ H⁺</text>
+<rect x="600" y="55" width="250" height="120" rx="20" fill="#f6a24b" stroke="#d96b00" stroke-width="4"/>
+<text x="725" y="105" text-anchor="middle" font-size="25" font-weight="700">DICROMATO</text><text x="725" y="140" text-anchor="middle" font-size="20">alaranjado</text>
+</svg>
+</div>
+<table><tr><th>Perturbação</th><th>Deslocamento</th><th>Cor final</th></tr>
+<tr><td>➕ Mais H⁺</td><td>→ direita</td><td class="orange">🟠 Alaranjado</td></tr>
+<tr><td>➖ Menos H⁺</td><td>← esquerda</td><td>🟡 Amarelo</td></tr></table>
+<p class="summary">Mais H⁺ → alaranjado. &nbsp;|&nbsp; Menos H⁺ → amarelo.</p>
+</section>
+
+<section class="card">
+<h2>7. Variação da temperatura — cloreto de cobalto</h2>
+<p><strong>[Co(H₂O)₆]²⁺ + 4 Cl⁻ ⇄ [CoCl₄]²⁻ + 6 H₂O</strong></p>
+<div class="diagram">
+<svg viewBox="0 0 900 230" aria-label="Efeito da temperatura na solução de cobalto">
+<rect x="45" y="55" width="260" height="120" rx="20" fill="#f7c5cf" stroke="#c86c7d" stroke-width="4"/>
+<text x="175" y="105" text-anchor="middle" font-size="25" font-weight="700">ESFRIA ❄️</text><text x="175" y="140" text-anchor="middle" font-size="20">rosa • exotérmico</text>
+<line x1="330" y1="92" x2="570" y2="92" stroke="#3157d5" stroke-width="5" marker-end="url(#b)"/>
+<line x1="570" y1="140" x2="330" y2="140" stroke="#3157d5" stroke-width="5" marker-end="url(#b)"/>
+<rect x="595" y="55" width="260" height="120" rx="20" fill="#9ed7f5" stroke="#428bb8" stroke-width="4"/>
+<text x="725" y="105" text-anchor="middle" font-size="25" font-weight="700">AQUECE 🔥</text><text x="725" y="140" text-anchor="middle" font-size="20">azul • endotérmico</text>
+</svg>
+</div>
+<table><tr><th>Temperatura</th><th>Sentido</th><th>Cor</th></tr><tr><td>🔥 Aumenta</td><td>→ endotérmico</td><td>💙 Azul</td></tr><tr><td>❄️ Diminui</td><td>← exotérmico</td><td>🩷 Rosa</td></tr></table>
+<p class="summary">Esquentou → azul. &nbsp;|&nbsp; Esfriou → rosa. <br><small>Importante: a temperatura altera o valor de Kc; no exemplo, ao aquecer, Kc aumenta.</small></p>
+</section>
+
+<section class="card">
+<h2>8. Variação da pressão — síntese da amônia</h2>
+<p><strong>N₂(g) + 3 H₂(g) ⇄ 2 NH₃(g)</strong></p>
+<div class="diagram">
+<svg viewBox="0 0 900 250" aria-label="Efeito da pressão na síntese da amônia">
+<rect x="55" y="60" width="320" height="130" rx="20" fill="#edf1ff" stroke="#3157d5" stroke-width="4"/>
+<text x="215" y="98" text-anchor="middle" font-size="22" font-weight="700">ESQUERDA</text>
+<text x="215" y="135" text-anchor="middle" font-size="25">1 N₂ + 3 H₂</text><text x="215" y="165" text-anchor="middle" font-size="18">4 moléculas gasosas</text>
+<line x1="405" y1="125" x2="495" y2="125" stroke="#3157d5" stroke-width="5" marker-end="url(#b)"/>
+<rect x="525" y="60" width="320" height="130" rx="20" fill="#e8fbf3" stroke="#16855b" stroke-width="4"/>
+<text x="685" y="98" text-anchor="middle" font-size="22" font-weight="700">DIREITA</text>
+<text x="685" y="135" text-anchor="middle" font-size="25">2 NH₃</text><text x="685" y="165" text-anchor="middle" font-size="18">2 moléculas gasosas</text>
+<text x="450" y="225" text-anchor="middle" font-size="20" font-weight="700">⬆️ pressão → lado menor • ⬇️ pressão → lado maior</text>
+</svg>
+</div>
+<table><tr><th>Pressão</th><th>Para onde vai?</th><th>Resultado</th></tr><tr><td>⬆️ Aumenta</td><td>→ menos moléculas</td><td>Mais amônia</td></tr><tr><td>⬇️ Diminui</td><td>← mais moléculas</td><td>Menos amônia</td></tr></table>
+</section>
+
+<section class="card">
+<h2>9. Ação dos catalisadores</h2>
+<div class="flow"><div class="box">Catalisador</div><div class="arrow">→</div><div class="box">menor barreira energética</div><div class="arrow">→</div><div class="box">equilíbrio alcançado mais rápido</div></div>
+<table><tr><th>Efeito</th><th>O catalisador faz?</th></tr><tr><td>Acelera a reação</td><td>✅ Sim</td></tr><tr><td>Desloca o equilíbrio</td><td>❌ Não</td></tr><tr><td>Muda Kc</td><td>❌ Não</td></tr><tr><td>Aumenta o rendimento</td><td>❌ Não</td></tr></table>
+<p class="summary">Catalisador = acelera a chegada, mas não muda o destino.</p>
+</section>
+
+<section class="card">
+<h2>10. Mapa rápido para prever o sentido</h2>
+<table>
+<tr><th>Perturbação</th><th>O sistema faz...</th><th>Resposta típica</th></tr>
+<tr><td>➕ Aumenta concentração de reagente</td><td>Consome o excesso</td><td>→ produtos</td></tr>
+<tr><td>➖ Diminui concentração de produto</td><td>Repõe o que saiu</td><td>→ produtos</td></tr>
+<tr><td>🔥 Aumenta temperatura</td><td>Absorve calor extra</td><td>→ endotérmico</td></tr>
+<tr><td>❄️ Diminui temperatura</td><td>Libera calor</td><td>→ exotérmico</td></tr>
+<tr><td>⬆️ Aumenta pressão</td><td>Reduz o volume gasoso</td><td>→ menos moléculas de gás</td></tr>
+<tr><td>⬇️ Diminui pressão</td><td>Aumenta o volume gasoso</td><td>→ mais moléculas de gás</td></tr>
+<tr><td>⚙️ Catalisador</td><td>Acelera os dois sentidos</td><td>não desloca</td></tr>
+</table>
+<div class="callout"><strong>🔑 Regra de ouro:</strong> Aumentou algo? O sistema tende a diminuir o efeito. Diminuiu algo? O sistema tende a repor. Catalisador? Só acelera.</div>
+</section>
+
+<section class="card">
+<h2>11. Resumo visual</h2>
+<div class="diagram">
+<svg viewBox="0 0 900 370" aria-label="Mapa visual do Princípio de Le Chatelier">
+<circle cx="450" cy="185" r="95" fill="#e9efff" stroke="#3157d5" stroke-width="5"/>
+<text x="450" y="175" text-anchor="middle" font-size="25" font-weight="700">LE CHATELIER</text><text x="450" y="208" text-anchor="middle" font-size="18">anular a perturbação</text>
+<line x1="355" y1="145" x2="155" y2="70" stroke="#3157d5" stroke-width="4"/><text x="125" y="50" text-anchor="middle" font-size="20" font-weight="700">CONCENTRAÇÃO</text><text x="125" y="90" text-anchor="middle" font-size="17">consome / repõe</text>
+<line x1="355" y1="225" x2="155" y2="300" stroke="#3157d5" stroke-width="4"/><text x="125" y="325" text-anchor="middle" font-size="20" font-weight="700">TEMPERATURA</text><text x="125" y="350" text-anchor="middle" font-size="17">endotérmico / exotérmico</text>
+<line x1="545" y1="145" x2="745" y2="70" stroke="#3157d5" stroke-width="4"/><text x="775" y="50" text-anchor="middle" font-size="20" font-weight="700">PRESSÃO</text><text x="775" y="90" text-anchor="middle" font-size="17">menos / mais gás</text>
+<line x1="545" y1="225" x2="745" y2="300" stroke="#3157d5" stroke-width="4"/><text x="775" y="325" text-anchor="middle" font-size="20" font-weight="700">CATALISADOR</text><text x="775" y="350" text-anchor="middle" font-size="17">só acelera</text>
+</svg>
+</div>
+<p class="quote">O sistema “se defende” da mudança para voltar ao equilíbrio.</p>
+</section>
+
+</main>
+</body>
+</html></p>
         </div>
+
+
+
+
+
+        
         <div class="conteudo-aula" id="aula-6">
             <h2>Aula 06</h2>
             <p>Conteúdo da Aula 06...</p>
