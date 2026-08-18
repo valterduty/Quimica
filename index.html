@@ -581,9 +581,307 @@
 
         <!-- Aulas 06 a 14 -->
         <div class="conteudo-aula" id="aula-6">
-            <h2>Aula 06: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
+            <h2>Aula 6: Deslocamento de equilíbrio - química em prática</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Química - Equilíbrio e Cinética Química</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .answer-box {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .option:hover {
+            background-color: #f0f9ff;
+        }
+        .correct {
+            background-color: #dcfce7 !important;
+            border-color: #22c55e !important;
+        }
+        .wrong {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-blue-700 mb-2">Exercícios de Química</h1>
+            <p class="text-gray-600">Cinética Química e Equilíbrio Químico</p>
+        </header>
+
+        <!-- Exercício 1 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 1 - (CESMAC 2020)</h2>
+            <p class="mb-4">Na assepsia de ferimentos, é utilizado o peróxido de hidrogênio (H₂O₂). Sua decomposição ocorre segundo a reação:</p>
+            
+            <svg viewBox="0 0 400 60" class="mx-auto">
+                <text x="20" y="30" font-size="16">2 H₂O₂(aq) → 2 H₂O(l) + O₂(g)</text>
+                <text x="120" y="50" font-size="12" fill="#666">(catalisado por enzima catalase)</text>
+            </svg>
+
+            <p class="mb-4">Dados de concentração em função do tempo:</p>
+            <div class="overflow-x-auto mb-6">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-blue-50">
+                            <th class="border border-gray-300 p-2">Tempo (min)</th>
+                            <th class="border border-gray-300 p-2">[H₂O₂] (mol·L⁻¹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td class="border border-gray-300 p-2">0</td>
+                            <td class="border border-gray-300 p-2">2,0</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td class="border border-gray-300 p-2">1</td>
+                            <td class="border border-gray-300 p-2">1,7</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td class="border border-gray-300 p-2">2</td>
+                            <td class="border border-gray-300 p-2">1,4</td>
+                        </tr>
+                        <tr class="text-center">
+                            <td class="border border-gray-300 p-2">3</td>
+                            <td class="border border-gray-300 p-2">1,1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="mb-3 font-medium">Qual a velocidade média da reação em mol·L⁻¹·s⁻¹?</p>
+            <div class="space-y-2 mb-4">
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) 1,0</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) 0,01</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) 0,3</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">D) 0,005</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) 0,6</div>
+            </div>
+
+            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans1">
+                <p class="font-semibold text-green-700">Resposta Correta: D</p>
+                <p class="mt-2">Cálculo da velocidade média:</p>
+                <svg viewBox="0 0 450 80" class="mx-auto">
+                    <text x="10" y="25" font-size="14">v = |Δ[H₂O₂] / Δt|</text>
+                    <text x="10" y="45" font-size="14">Δ[H₂O₂] = 1,1 - 2,0 = -0,9 mol·L⁻¹</text>
+                    <text x="10" y="65" font-size="14">Δt = 3 min = 180 s</text>
+                    <text x="10" y="85" font-size="14">v = |-0,9 / 180| = 0,005 mol·L⁻¹·s⁻¹</text>
+                </svg>
+                <p class="text-sm text-gray-600 mt-2">✅ Conversão correta do tempo para segundos e cálculo adequado da variação de concentração.</p>
+            </div>
+            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err1">
+                <p class="font-semibold text-red-700">Resposta Incorreta</p>
+                <p class="mt-2">• A: Superestima a velocidade, ignorando variação real<br>
+                • B: Erro na conversão de unidades<br>
+                • C: Não converteu minutos para segundos<br>
+                • E: Interpretação errada dos dados</p>
+            </div>
+        </section>
+
+        <!-- Exercício 2 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 2 - (ENEM 2018)</h2>
+            <p class="mb-4">O vermelhão (HgS) escurece com o tempo devido à decomposição fotoquímica. O íon Cl⁻ presente na umidade atua como catalisador:</p>
+            
+            <svg viewBox="0 0 450 80" class="mx-auto">
+                <text x="20" y="30" font-size="15">2 HgS(s)  ────→  2 Hg(s) + S₂(g)</text>
+                <text x="150" y="20" font-size="12">luz</text>
+                <text x="150" y="45" font-size="12">Cl⁻ (catalisador)</text>
+            </svg>
+
+            <p class="mb-3 font-medium">Qual o papel do íon cloreto nessa reação?</p>
+            <div class="space-y-2 mb-4">
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Agente oxidante</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Absorve luz visível</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">C) Diminui a energia de ativação</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) Precipita cloreto de mercúrio</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) Desloca o equilíbrio químico</div>
+            </div>
+
+            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans2">
+                <p class="font-semibold text-green-700">Resposta Correta: C</p>
+                <p class="mt-2">✅ Função do catalisador:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                    <li>Oferece caminho alternativo com menor energia de ativação</li>
+                    <li>Não é consumido na reação</li>
+                    <li>Não altera a constante de equilíbrio</li>
+                    <li>Apenas acelera a velocidade da reação direta e inversa</li>
+                </ul>
+            </div>
+            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err2">
+                <p class="font-semibold text-red-700">Resposta Incorreta</p>
+                <p class="mt-2">• A: Não participa de oxirredução<br>
+                • B: A luz é absorvida pelo HgS<br>
+                • D: Não forma precipitado<br>
+                • E: Catalisadores não alteram equilíbrio</p>
+            </div>
+        </section>
+
+        <!-- Exercício 3 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 3 - (ENEM 2014)</h2>
+            <p class="mb-4">O excesso de CO₂ na atmosfera acidifica os oceanos, alterando o equilíbrio do sistema carbonato:</p>
+            
+            <svg viewBox="0 0 480 100" class="mx-auto">
+                <text x="10" y="25" font-size="14">CO₂(g) + H₂O(l) ⇌ H₂CO₃(aq)</text>
+                <text x="10" y="45" font-size="14">H₂CO₃(aq) ⇌ H⁺(aq) + HCO₃⁻(aq)</text>
+                <text x="10" y="65" font-size="14">HCO₃⁻(aq) ⇌ 2 H⁺(aq) + CO₃²⁻(aq)</text>
+                <text x="10" y="85" font-size="14">Corais: Ca²⁺ + CO₃²⁻ ⇌ CaCO₃(s) (esqueletos)</text>
+            </svg>
+
+            <p class="mb-3 font-medium">O excesso de CO₂ causa qual efeito nos corais?</p>
+            <div class="space-y-2 mb-4">
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Branqueamento e morte</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Excesso de fixação de cálcio</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) Menor incorporação de carbono</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) Estímulo da atividade enzimática</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">E) Dano à estrutura calcária</div>
+            </div>
+
+            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans3">
+                <p class="font-semibold text-green-700">Resposta Correta: E</p>
+                <p class="mt-2">Explicação:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                    <li>Aumento de CO₂ → mais H⁺ → diminui concentração de CO₃²⁻</li>
+                    <li>Menos íons carbonato → menor formação de CaCO₃</li>
+                    <li>Descalcificação e enfraquecimento dos esqueletos dos corais</li>
+                    <li>Redução das populações de corais</li>
+                </ul>
+            </div>
+            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err3">
+                <p class="font-semibold text-red-700">Resposta Incorreta</p>
+                <p class="mt-2">• A: Causado por aumento de temperatura<br>
+                • B: Ao contrário, diminui a formação<br>
+                • C: Problema é falta de CO₃²⁻, não de carbono<br>
+                • D: Não envolve enzimas</p>
+            </div>
+        </section>
+
+        <!-- Exercício 4 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 4 - (ENEM 2025)</h2>
+            <p class="mb-4">Reação de cloração do dióxido de titânio:</p>
+            
+            <svg viewBox="0 0 500 70" class="mx-auto">
+                <text x="20" y="30" font-size="15">TiO₂(s) + 2 Cl₂(g) ⇌ TiCl₄(g) + O₂(g)</text>
+                <text x="20" y="50" font-size="14">ΔH = +175 kJ/mol (reação endotérmica)</text>
+            </svg>
+
+            <p class="mb-3 font-medium">Como favorecer a formação de TiCl₄?</p>
+            <div class="space-y-2 mb-4">
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Aumentar pressão total</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Diminuir temperatura</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) Aumentar O₂</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">D) Aumentar pressão parcial de Cl₂</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) Variar quantidade de TiO₂</div>
+            </div>
+
+            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans4">
+                <p class="font-semibold text-green">Resposta Correta: D</p>
+                <p class="mt-2">Análise pelo Princípio de Le Châtelier:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                    <li>TiO₂ é sólido → não interfere no equilíbrio</li>
+                    <li>Mols de gás: reagentes = 2, produtos = 2 → pressão total não altera equilíbrio</li>
+                    <li>Reação endotérmica → aumentar temperatura favorece formação de produtos</li>
+                    <li>Aumentar Cl₂ (reagente) desloca equilíbrio para direita → mais TiCl₄</li>
+                </ul>
+            </div>
+            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err4">
+                <p class="font-semibold text-red-700">Resposta Incorreta</p>
+                <p class="mt-2">• A: Número de mols de gás igual nos dois lados<br>
+                • B: Reação é endotérmica → diminuir T reduz produtos<br>
+                • C: Aumentar produto desloca para esquerda<br>
+                • E: Sólidos não alteram equilíbrio</p>
+            </div>
+        </section>
+
+        <!-- Exercício 5 -->
+        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 5 - (UNESP 2022)</h2>
+            <p class="mb-4">Reforma do gás natural para produção de hidrogênio:</p>
+            
+            <svg viewBox="0 0 520 80" class="mx-auto">
+                <text x="10" y="30" font-size="15">CH₄(g) + H₂O(g) ⇌ CO(g) + 3 H₂(g)</text>
+                <text x="10" y="55" font-size="14">ΔH > 0 (endotérmica)</text>
+                <text x="10" y="75" font-size="13">Mols de gás: esquerda = 2 | direita = 4</text>
+            </svg>
+
+            <p class="mb-3 font-medium">Quais procedimentos aumentam o rendimento de H₂?</p>
+            <div class="space-y-2 mb-4">
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) 1 e 2</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) 1 e 3</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">C) 2 e 4</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) 3 e 4</div>
+                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) 2 e 3</div>
+            </div>
+
+            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans5">
+                <p class="font-semibold text-green-700">Resposta Correta: C</p>
+                <p class="mt-2">Análise dos procedimentos:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                    <li>1. Aumentar pressão → desloca para esquerda (menos mols de gás) → DIMINUI H₂</li>
+                    <li>2. Aumentar temperatura → reação endotérmica → desloca para direita → AUMENTA H₂</li>
+                    <li>3. Catalisador → NÃO ALTERA posição do equilíbrio</li>
+                    <li>4. Remover CO → sistema produz mais produtos → AUMENTA H₂</li>
+                    <li>✅ Procedimentos corretos: 2 e 4</li>
+                </ul>
+            </div>
+            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err5">
+                <p class="font-semibold text-red-700">Resposta Incorreta</p>
+                <p class="mt-2">• Lembre-se: catalisador só acelera, não muda rendimento<br>
+                • Pressão afeta reações com diferença de mols de gás</p>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm pt-4 border-t">
+            <p>Material baseado em: quimica.pdf | Atualizado: 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkAnswer(element, status) {
+            const parent = element.parentElement;
+            const allOptions = parent.querySelectorAll('.option');
+            const exerciseId = parent.parentElement.querySelector('.answer-box').id.replace('ans', '');
+            const correctBox = document.getElementById('ans' + exerciseId);
+            const errorBox = document.getElementById('err' + exerciseId);
+
+            // Limpa estilos anteriores
+            allOptions.forEach(opt => {
+                opt.classList.remove('correct', 'wrong');
+            });
+
+            if(status === 'correct') {
+                element.classList.add('correct');
+                correctBox.style.display = 'block';
+                errorBox.classList.add('hidden');
+            } else {
+                element.classList.add('wrong');
+                errorBox.classList.remove('hidden');
+                correctBox.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html></p>
         </div>
+
+
+
+
+
+
+        
         <div class="conteudo-aula" id="aula-7">
             <h2>Aula 07: Em preparação</h2>
             <p>Conteúdo será disponibilizado em breve.</p>
