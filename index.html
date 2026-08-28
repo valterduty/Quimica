@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Química 3º EM</title>
+    <title>Aulas - Conteúdo</title>
     <style>
         * {
             margin: 0;
@@ -11,23 +11,26 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
+
         body {
             background-color: #f0f4f8;
             padding: 2rem;
             max-width: 900px;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
             color: #2d3748;
             margin-bottom: 2.5rem;
         }
-        .lista-aulas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-bottom: 3rem;
+
+        .item-aula {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
         }
+
         .botao-aula {
             padding: 1rem 1.2rem;
             background-color: #3182ce;
@@ -38,902 +41,3582 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
+            width: 100%;
         }
+
         .botao-aula:hover {
             background-color: #2b6cb0;
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
+
         .botao-aula.ativa {
             background-color: #2f855a;
             box-shadow: 0 4px 14px rgba(47,133,90,0.3);
         }
+
         .conteudo-aula {
             background-color: white;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 0 0 12px 12px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            min-height: 200px;
+            margin-top: -4px;
             display: none;
-        }
-        .conteudo-aula.visivel {
-            display: block;
             animation: aparece 0.4s ease;
         }
+
+        .conteudo-aula.visivel {
+            display: block;
+        }
+
         .conteudo-aula h2 {
             color: #2d3748;
             margin-bottom: 1rem;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
         }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .botao-nav {
+            padding: 0.7rem 1.1rem;
+            background-color: #744210;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .botao-nav:hover {
+            background-color: #5a350e;
+            transform: translateY(-2px);
+        }
+
+        .botao-nav:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+            opacity: 0.7;
+        }
+
+        .atalhos {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+            width: 100%;
+        }
+
         @keyframes aparece {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .navegacao {
+                flex-direction: column;
+            }
+            .botao-nav {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Química 3º EM</h1>
-    <p style="text-align: center; margin-bottom: 2rem; color: #4a5568;">3º Bimestre - 2026</p>
 
-    <div class="lista-aulas">
+    <h1>📚 Química 3º EM</h1>
+ <h1>3º Bimestre - 2026</h1>
+    <!-- Aula 01 -->
+    <div class="item-aula">
         <button class="botao-aula" data-aula="1">Aula 01</button>
-        <button class="botao-aula" data-aula="2">Aula 02</button>
-        <button class="botao-aula" data-aula="3">Aula 03</button>
-        <button class="botao-aula" data-aula="4">Aula 04</button>
-        <button class="botao-aula" data-aula="5">Aula 05</button>
-        <button class="botao-aula" data-aula="6">Aula 06</button>
-        <button class="botao-aula" data-aula="7">Aula 07</button>
-        <button class="botao-aula" data-aula="8">Aula 08</button>
-        <button class="botao-aula" data-aula="9">Aula 09</button>
-        <button class="botao-aula" data-aula="10">Aula 10</button>
-        <button class="botao-aula" data-aula="11">Aula 11</button>
-        <button class="botao-aula" data-aula="12">Aula 12</button>
-        <button class="botao-aula" data-aula="13">Aula 13</button>
-        <button class="botao-aula" data-aula="14">Aula 14</button>
-    </div>
-
-    <div id="conteudo-exibicao">
-        <!-- Aula 01 -->
         <div class="conteudo-aula" id="aula-1">
-            <h2>Aula 01: Condições para Ocorrência de Reações Químicas</h2>
-            <style>
-                :root {
-                    --primaria: #2c3e50;
-                    --secundaria: #3498db;
-                    --destaque: #e74c3c;
-                    --sucesso: #27ae60;
-                    --fundo: #f8fafc;
-                    --cartao: #ffffff;
-                    --borda: #e2e8f0;
-                }
-                * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-                body { background-color: var(--fundo); color: var(--primaria); line-height: 1.6; padding: 20px; border-radius: 8px; }
-                header { text-align: center; padding: 30px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; border-radius: 12px; margin-bottom: 30px; }
-                h1 { font-size: 1.8rem; margin-bottom: 10px; }
-                h2 { color: var(--secundaria); border-bottom: 2px solid var(--secundaria); padding-bottom: 8px; margin: 35px 0 20px; font-size: 1.3rem; }
-                h3 { color: var(--primaria); margin: 20px 0 10px; font-size: 1.1rem; }
-                .cartao { background: var(--cartao); padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; border-left: 4px solid var(--secundaria); }
-                .resumo { background-color: #ecfdf5; border-left-color: var(--sucesso); }
-                .exemplo { background-color: #fff9e6; border-left-color: #f59e0b; }
-                .alerta { background-color: #fef2f2; border-left-color: var(--destaque); }
-                ul, ol { margin-left: 25px; margin-bottom: 15px; }
-                li { margin-bottom: 8px; }
-                .esquema { display: flex; justify-content: center; margin: 20px 0; overflow-x: auto; }
-                svg { max-width: 100%; height: auto; }
-                .comparativo { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-                @media (max-width: 600px) { .comparativo { grid-template-columns: 1fr; } }
-                .coluna { padding: 15px; border-radius: 8px; }
-                .fisica { background-color: #e0f2fe; }
-                .quimica { background-color: #fecaca; }
-                .formula { font-family: 'Consolas', monospace; background: #f1f5f9; padding: 12px; border-radius: 6px; text-align: center; font-size: 1.1rem; margin: 15px 0; }
-                .grade-indicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 15px 0; }
-                .indicio { text-align: center; padding: 10px; background: #f0f4f8; border-radius: 8px; font-size: 0.95rem; }
-            </style>
-            <header>
-                <h1>⚗️ Aula 01: Condições para Ocorrência</h1>
-                <p>Transformações da matéria, colisões, energia e velocidade</p>
-            </header>
-            <section class="cartao">
-                <h2>📌 Reação Química e Transformação</h2>
-                <p>Uma reação química é o processo em que substâncias se transformam em <strong>novas substâncias</strong> com propriedades diferentes.</p>
-                <h3>O que acontece?</h3>
-                <ul>
-                    <li>Reagentes → Produtos, sem criação/destruição de átomos — apenas reorganização.</li>
-                    <li>Lei da Conservação da Massa: quantidade total de matéria se mantém.</li>
-                </ul>
-                <h3>Como identificar?</h3>
-                <div class="grade-indicios">
-                    <div class="indicio">🎨 Mudança de cor</div>
-                    <div class="indicio">💨 Liberação de gás</div>
-                    <div class="indicio">🔽 Precipitado sólido</div>
-                    <div class="indicio">💡 Emissão de luz</div>
-                    <div class="indicio">🌡️ Mudança de temperatura</div>
-                </div>
-                <h3>Física vs Química</h3>
-                <div class="comparativo">
-                    <div class="coluna fisica">
-                        <strong>🔹 Física</strong>
-                        <p>Apenas forma/estado muda — sem formação de nova substância.<br>Ex: gelo derretendo.</p>
-                    </div>
-                    <div class="coluna quimica">
-                        <strong>🔹 Química</strong>
-                        <p>Cria novas substâncias diferentes dos reagentes.<br>Ex: madeira queimando.</p>
-                    </div>
-                </div>
-                <div class="esquema">
-                    <svg width="520" height="140" viewBox="0 0 520 140">
-                        <rect x="10" y="40" width="120" height="60" rx="8" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                        <text x="70" y="65" text-anchor="middle" fill="white" font-size="14">Reagentes</text>
-                        <path d="M145 70 L185 70 L180 62 M185 70 L180 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <rect x="200" y="40" width="120" height="60" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-                        <text x="260" y="65" text-anchor="middle" fill="white" font-size="14">Produtos</text>
-                        <path d="M345 70 L385 70 L380 62 M385 70 L380 78" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                    </svg>
-                </div>
-            </section>
-            <section class="cartao">
-                <h2>💥 Teoria das Colisões</h2>
-                <p>Reação só ocorre se as partículas colidirem de forma <strong>eficaz</strong>.</p>
-                <ul>
-                    <li><strong>Energia de ativação (Eₐ):</strong> energia mínima necessária para iniciar a reação.</li>
-                    <li><strong>Orientação correta:</strong> as partículas devem se encontrar na posição certa para quebrar e formar ligações.</li>
-                </ul>
-                <div class="esquema">
-                    <svg width="600" height="220" viewBox="0 0 600 220">
-                        <circle cx="70" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                        <circle cx="130" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-                        <text x="100" y="130" text-anchor="middle" font-size="12">Sem energia → ❌</text>
-                        <circle cx="270" cy="50" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                        <circle cx="310" cy="90" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-                        <text x="300" y="160" text-anchor="middle" font-size="12">Energia ok / Orientação errada → ❌</text>
-                        <circle cx="470" cy="60" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                        <circle cx="530" cy="60" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-                        <rect x="490" y="45" width="20" height="30" fill="#27ae60" rx="3"/>
-                        <text x="500" y="115" text-anchor="middle" font-size="12">✅ Energia + Orientação = Reação!</text>
-                    </svg>
-                </div>
-            </section>
-            <section class="cartao">
-                <h2>✅ Condições para ocorrer</h2>
-                <ul>
-                    <li>Contato entre reagentes</li>
-                    <li>Colisões eficazes (E ≥ Eₐ e orientação correta)</li>
-                    <li>Energia de ativação (calor, luz, eletricidade...)</li>
-                    <li>Condições adequadas: temperatura, pressão, concentração</li>
-                    <li>Catalisador (reduz Eₐ sem ser consumido)</li>
-                </ul>
-            </section>
-            <section class="cartao">
-                <h2>🔥 Energia nas reações</h2>
-                <p>Quebrar ligações → absorve energia | Formar ligações → libera energia</p>
-                <div class="comparativo">
-                    <div class="coluna fisica">
-                        <strong>🔵 Exotérmica</strong>
-                        <p>Libera calor/luz<br>ΔH &lt; 0<br>Ex: combustão, respiração</p>
-                    </div>
-                    <div class="coluna quimica">
-                        <strong>🔴 Endotérmica</strong>
-                        <p>Absorve energia<br>ΔH &gt; 0<br>Ex: fotossíntese, decomposição</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Aula 02 -->
-        <div class="conteudo-aula" id="aula-2">
-            <h2>Aula 02: Fatores que influenciam a rapidez</h2>
-            <style>
-                * {
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                }
-                body {
-                    background-color: #f0f7ff;
-                    color: #2c3e50;
-                    line-height: 1.6;
-                    padding: 20px;
-                    border-radius: 8px;
-                }
-                header {
-                    background: linear-gradient(135deg, #2980b9, #2c3e50);
-                    color: white;
-                    padding: 30px;
-                    border-radius: 12px;
-                    text-align: center;
-                    margin-bottom: 30px;
-                }
-                h2 {
-                    color: #2980b9;
-                    border-bottom: 3px solid #3498db;
-                    padding-bottom: 8px;
-                    margin: 35px 0 20px;
-                    font-size: 1.4rem;
-                }
-                .card {
-                    background: white;
-                    padding: 22px;
-                    border-radius: 10px;
-                    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-                    margin-bottom: 25px;
-                }
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin: 20px 0;
-                }
-                th, td {
-                    border: 1px solid #ddd;
-                    padding: 12px;
-                    text-align: left;
-                }
-                th {
-                    background-color: #2980b9;
-                    color: white;
-                }
-                .highlight-box {
-                    background-color: #e8f8f5;
-                    border-left: 5px solid #1abc9c;
-                    padding: 15px;
-                    border-radius: 0 8px 8px 0;
-                    margin: 15px 0;
-                }
-            </style>
-            <header>
-                <h1>Aula 02: Fatores que influenciam a Rapidez</h1>
-                <p>Cinética Química e velocidade das transformações</p>
-            </header>
-            <div class="card">
-                <h2>O que é Rapidez de Reação?</h2>
-                <p>É a medida de quanto a concentração das substâncias muda por unidade de tempo.</p>
-                <p>Pode ser muito rápida (como explosões) ou muito lenta (como ferrugem).</p>
-
-                <table>
-                    <tr>
-                        <th>Fator</th>
-                        <th>Efeito</th>
-                        <th>Por que?</th>
-                    </tr>
-                    <tr>
-                        <td>Temperatura ↑</td>
-                        <td>Reação fica mais rápida</td>
-                        <td>Partículas se movem mais rápido e colidem com mais energia</td>
-                    </tr>
-                    <tr>
-                        <td>Concentração ↑</td>
-                        <td>Mais rápida</td>
-                        <td>Mais partículas no mesmo espaço → mais colisões</td>
-                    </tr>
-                    <tr>
-                        <td>Superfície de contato ↑</td>
-                        <td>Mais rápida</td>
-                        <td>Mais área exposta → mais pontos de contato</td>
-                    </tr>
-                    <tr>
-                        <td>Pressão (gases) ↑</td>
-                        <td>Mais rápida</td>
-                        <td>Partículas ficam mais próximas → mais colisões</td>
-                    </tr>
-                    <tr>
-                        <td>Catalisador</td>
-                        <td>Acelera muito</td>
-                        <td>Diminui a energia de ativação</td>
-                    </tr>
-                </table>
-
-                <div class="highlight-box">
-                    <strong>Resumo:</strong>
-                    <p>Tudo o que aumentar a frequência ou a força das colisões entre as partículas, aumenta a velocidade da reação.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>Catalisadores e Inibidores</h2>
-                <p>Catalisadores aceleram a reação sem ser consumidos. Inibidores diminuem a velocidade.</p>
-                <ul>
-                    <li>✅ Enzimas no nosso corpo são catalisadores naturais</li>
-                    <li>✅ Conversores catalíticos de carros reduzem poluentes</li>
-                    <li>❌ Conservantes em alimentos são inibidores</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Aula 03 -->
-        <div class="conteudo-aula" id="aula-3">
-            <h2>Aula 03: Equilíbrio Químico — Kc</h2>
-            <style>
-                :root {
-                    --cor-primaria: #2c5282;
-                    --cor-secundaria: #2f855a;
-                    --cor-destaque: #ed8936;
-                    --cor-fundo: #f7fafc;
-                    --cor-texto: #2d3748;
-                    --cor-cartao: #ffffff;
-                    --borda-suave: #e2e8f0;
-                }
-                * { margin: 0; padding: 0; box-sizing: border-box; }
-                body {
-                    font-family: 'Segoe UI', Roboto, sans-serif;
-                    background-color: var(--cor-fundo);
-                    color: var(--cor-texto);
-                    line-height: 1.7;
-                    padding: 20px;
-                    border-radius: 8px;
-                }
-                .secao {
-                    background: var(--cor-cartao);
-                    padding: 20px;
-                    margin-bottom: 20px;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-                }
-                .equacao {
-                    font-family: 'Times New Roman', serif;
-                    font-size: 1.2rem;
-                    text-align: center;
-                    padding: 10px;
-                    background-color: #f7fafc;
-                    border-radius: 8px;
-                    margin: 10px 0;
-                }
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin: 15px 0;
-                }
-                th, td {
-                    border: 1px solid var(--borda-suave);
-                    padding: 10px;
-                    text-align: left;
-                }
-                th { background-color: var(--cor-primaria); color: white; }
-            </style>
-
-            <div class="secao">
-                <h2>⚖️ Equilíbrio Químico Dinâmico</h2>
-                <p>É quando a reação direta e a inversa acontecem ao mesmo tempo, mas com <strong>velocidades iguais</strong>. As concentrações ficam constantes, mas as reações não param.</p>
-
-                <div class="equacao">A + B ⇌ C + D</div>
-
-                <h3>Reação Reversível vs Irreversível</h3>
-                <table>
-                    <tr><th>Reversível</th><th>Irreversível</th></tr>
-                    <tr>
-                        <td>Acontece nos dois sentidos</td>
-                        <td>Ocorre praticamente só num sentido</td>
-                    </tr>
-                    <tr>
-                        <td>Representada por ⇌</td>
-                        <td>Representada por →</td>
-                    </tr>
-                    <tr>
-                        <td>Chega ao equilíbrio</td>
-                        <td>Não chega ao equilíbrio</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="secao">
-                <h2>🔢 Constante de Equilíbrio — Kc</h2>
-                <p>É um valor que indica a proporção entre produtos e reagentes quando o sistema está em equilíbrio.</p>
-
-                <div class="equacao">Kc = [C]<sup>c</sup> · [D]<sup>d</sup> / [A]<sup>a</sup> · [B]<sup>b</sup></div>
-
-                <h3>Como interpretar Kc?</h3>
-                <ul>
-                    <li><strong>Kc &gt; 1</strong> → predominam os produtos</li>
-                    <li><strong>Kc &lt; 1</strong> → predominam os reagentes</li>
-                    <li><strong>Kc ≈ 1</strong> → quantidades semelhantes</li>
-                </ul>
-
-                <p><em>Importante:</em> Sólidos e líquidos puros não entram na fórmula de Kc.</p>
-            </div>
-        </div>
-
-        <!-- Aula 04 -->
-        <div class="conteudo-aula" id="aula-4">
-            <h2>Aula 04: Quociente de Equilíbrio (Q)</h2>
-            <style>
-                body {
-                    font-family: 'Segoe UI', sans-serif;
-                    background: #f0f4f8;
-                    padding: 15px;
-                    border-radius: 8px;
-                }
-                .card {
-                    background: white;
-                    padding: 22px;
-                    border-radius: 12px;
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-                    margin-bottom: 20px;
-                }
-                .formula {
-                    background: #eff6ff;
-                    border-left: 4px solid #2563eb;
-                    padding: 15px;
-                    text-align: center;
-                    font-size: 1.2rem;
-                    border-radius: 6px;
-                    margin: 15px 0;
-                }
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 15px;
-                }
-                th, td {
-                    border: 1px solid #cbd5e1;
-                    padding: 10px;
-                }
-                th { background: #dbeafe; color: #1e40af; }
-            </style>
-
-            <div class="card">
-                <h2>O que é Q?</h2>
-                <p>O <strong>Quociente de Equilíbrio (Q)</strong> é calculado <strong>a qualquer momento</strong> da reação, e não só no equilíbrio.</p>
-
-                <div class="formula">Q = [C]<sup>c</sup> · [D]<sup>d</sup> / [A]<sup>a</sup> · [B]<sup>b</sup></div>
-
-                <h3>Comparação Q vs Kc</h3>
-                <ul>
-                    <li><strong>Q &lt; Kc</strong> → reação avança para a direita (forma mais produtos)</li>
-                    <li><strong>Q = Kc</strong> → sistema em equilíbrio</li>
-                    <li><strong>Q &gt; Kc</strong> → reação avança para a esquerda (forma mais reagentes)</li>
-                </ul>
-
-                <table>
-                    <tr>
-                        <th>Q</th>
-                        <th>O que significa</th>
-                        <th>Sentido da reação</th>
-                    </tr>
-                    <tr>
-                        <td>Menor que Kc</td>
-                        <td>Faltam produtos</td>
-                        <td>→ Direita</td>
-                    </tr>
-                    <tr>
-                        <td>Igual a Kc</td>
-                        <td>Equilíbrio atingido</td>
-                        <td>Sem mudança</td>
-                    </tr>
-                    <tr>
-                        <td>Maior que Kc</td>
-                        <td>Excesso de produtos</td>
-                        <td>← Esquerda</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Aula 05 -->
-        <div class="conteudo-aula" id="aula-5">
-            <h2>Aula 05: Princípio de Le Chatelier</h2>
-            <style>
-                body {
-                    font-family: 'Segoe UI', sans-serif;
-                    background: #f5f7fb;
-                    padding: 15px;
-                    border-radius: 8px;
-                }
-                .card {
-                    background: white;
-                    padding: 22px;
-                    border-radius: 12px;
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-                    margin-bottom: 20px;
-                }
-                .destaque {
-                    background: #eef3ff;
-                    border-left: 4px solid #3157d5;
-                    padding: 15px;
-                    border-radius: 8px;
-                    margin: 10px 0;
-                }
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin-top: 15px;
-                }
-                th, td {
-                    border: 1px solid #ddd;
-                    padding: 10px;
-                }
-            </style>
-
-            <div class="card">
-                <h2>O que diz o princípio?</h2>
-                <p><em>"Quando um sistema em equilíbrio sofre uma perturbação, ele tende a se reorganizar de forma a <strong>anular o efeito dessa mudança</strong>."</em></p>
-            </div>
-
-            <div class="card">
-                <h2>1. Mudança de Concentração</h2>
-                <ul>
-                    <li>Aumenta um reagente → reação vai para a direita</li>
-                    <li>Diminui um produto → reação vai para a direita</li>
-                    <li>Aumenta um produto → reação vai para a esquerda</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>2. Mudança de Temperatura</h2>
-                <ul>
-                    <li>Aumenta temperatura → favorece o sentido <strong>endotérmico</strong> (absorve calor)</li>
-                    <li>Diminui temperatura → favorece o sentido <strong>exotérmico</strong> (libera calor)</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>3. Mudança de Pressão (gases)</h2>
-                <ul>
-                    <li>Aumenta pressão → reação vai para o lado com <strong>menor número de moléculas de gás</strong></li>
-                    <li>Diminui pressão → lado com maior número de moléculas</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>4. Catalisador</h2>
-                <p>✅ Acelera a chegada ao equilíbrio<br>❌ NÃO altera o equilíbrio nem o valor de Kc</p>
-            </div>
-        </div>
-
-        <!-- Aulas 06 a 14 -->
-        <div class="conteudo-aula" id="aula-6">
-            <h2>Aula 6: Deslocamento de equilíbrio - química em prática</h2>
+            <h2>Aula 01: Condições para ocorrência de reações químicas
+</h2>
             <p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercícios de Química - Equilíbrio e Cinética Química</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Química — Aula 01: Condições para Ocorrência de Reações Químicas</title>
     <style>
-        .answer-box {
-            display: none;
-            transition: all 0.3s ease;
+        /* === Estilos gerais e responsivos === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .option:hover {
-            background-color: #f0f9ff;
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #f0f8ff;
+            padding: 0 1rem;
         }
-        .correct {
-            background-color: #dcfce7 !important;
-            border-color: #22c55e !important;
+
+        /* Cabeçalho principal */
+        header {
+            background: linear-gradient(135deg, #2980b9, #1abc9c);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            margin: 0 -1rem 2rem -1rem;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .wrong {
-            background-color: #fee2e2 !important;
-            border-color: #ef4444 !important;
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
         }
-        svg {
-            max-width: 100%;
-            height: auto;
+
+        .subtitulo {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Conteúdo principal */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        section {
+            margin-bottom: 2.2rem;
+        }
+
+        h2 {
+            color: #2980b9;
+            font-size: 1.4rem;
+            margin: 1.8rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #d1e7f0;
+        }
+
+        h3 {
+            color: #16a085;
+            font-size: 1.15rem;
+            margin: 1.4rem 0 0.7rem;
+        }
+
+        p {
+            margin-bottom: 0.9rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 0.8rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Caixas de destaque e resumo */
+        .caixa-destaque {
+            background-color: #eef9f4;
+            border-left: 5px solid #1abc9c;
+            padding: 1.1rem;
+            margin: 1.2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .resumo {
+            background-color: #eaf4fc;
+            border-left: 5px solid #3498db;
+            padding: 1.2rem;
+            margin: 1.4rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .formula {
+            background-color: #fdf6e3;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 8px;
             margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+
+        /* Ilustrações SVG embutidas */
+        .ilustracao {
+            display: block;
+            margin: 1.3rem auto;
+            max-width: 380px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            margin: 2.5rem -1rem 0 -1rem;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 16px 16px 0 0;
+            font-size: 0.95rem;
+        }
+
+        /* Ajustes para telas menores (celulares) */
+        @media (max-width: 600px) {
+            main {
+                padding: 1.2rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            header {
+                padding: 1.8rem 1rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
-        <header class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-blue-700 mb-2">Exercícios de Química</h1>
-            <p class="text-gray-600">Cinética Química e Equilíbrio Químico</p>
-        </header>
+<body>
 
-        <!-- Exercício 1 -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 1 - (CESMAC 2020)</h2>
-            <p class="mb-4">Na assepsia de ferimentos, é utilizado o peróxido de hidrogênio (H₂O₂). Sua decomposição ocorre segundo a reação:</p>
-            
-            <svg viewBox="0 0 400 60" class="mx-auto">
-                <text x="20" y="30" font-size="16">2 H₂O₂(aq) → 2 H₂O(l) + O₂(g)</text>
-                <text x="120" y="50" font-size="12" fill="#666">(catalisado por enzima catalase)</text>
+    <!-- === Cabeçalho da página === -->
+    <header>
+        <h1>⚗️ Química — Aula 01</h1>
+        <p class="subtitulo">Condições para ocorrência de reações químicas</p>
+    </header>
+
+    <main>
+        <!-- === Introdução === -->
+        <section>
+            <h2>Reação química e transformação da matéria</h2>
+            <p>Uma reação química é o processo em que uma ou mais substâncias se transformam em novas substâncias com propriedades diferentes das iniciais.</p>
+
+            <!-- Ilustração 1: Reorganização dos átomos (SVG inline) -->
+            <!-- Esta ilustração mostra os reagentes se reorganizando e formando produtos -->
+            <svg class="ilustracao" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1abc9c;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Reagentes à esquerda -->
+                <circle cx="60" cy="70" r="28" fill="url(#grad1)" stroke="#2980b9" stroke-width="2"/>
+                <circle cx="95" cy="70" r="20" fill="#74b9ff" stroke="#0984e3" stroke-width="2"/>
+                <text x="45" y="76" fill="white" font-size="12" font-weight="bold">A</text>
+                <text x="88" y="74" fill="white" font-size="11">B</text>
+
+                <circle cx="150" cy="70" r="26" fill="url(#grad2)" stroke="#e67e22" stroke-width="2"/>
+                <text x="142" y="76" fill="white" font-size="12" font-weight="bold">C</text>
+
+                <!-- Seta de transformação -->
+                <path d="M195 70 L245 70" stroke="#2c3e50" stroke-width="3" marker-end="url(#seta)"/>
+                <polygon points="245,63 255,70 245,77" fill="#2c3e50"/>
+
+                <!-- Produtos à direita -->
+                <circle cx="300" cy="60" r="28" fill="url(#grad1)" stroke="#2980b9" stroke-width="2"/>
+                <circle cx="335" cy="80" r="20" fill="url(#grad2)" stroke="#e67e22" stroke-width="2"/>
+                <line x1="318" y1="70" x2="335" y2="70" stroke="#333" stroke-width="2"/>
+                <text x="285" y="66" fill="white" font-size="12" font-weight="bold">A</text>
+                <text x="330" y="86" fill="white" font-size="11">C</text>
+
+                <circle cx="370" cy="70" r="18" fill="#74b9ff" stroke="#0984e3" stroke-width="2"/>
+                <text x="364" y="76" fill="white" font-size="10">B</text>
+
+                <!-- Rótulos -->
+                <text x="85" y="130" fill="#2c3e50" font-size="13" font-weight="bold">Reagentes</text>
+                <text x="305" y="130" fill="#2c3e50" font-size="13" font-weight="bold">Produtos</text>
+                <text x="160" y="50" fill="#7f8c8d" font-size="11">átomos se reorganizam</text>
             </svg>
 
-            <p class="mb-4">Dados de concentração em função do tempo:</p>
-            <div class="overflow-x-auto mb-6">
-                <table class="w-full border-collapse border border-gray-300">
+            <h3>O que acontece em uma reação química?</h3>
+            <p>Durante uma reação química:</p>
+            <ul>
+                <li>As substâncias iniciais (<strong>reagentes</strong>) são transformadas em novas substâncias (<strong>produtos</strong>).</li>
+                <li>Os átomos não são criados nem destruídos; eles apenas se <strong>reorganizam</strong> para formar novas moléculas.</li>
+            </ul>
+
+            <h3>Como identificar uma reação química?</h3>
+            <p>Alguns indícios que indicam que uma reação pode ter ocorrido:</p>
+            <ul>
+                <li>🔸 Mudança de cor</li>
+                <li>🔸 Liberação de gás (formação de bolhas)</li>
+                <li>🔸 Formação de um sólido (precipitado)</li>
+                <li>🔸 Emissão de luz</li>
+                <li>🔸 Alteração de temperatura</li>
+            </ul>
+
+            <h3>Exemplos de transformações químicas</h3>
+            <ul>
+                <li>Ferro enferrujando</li>
+                <li>Queima de madeira</li>
+                <li>Cozimento de um ovo</li>
+                <li>Digestão dos alimentos</li>
+            </ul>
+
+            <h3>Transformação física × Transformação química</h3>
+            <ul>
+                <li><strong>Transformação física:</strong> altera apenas o estado ou a forma da matéria, sem formar novas substâncias. Exemplo: gelo derretendo.</li>
+                <li><strong>Transformação química:</strong> forma novas substâncias com propriedades diferentes. Exemplo: papel queimando.</li>
+            </ul>
+
+            <div class="resumo">
+                <strong>Resumo:</strong> A reação química é uma transformação da matéria em que novas substâncias são produzidas pela reorganização dos átomos dos reagentes, enquanto a quantidade total de matéria permanece a mesma — isso é a <strong>Lei da Conservação da Massa</strong>.
+            </div>
+        </section>
+
+        <!-- === Teoria das Colisões === -->
+        <section>
+            <h2>Teoria das colisões: energia de ativação e orientação</h2>
+            <p>A teoria das colisões explica que uma reação química só acontece quando as partículas dos reagentes colidem de forma <strong>eficaz</strong>.</p>
+
+            <!-- Ilustração 2: Colisões com e sem eficácia (SVG inline) -->
+            <!-- Compara colisão sem energia, sem orientação e colisão eficaz -->
+            <svg class="ilustracao" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="azul" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498db;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#154360;stop-opacity:1"/>
+                    </linearGradient>
+                    <linearGradient id="vermelho" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#922b21;stop-opacity:1"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Colisão sem energia suficiente -->
+                <text x="10" y="25" fill="#c0392b" font-size="12" font-weight="bold">❌ Sem energia suficiente</text>
+                <circle cx="50" cy="60" r="22" fill="url(#azul)" stroke="#154360" stroke-width="2"/>
+                <circle cx="100" cy="60" r="22" fill="url(#vermelho)" stroke="#922b21" stroke-width="2"/>
+                <path d="M72 55 L80 55 M72 65 L80 65" stroke="#7f8c8d" stroke-width="2"/>
+                <text x="15" y="100" fill="#7f8c8d" font-size="10">→ se separam sem reagir</text>
+
+                <!-- Colisão com energia mas orientação errada -->
+                <text x="160" y="20" fill="#c0392b" font-size="12" font-weight="bold">❌ Orientação errada</text>
+                <circle cx="180" cy="70" r="22" fill="url(#azul)" stroke="#154360" stroke-width="2"/>
+                <circle cx="230" cy="45" r="22" fill="url(#vermelho)" stroke="#922b21" stroke-width="2"/>
+                <path d="M202 65 L210 55" stroke="#7f8c8d" stroke-width="2"/>
+                <text x="155" y="100" fill="#7f8c8d" font-size="10">→ posição incorreta</text>
+
+                <!-- Colisão eficaz -->
+                <text x="290" y="25" fill="#27ae60" font-size="12" font-weight="bold">✅ Colisão eficaz</text>
+                <circle cx="300" cy="60" r="22" fill="url(#azul)" stroke="#154360" stroke-width="2"/>
+                <circle cx="345" cy="60" r="22" fill="url(#vermelho)" stroke="#922b21" stroke-width="2"/>
+                <line x1="322" y1="60" x2="345" y2="60" stroke="#2c3e50" stroke-width="3"/>
+                <text x="275" y="100" fill="#27ae60" font-size="10">→ formam novas ligações</text>
+
+                <!-- Energia de ativação -->
+                <path d="M30 140 L100 140 L130 110 L160 140 L220 140" stroke="#2980b9" stroke-width="3" fill="none"/>
+                <text x="20" y="155" fill="#2c3e50" font-size="11">Reagentes</text>
+                <text x="200" y="155" fill="#2c3e50" font-size="11">Produtos</text>
+                <path d="M130 110 L130 140" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3"/>
+                <text x="135" y="138" fill="#c0392b" font-size="11">Ea</text>
+                <text x="95" y="110" fill="#e74c3c" font-size="10">Energia de ativação</text>
+            </svg>
+
+            <h3>Energia de ativação (Eₐ)</h3>
+            <p>É a <strong>energia mínima necessária</strong> para que a reação ocorra. Se a colisão tiver energia menor que a Eₐ, os reagentes apenas se chocam e se separam, sem formar produtos.</p>
+            <p>Quanto maior a temperatura, maior o número de partículas com energia suficiente para superar a Eₐ, aumentando a velocidade da reação.</p>
+
+            <h3>Orientação favorável</h3>
+            <p>As partículas devem colidir na <strong>posição correta</strong> para que as ligações químicas possam ser rompidas e novas ligações sejam formadas. Mesmo com energia suficiente, uma colisão com orientação inadequada não produz reação.</p>
+
+            <div class="caixa-destaque">
+                <strong>Resumo das colisões:</strong>
+                <ul>
+                    <li>✅ Colisão + energia suficiente + orientação correta = reação química</li>
+                    <li>❌ Colisão sem energia suficiente → não ocorre reação</li>
+                    <li>❌ Colisão com energia suficiente, mas orientação incorreta → também não ocorre reação</li>
+                </ul>
+            </div>
+
+            <p><strong>Exemplo:</strong> Na combustão, as moléculas do combustível e do oxigênio precisam colidir com energia suficiente e na orientação adequada para que novas substâncias, como dióxido de carbono (CO₂) e água (H₂O), sejam formadas.</p>
+        </section>
+
+        <!-- === Condições para ocorrer a reação === -->
+        <section>
+            <h2>Condições para que uma reação química ocorra</h2>
+            <p>Para que uma reação química ocorra, é necessário que algumas condições sejam atendidas:</p>
+
+            <h3>📌 Contato entre os reagentes</h3>
+            <p>As substâncias precisam entrar em contato para que suas partículas possam colidir.</p>
+
+            <h3>📌 Colisões efetivas</h3>
+            <p>As partículas devem colidir com energia suficiente (igual ou superior à energia de ativação) e com orientação favorável.</p>
+
+            <h3>📌 Energia de ativação (Eₐ)</h3>
+            <p>É a energia mínima necessária para iniciar a reação. Essa energia pode ser fornecida por calor, luz, eletricidade ou outras fontes.</p>
+
+            <h3>📌 Condições adequadas do meio</h3>
+            <p>Algumas reações dependem de fatores como:</p>
+            <ul>
+                <li>temperatura;</li>
+                <li>pressão (principalmente em reações com gases);</li>
+                <li>concentração dos reagentes;</li>
+                <li>superfície de contato.</li>
+            </ul>
+
+            <h3>📌 Presença de catalisador (quando necessário)</h3>
+            <p>Um catalisador acelera a reação ao <strong>diminuir a energia de ativação</strong>, sem ser consumido durante o processo.</p>
+
+            <div class="resumo">
+                <strong>Resumo:</strong> Uma reação química ocorre quando:
+                <ul>
+                    <li>✔️ os reagentes entram em contato;</li>
+                    <li>✔️ há colisões com energia suficiente;</li>
+                    <li>✔️ as partículas colidem na orientação correta;</li>
+                    <li>✔️ as condições do meio são favoráveis (temperatura, pressão, concentração etc.);</li>
+                    <li>✔️ quando necessário, há um catalisador para facilitar a reação.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === Energia envolvida nas reações === -->
+        <section>
+            <h2>Energia envolvida nas reações químicas</h2>
+            <p>A energia envolvida nas reações está relacionada à quebra e à formação de ligações químicas:</p>
+            <ul>
+                <li>🔹 <strong>Quebra de ligações:</strong> absorve energia</li>
+                <li>🔹 <strong>Formação de ligações:</strong> libera energia</li>
+            </ul>
+            <p>O saldo entre a energia absorvida e a liberada determina se a reação libera ou absorve calor.</p>
+
+            <h3>Tipos de reações quanto à energia</h3>
+            <ul>
+                <li><strong>Reação exotérmica:</strong> libera energia, geralmente na forma de calor. Os produtos possuem menos energia que os reagentes. ΔH &lt; 0 (variação de entalpia negativa). Exemplos: combustão, respiração celular.</li>
+                <li><strong>Reação endotérmica:</strong> absorve energia do ambiente. Os produtos possuem mais energia que os reagentes. ΔH &gt; 0 (variação de entalpia positiva). Exemplos: fotossíntese e decomposição térmica do carbonato de cálcio.</li>
+            </ul>
+
+            <div class="caixa-destaque">
+                <strong>Resumo de energia:</strong>
+                <ul>
+                    <li>Quebrar ligações → absorve energia</li>
+                    <li>Formar ligações → libera energia</li>
+                    <li>Exotérmica → libera calor (ΔH &lt; 0)</li>
+                    <li>Endotérmica → absorve calor (ΔH &gt; 0)</li>
+                    <li>Energia de ativação (Eₐ) → energia mínima para iniciar a reação</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- === Rapidez média de reação === -->
+        <section>
+            <h2>Rapidez média de uma reação</h2>
+            <p>A rapidez média de uma reação química indica quanto a quantidade de reagentes diminui ou a quantidade de produtos aumenta em um determinado intervalo de tempo.</p>
+
+            <div class="formula">
+                v = Δconcentração ÷ Δt
+            </div>
+
+            <p>Onde:</p>
+            <ul>
+                <li>Δ concentração = variação da concentração dos reagentes ou produtos</li>
+                <li>Δt = intervalo de tempo</li>
+            </ul>
+
+            <h3>Como interpretar</h3>
+            <ul>
+                <li>A concentração dos reagentes diminui com o tempo.</li>
+                <li>A concentração dos produtos aumenta com o tempo.</li>
+                <li>Quanto maior a rapidez média, mais rapidamente a reação ocorre.</li>
+            </ul>
+
+            <div class="caixa-destaque">
+                <strong>Exemplo prático:</strong><br>
+                Se a concentração de um reagente diminui de 1,0 mol/L para 0,4 mol/L em 3 segundos:<br>
+                → Variação da concentração = 0,6 mol/L<br>
+                → Tempo = 3 s<br>
+                → Rapidez média = 0,6 ÷ 3 = <strong>0,2 mol/L·s</strong>
+            </div>
+
+            <h3>Fatores que influenciam a rapidez da reação</h3>
+            <ul>
+                <li>🌡️ Temperatura</li>
+                <li>🧪 Concentração dos reagentes</li>
+                <li>📐 Superfície de contato</li>
+                <li>🔵 Pressão (em reações com gases)</li>
+                <li>⚡ Presença de catalisadores</li>
+            </ul>
+
+            <p><strong>Resumo:</strong> A rapidez média de uma reação mede a variação da concentração dos reagentes ou produtos por unidade de tempo, indicando a velocidade com que a reação acontece.</p>
+        </section>
+
+        <!-- === Exemplos do cotidiano === -->
+        <section>
+            <h2>Exemplos de reações do cotidiano</h2>
+            <p>As reações químicas estão presentes em diversas situações do nosso dia a dia:</p>
+            <ul>
+                <li>🔩 <strong>Ferrugem no ferro:</strong> o ferro reage com o oxigênio e a umidade do ar, formando ferrugem.</li>
+                <li>🔥 <strong>Queima de madeira ou papel:</strong> ocorre uma reação de combustão, liberando calor, luz e formando novas substâncias.</li>
+                <li>🍳 <strong>Cozimento dos alimentos:</strong> o calor provoca transformações químicas que alteram a composição dos alimentos.</li>
+                <li>🍽️ <strong>Digestão dos alimentos:</strong> enzimas transformam os alimentos em substâncias mais simples, que podem ser absorvidas pelo organismo.</li>
+                <li>🌿 <strong>Fotossíntese:</strong> as plantas utilizam luz solar, água e dióxido de carbono para produzir glicose e oxigênio.</li>
+                <li>🫁 <strong>Respiração celular:</strong> as células utilizam glicose e oxigênio para produzir energia, liberando dióxido de carbono e água.</li>
+            </ul>
+        </section>
+
+        <!-- === Relação entre condições e ocorrência === -->
+        <section>
+            <h2>Relação entre condições e ocorrência da reação</h2>
+            <p>A ocorrência de uma reação química depende de condições que favoreçam colisões eficazes entre as partículas dos reagentes. Para que a reação aconteça, as partículas devem colidir com energia suficiente para superar a energia de ativação e com orientação favorável.</p>
+
+            <h3>Influência dos fatores:</h3>
+            <ul>
+                <li><strong>Temperatura:</strong> o aumento da temperatura eleva a energia das partículas, aumentando o número de colisões eficazes.</li>
+                <li><strong>Concentração:</strong> quanto maior a concentração, maior a frequência de colisões entre as partículas.</li>
+                <li><strong>Superfície de contato:</strong> quanto maior a área de contato, maior a quantidade de colisões.</li>
+                <li><strong>Pressão (em gases):</strong> o aumento da pressão aproxima as partículas, favorecendo as colisões.</li>
+                <li><strong>Catalisadores:</strong> diminuem a energia de ativação, acelerando a reação sem serem consumidos.</li>
+            </ul>
+
+            <div class="resumo">
+                <strong>Resumo geral:</strong> Uma reação química ocorre quando existem condições favoráveis para que os reagentes realizem colisões eficazes. Temperatura, concentração, superfície de contato, pressão e catalisadores são fatores que influenciam diretamente a ocorrência e a velocidade das reações químicas.
+            </div>
+        </section>
+    </main>
+
+    <!-- === Rodapé === -->
+    <footer>
+        <p>Química — Aula 01: Condições para ocorrência de reações químicas</p>
+        <p style="margin-top: 0.3rem; font-size: 0.85rem; opacity: 0.8;">Conteúdo educacional de domínio público · Ilustrações SVG embutidas · Arquivo 100% offline</p>
+    </footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="1" disabled>⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="1">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="1">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+  
+    <!-- Aula 02 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="2">Aula 02</button>
+        <div class="conteudo-aula" id="aula-2">
+            <h2>Aula 02: Fatores que influenciam a rapidez de uma reação
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 02: Fatores que Influenciam a Rapidez de uma Reação</title>
+    <style>
+        /* Estilos gerais da página */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Cabeçalho e títulos */
+        header {
+            text-align: center;
+            padding: 25px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin: 30px 0 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #16a085;
+            margin: 20px 0 10px;
+        }
+
+        /* Seções e conteúdo */
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Blocos de resumo com destaque */
+        .resumo {
+            background-color: #e8f4f8;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+        }
+
+        /* Ilustrações SVG embutidas */
+        .ilustracao {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background-color: #fafafa;
+            padding: 10px;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da aula -->
+    <header>
+        <h1>🧪 Química — Aula 02</h1>
+        <p>Fatores que influenciam a rapidez de uma reação química</p>
+    </header>
+
+    <!-- Introdução ao tema -->
+    <section>
+        <h2>Rapidez das Transformações Químicas</h2>
+        <p>A rapidez das transformações químicas é a velocidade com que uma reação química ocorre, ou seja, o tempo que os reagentes levam para se transformar em produtos.</p>
+        <p>Essa rapidez pode variar bastante: algumas reações acontecem em frações de segundo (como uma explosão), enquanto outras levam dias, meses ou até anos (como a ferrugem do ferro).</p>
+
+        <!-- Ilustração SVG: Comparação entre reação rápida e lenta -->
+        <div class="ilustracao">
+            <svg width="520" height="180" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+                <!-- Reação Rápida -->
+                <rect x="20" y="20" width="200" height="140" fill="#fff3cd" stroke="#f39c12" stroke-width="3" rx="10"/>
+                <text x="120" y="50" text-anchor="middle" font-size="18" fill="#d35400" font-weight="bold">Reação Rápida</text>
+                <circle cx="70" cy="90" r="15" fill="#e74c3c"/>
+                <circle cx="110" cy="90" r="15" fill="#3498db"/>
+                <circle cx="90" cy="120" r="15" fill="#2ecc71"/>
+                <path d="M140 70 L180 70 M140 90 L180 90 M140 110 L180 110" stroke="#333" stroke-width="3" marker-end="url(#seta)"/>
+                <circle cx="210" cy="90" r="15" fill="#9b59b6"/>
+                <circle cx="250" cy="90" r="15" fill="#1abc9c"/>
+                <text x="120" y="150" text-anchor="middle" font-size="13" fill="#555">Ex: Explosão / Queima</text>
+
+                <!-- Reação Lenta -->
+                <rect x="300" y="20" width="200" height="140" fill="#d4e6f1" stroke="#2980b9" stroke-width="3" rx="10"/>
+                <text x="400" y="50" text-anchor="middle" font-size="18" fill="#21618c" font-weight="bold">Reação Lenta</text>
+                <circle cx="350" cy="90" r="15" fill="#e74c3c"/>
+                <circle cx="390" cy="90" r="15" fill="#3498db"/>
+                <path d="M420 70 L460 70 M420 90 L460 90 M420 110 L460 110" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#seta)"/>
+                <circle cx="490" cy="100" r="10" fill="#9b59b6" opacity="0.6"/>
+                <text x="400" y="150" text-anchor="middle" font-size="13" fill="#555">Ex: Ferrugem do ferro</text>
+
+                <!-- Definição de seta -->
+                <defs>
+                    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <polygon points="0,0 10,5 0,10" fill="#333"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <p>Os principais fatores que influenciam a rapidez das transformações químicas são:</p>
+        <ul>
+            <li><strong>Temperatura:</strong> quanto maior a temperatura, mais rápida tende a ser a reação.</li>
+            <li><strong>Concentração dos reagentes:</strong> maior concentração geralmente aumenta a velocidade da reação.</li>
+            <li><strong>Superfície de contato:</strong> reagentes sólidos em pedaços menores reagem mais rapidamente.</li>
+            <li><strong>Catalisadores:</strong> substâncias que aceleram a reação sem serem consumidas.</li>
+            <li><strong>Pressão (em reações com gases):</strong> aumento da pressão costuma aumentar a velocidade da reação.</li>
+        </ul>
+
+        <h3>Exemplos práticos</h3>
+        <ul>
+            <li>🔥 Queima de papel: reação rápida.</li>
+            <li>🔩 Ferrugem em um portão: reação lenta.</li>
+            <li>💧 Efervescência de um comprimido na água: reação rápida.</li>
+        </ul>
+
+        <p>Em resumo, a rapidez das transformações químicas é estudada pela <strong>cinética química</strong>, que analisa a velocidade das reações e os fatores que a influenciam.</p>
+    </section>
+
+    <!-- Definição de rapidez de reação -->
+    <section>
+        <h2>Definição de Rapidez de Reação</h2>
+        <p>A rapidez de reação é a medida da velocidade com que os reagentes são consumidos ou os produtos são formados durante uma reação química.</p>
+        <p>Em outras palavras, ela indica o quanto a quantidade (ou concentração) de uma substância varia em determinado intervalo de tempo.</p>
+
+        <div class="resumo">
+            <strong>Definição resumida:</strong>
+            <p>A rapidez de reação é a <em>variação da concentração dos reagentes ou dos produtos por unidade de tempo</em>.</p>
+        </div>
+
+        <p>Exemplo: Se uma reação produz gás muito rapidamente, sua rapidez é alta. Já a formação da ferrugem ocorre lentamente, portanto tem baixa rapidez de reação.</p>
+    </section>
+
+    <!-- Fatores que influenciam -->
+    <section>
+        <h2>Fatores que Influenciam a Rapidez</h2>
+        <p>A rapidez de reação depende de fatores como temperatura, concentração, superfície de contato, pressão e presença de catalisadores. Veja como cada um atua:</p>
+
+        <!-- Ilustração SVG: Fatores e colisões entre partículas -->
+        <div class="ilustracao">
+            <svg width="520" height="260" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
+                <!-- Menos colisões -->
+                <rect x="20" y="20" width="220" height="210" fill="#e8f4f8" stroke="#16a085" stroke-width="2" rx="10"/>
+                <text x="130" y="45" text-anchor="middle" font-size="12" fill="#16a085" font-weight="bold">Menos colisões → Reação mais lenta</text>
+                <circle cx="60" cy="90" r="18" fill="#3498db"/>
+                <circle cx="120" cy="100" r="18" fill="#e74c3c"/>
+                <circle cx="85" cy="160" r="18" fill="#f1c40f"/>
+                <circle cx="150" cy="170" r="18" fill="#9b59b6"/>
+                <text x="130" y="220" text-anchor="middle" font-size="12" fill="#555">Baixa concentração / Baixa temperatura</text>
+
+                <!-- Mais colisões -->
+                <rect x="280" y="20" width="220" height="210" fill="#fdecea" stroke="#e74c3c" stroke-width="2" rx="10"/>
+                <text x="390" y="45" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="bold">Mais colisões → Reação mais rápida</text>
+                <circle cx="310" cy="80" r="15" fill="#3498db"/>
+                <circle cx="340" cy="95" r="15" fill="#e74c3c"/>
+                <circle cx="370" cy="75" r="15" fill="#f1c40f"/>
+                <circle cx="400" cy="100" r="15" fill="#9b59b6"/>
+                <circle cx="430" cy="85" r="15" fill="#2ecc71"/>
+                <circle cx="325" cy="140" r="15" fill="#3498db"/>
+                <circle cx="360" cy="155" r="15" fill="#e74c3c"/>
+                <circle cx="395" cy="145" r="15" fill="#f1c40f"/>
+                <circle cx="425" cy="160" r="15" fill="#9b59b6"/>
+                <text x="380" y="220" text-anchor="middle" font-size="12" fill="#555">Alta concentração / Alta temperatura / Catalisador</text>
+
+                <!-- Símbolo de choque -->
+                <text x="375" y="125" font-size="22">⚡</text>
+            </svg>
+        </div>
+
+        <h3>Resumo dos efeitos:</h3>
+        <div class="resumo">
+            <ul>
+                <li>🌡️ Temperatura ↑ → rapidez ↑</li>
+                <li>🧪 Concentração ↑ → rapidez ↑</li>
+                <li>📐 Superfície de contato ↑ → rapidez ↑</li>
+                <li>🔵 Pressão (gases) ↑ → rapidez ↑</li>
+                <li>✨ Catalisador → acelera a reação sem ser consumido</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Detalhamento dos fatores -->
+    <section>
+        <h2>Detalhamento dos Fatores</h2>
+
+        <h3>Concentração dos reagentes</h3>
+        <p>A concentração dos reagentes é a quantidade de partículas de reagentes presente em um determinado volume de solução.</p>
+        <p>Quanto maior a concentração dos reagentes, maior é o número de partículas por volume. Isso aumenta a frequência das colisões entre elas, fazendo com que a reação aconteça mais rapidamente.</p>
+        <div class="resumo">
+            Maior concentração → mais colisões → reação mais rápida.<br>
+            Menor concentração → menos colisões → reação mais lenta.
+        </div>
+        <p><strong>Exemplo:</strong> O ácido clorídrico concentrado reage com um pedaço de zinco mais rapidamente do que o ácido clorídrico diluído, pois há mais partículas de ácido disponíveis para colidir com o metal.</p>
+
+        <h3>Temperatura</h3>
+        <p>Quando a temperatura aumenta, as partículas dos reagentes passam a se mover mais rapidamente e com mais energia. Isso faz com que ocorram mais colisões e que um maior número delas seja eficaz, acelerando a reação.</p>
+        <div class="resumo">
+            Temperatura maior → partículas mais rápidas → mais colisões eficazes → reação mais rápida.<br>
+            Temperatura menor → partículas mais lentas → menos colisões eficazes → reação mais lenta.
+        </div>
+        <p><strong>Exemplo:</strong> Um comprimido efervescente reage mais rapidamente em água quente do que em água fria.</p>
+
+        <h3>Superfície de contato</h3>
+        <p>A superfície de contato é a área exposta dos reagentes que pode entrar em contato durante uma reação química. Quanto maior a área de contato, mais partículas ficam expostas para colidir, acelerando a reação.</p>
+        <div class="resumo">
+            🧂 Maior superfície de contato → mais colisões → reação mais rápida.<br>
+            🪨 Menor superfície de contato → menos colisões → reação mais lenta.
+        </div>
+        <p><strong>Exemplo:</strong> Um comprimido efervescente triturado reage mais rapidamente do que um comprimido inteiro. A serragem queima mais rápido do que um pedaço grande de madeira.</p>
+
+        <h3>Pressão (em reações com gases)</h3>
+        <p>O aumento da pressão aproxima as partículas dos gases, aumentando a frequência das colisões e acelerando a reação.</p>
+
+        <h3>Catalisadores e Inibidores</h3>
+        <p><strong>Catalisadores:</strong> aumentam a velocidade da reação, pois diminuem a energia de ativação necessária para que ela ocorra. Não são consumidos durante a reação.</p>
+        <p><strong>Inibidores:</strong> diminuem a velocidade da reação, dificultando a ocorrência das colisões eficazes.</p>
+        <p><strong>Exemplos:</strong> As enzimas são catalisadores naturais; conservantes em alimentos atuam como inibidores.</p>
+    </section>
+
+    <!-- Controle experimental -->
+    <section>
+        <h2>Controlando a Rapidez das Reações</h2>
+        <p>Ao alterar as condições do experimento, é possível acelerar ou retardar uma reação conforme a necessidade:</p>
+        <ul>
+            <li>❄️ Alimentos na geladeira: diminui a temperatura → retarda a deterioração.</li>
+            <li>🚗 Conversor catalítico: usa catalisadores → acelera redução de poluentes.</li>
+            <li>🏭 Indústria química: controla temperatura e pressão → aumenta eficiência.</li>
+        </ul>
+        <p><strong>Conclusão:</strong> O controle das condições experimentais permite ajustar a rapidez das reações químicas, tornando processos industriais, laboratoriais e biológicos mais eficientes e seguros.</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Aula 02 — Química | Fatores que influenciam a rapidez de uma reação</p>
+        <p>Material educativo de domínio público — 100% offline com ilustrações SVG embutidas</p>
+    </footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="2">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="2">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="2">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
+    <!-- Aula 03 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="3">Aula 03</button>
+        <div class="conteudo-aula" id="aula-3">
+            <h2>Cópia de Aula 03: Equilíbrio químico: interpretando o Kc
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 — Equilíbrio Químico: Interpretando o Kc</title>
+    <style>
+        /* ========== ESTILOS GERAIS ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background-color: #f0f8ff;
+            padding: 0;
+        }
+
+        /* Cabeçalho principal */
+        header {
+            background: linear-gradient(135deg, #2980b9, #1abc9c);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Container principal com largura limitada */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.2rem;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 0.4rem;
+            margin: 2rem 0 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: #16a085;
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Caixa de destaque */
+        .destaque {
+            background-color: #e8f4f8;
+            border-left: 4px solid #2980b9;
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Fórmulas e equações */
+        .equacao {
+            font-family: 'Courier New', monospace;
+            background-color: #f4f4f4;
+            padding: 0.8rem 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Tabela comparativa */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        /* Bloco de resumo */
+        .resumo-box {
+            background-color: #fff9e6;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 1.3rem;
+            margin-top: 1.5rem;
+        }
+
+        .resumo-box h3 {
+            color: #d35400;
+            margin-top: 0;
+        }
+
+        /* Ilustrações SVG embutidas — sem dependências externas */
+        .ilustracao {
+            display: block;
+            margin: 1.5rem auto;
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.35rem;
+            }
+
+            main {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .equacao {
+                font-size: 0.95rem;
+                padding: 0.6rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho da página -->
+<header>
+    <h1>🧪 Aula 03 — Equilíbrio Químico</h1>
+    <p>Equilíbrio dinâmico, reações reversíveis e interpretação da constante Kc</p>
+</header>
+
+<main>
+
+    <!-- ==============================================
+         ILUSTRAÇÃO 1: Esquema do equilíbrio dinâmico
+         SVG criado do zero, sem dependências externas
+         ============================================== -->
+    <div class="ilustracao">
+        <svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundo suave -->
+            <rect x="10" y="10" width="500" height="180" rx="12" fill="#f0f8ff" stroke="#2980b9" stroke-width="2"/>
+            
+            <!-- Esfera A -->
+            <circle cx="110" cy="100" r="45" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+            <text x="110" y="106" text-anchor="middle" fill="white" font-size="24" font-weight="bold">A</text>
+            
+            <!-- Setas duplas indicando equilíbrio -->
+            <path d="M170 75 L280 75" stroke="#2c3e50" stroke-width="4" marker-end="url(#seta-dir)"/>
+            <path d="M280 125 L170 125" stroke="#2c3e50" stroke-width="4" marker-end="url(#seta-esq)"/>
+            
+            <!-- Rótulos das setas -->
+            <text x="225" y="65" text-anchor="middle" fill="#16a085" font-size="13">direta</text>
+            <text x="225" y="145" text-anchor="middle" fill="#e74c3c" font-size="13">inversa</text>
+            
+            <!-- Esfera B -->
+            <circle cx="410" cy="100" r="45" fill="#1abc9c" stroke="#16a085" stroke-width="3"/>
+            <text x="410" y="106" text-anchor="middle" fill="white" font-size="24" font-weight="bold">B</text>
+            
+            <!-- Legenda inferior -->
+            <text x="260" y="180" text-anchor="middle" fill="#2c3e50" font-size="14">Velocidade direta = Velocidade inversa → Equilíbrio dinâmico</text>
+            
+            <!-- Definição das pontas de seta -->
+            <defs>
+                <marker id="seta-dir" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <polygon points="0 0, 10 5, 0 10" fill="#2c3e50"/>
+                </marker>
+                <marker id="seta-esq" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <polygon points="10 0, 0 5, 10 10" fill="#2c3e50"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- ==============================================
+         SEÇÃO 1: Apresentação e equilíbrio na respiração
+         ============================================== -->
+    <section>
+        <h2>📌 Introdução: O Equilíbrio na Respiração</h2>
+        
+        <p>Se há troca contínua de gases entre o organismo e o ambiente, por que dizemos que o sistema está em equilíbrio?</p>
+        
+        <div class="destaque">
+            <p>Porque <strong>equilíbrio químico não significa que as reações pararam</strong>. Em um equilíbrio dinâmico, as reações direta e inversa continuam acontecendo, mas suas velocidades se igualam, mantendo as concentrações relativamente estáveis.</p>
+        </div>
+
+        <p>No sangue, por exemplo, ocorre o seguinte equilíbrio:</p>
+        
+        <div class="equacao">
+            CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻
+        </div>
+
+        <p>Quando as condições mudam — como durante exercício físico, quando há maior produção de CO₂ — o equilíbrio pode se deslocar. A ventilação pulmonar também aumenta, eliminando mais CO₂ e ajudando a restabelecer o equilíbrio.</p>
+
+        <div class="resumo-box">
+            <h3>💡 Resumo</h3>
+            <p>O organismo está constantemente trocando gases, mas as reações químicas envolvidas podem atingir equilíbrios dinâmicos, permitindo que o pH e as concentrações dos componentes sejam regulados.</p>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         SEÇÃO 2: Equilíbrio dinâmico
+         ============================================== -->
+    <section>
+        <h2>⚖️ Equilíbrio Químico Dinâmico</h2>
+
+        <p>O equilíbrio químico dinâmico acontece em uma <strong>reação reversível</strong>, quando as reações direta e inversa continuam ocorrendo, mas acontecem na mesma velocidade.</p>
+
+        <p>Exemplo geral:</p>
+        <div class="equacao">
+            A ⇌ B
+        </div>
+        <ul style="margin-left: 1.6rem; margin-bottom: 1rem;">
+            <li>A → B : reação direta</li>
+            <li>B → A : reação inversa</li>
+        </ul>
+
+        <div class="destaque">
+            <p><strong>No equilíbrio:</strong> velocidade da reação direta = velocidade da reação inversa</p>
+            <p>Isso <em>não significa</em> que a reação parou. As partículas continuam reagindo, mas as concentrações de A e B permanecem aproximadamente constantes.</p>
+        </div>
+
+        <h3>Na respiração — exemplo prático</h3>
+        <div class="equacao">
+            CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻
+        </div>
+        <p>Esse equilíbrio ajuda a regular a quantidade de CO₂ e íons H⁺ no sangue, contribuindo para a manutenção do pH do corpo.</p>
+
+        <div class="resumo-box">
+            <h3>💡 Ideia principal</h3>
+            <p>Equilíbrio dinâmico = as reações continuam acontecendo, mas sem mudança líquida nas concentrações quando o sistema está em equilíbrio.</p>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         ILUSTRAÇÃO 2: Esquema do equilíbrio do CO₂
+         SVG criado do zero, sem dependências externas
+         ============================================== -->
+    <div class="ilustracao">
+        <svg width="580" height="220" viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundo -->
+            <rect x="10" y="10" width="560" height="200" rx="12" fill="#fff9e6" stroke="#f39c12" stroke-width="2"/>
+
+            <!-- Pulmão desenhado -->
+            <path d="M90 60 C70 40, 40 55, 50 90 C60 120, 90 140, 90 140 C90 140, 120 120, 130 90 C140 55, 110 40, 90 60 Z" 
+                  fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+            <text x="90" y="170" text-anchor="middle" fill="#c0392b" font-size="14">Pulmão</text>
+
+            <!-- Sangue/Corpo -->
+            <ellipse cx="290" cy="100" rx="100" ry="80" fill="#3498db" opacity="0.25" stroke="#2980b9" stroke-width="2"/>
+            <text x="290" y="106" text-anchor="middle" fill="#2c3e50" font-size="15">Sangue / Tecidos</text>
+
+            <!-- Setas e equação -->
+            <path d="M160 70 L210 70" stroke="#2c3e50" stroke-width="3" marker-end="url(#seta-dir2)"/>
+            <path d="M210 100 L160 100" stroke="#2c3e50" stroke-width="3" marker-end="url(#seta-esq2)"/>
+            
+            <text x="370" y="80" text-anchor="middle" fill="#2c3e50" font-size="13">CO₂ + H₂O ⇌ H₂CO₃</text>
+            <text x="370" y="110" text-anchor="middle" fill="#2c3e50" font-size="13">⇌ H⁺ + HCO₃⁻</text>
+
+            <!-- Legenda inferior -->
+            <text x="290" y="195" text-anchor="middle" fill="#7f8c8d" font-size="13">Eliminação de CO₂ ajuda a restabelecer o equilíbrio</text>
+
+            <defs>
+                <marker id="seta-dir2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <polygon points="0 0, 10 5, 0 10" fill="#2c3e50"/>
+                </marker>
+                <marker id="seta-esq2" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <polygon points="10 0, 0 5, 10 10" fill="#2c3e50"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- ==============================================
+         SEÇÃO 3: Reações reversíveis x irreversíveis
+         ============================================== -->
+    <section>
+        <h2>🔄 Reações Reversíveis e Irreversíveis</h2>
+
+        <h3>Reação Reversível</h3>
+        <p>Pode acontecer nos dois sentidos: os produtos podem voltar a formar os reagentes. Usa a seta dupla ⇌.</p>
+        <div class="equacao">A + B ⇌ C + D</div>
+
+        <h3>Reação Irreversível</h3>
+        <p>Ocorre predominantemente em um único sentido. Os produtos não retornam aos reagentes de maneira significativa nas mesmas condições. Usa a seta simples →.</p>
+        <div class="equacao">A + B → C + D</div>
+
+        <h3>Comparação resumida</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Reversível</th>
+                    <th>Irreversível</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sentido</td>
+                    <td>Acontece nos dois sentidos</td>
+                    <td>Predomina em um sentido</td>
+                </tr>
+                <tr>
+                    <td>Representação</td>
+                    <td>⇌</td>
+                    <td>→</td>
+                </tr>
+                <tr>
+                    <td>Equilíbrio</td>
+                    <td>Pode estabelecer</td>
+                    <td>Não estabelece equilíbrio</td>
+                </tr>
+                <tr>
+                    <td>Exemplo</td>
+                    <td>CO₂ + H₂O ⇌ H₂CO₃</td>
+                    <td>Combustão</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resumo-box">
+            <h3>💡 Resumo</h3>
+            <p><strong>Reversível:</strong> vai e volta. <strong>Irreversível:</strong> ocorre essencialmente em uma direção.</p>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         SEÇÃO 4: Representação e constante Kc
+         ============================================== -->
+    <section>
+        <h2>📊 A Constante de Equilíbrio — Kc</h2>
+
+        <p>O equilíbrio químico é representado por uma seta dupla ⇌, indicando que as reações direta e inversa acontecem simultaneamente. No equilíbrio, suas velocidades são iguais — <em>mas isso não significa que as quantidades de reagentes e produtos sejam iguais</em>, apenas que suas concentrações permanecem constantes.</p>
+
+        <h3>O que é Kc?</h3>
+        <p>A constante de equilíbrio (Kc) é um número que indica a <strong>relação entre as concentrações dos produtos e dos reagentes</strong> no estado de equilíbrio, a uma temperatura determinada.</p>
+
+        <p>Para uma reação geral:</p>
+        <div class="equacao">aA + bB ⇌ cC + dD</div>
+
+        <p>A expressão de Kc é:</p>
+        <div class="equacao">Kc = [C]ᶜ · [D]ᵈ / [A]ᵃ · [B]ᵇ</div>
+
+        <h3>Como interpretar o valor de Kc?</h3>
+        <ul style="margin-left: 1.6rem; margin-bottom: 1rem;">
+            <li><strong>Kc ≫ 1</strong> → produtos favorecidos (maior quantidade relativa de produtos)</li>
+            <li><strong>Kc ≪ 1</strong> → reagentes favorecidos (maior quantidade relativa de reagentes)</li>
+            <li><strong>Kc ≈ 1</strong> → quantidades comparáveis de reagentes e produtos</li>
+        </ul>
+
+        <div class="destaque">
+            <p><strong>Importante:</strong> Kc <em>não indica</em> que as concentrações são iguais. Ele representa a <em>relação</em> entre elas, levando em conta os coeficientes da equação.</p>
+        </div>
+
+        <h3>Exemplo prático — respiração</h3>
+        <p>Para CO₂ + H₂O ⇌ H₂CO₃, a água (líquido puro) não entra na expressão de Kc. Fica simplesmente:</p>
+        <div class="equacao">Kc = [H₂CO₃] / [CO₂]</div>
+
+        <h3>Exemplos de interpretação</h3>
+        <ul style="margin-left: 1.6rem; margin-bottom: 1rem;">
+            <li>Kc = 100 → forte predominância de produtos</li>
+            <li>Kc = 0,01 → forte predominância de reagentes</li>
+            <li>Kc ≈ 1 → proporções semelhantes</li>
+        </ul>
+
+        <h3>Relação com a extensão da reação</h3>
+        <p>Quanto maior o Kc, mais a reação avança no sentido dos produtos antes de parar (atingir o equilíbrio). Quanto menor o Kc, menos avança. E quando Kc é próximo de 1, a reação avança de forma intermediária.</p>
+
+        <div class="resumo-box">
+            <h3>📌 Resumo para memorizar</h3>
+            <ul>
+                <li><strong>Kc grande</strong> → equilíbrio favorece os produtos</li>
+                <li><strong>Kc pequeno</strong> → equilíbrio favorece os reagentes</li>
+                <li><strong>Kc ≈ 1</strong> → quantidades relativamente parecidas</li>
+                <li><strong>Kc NÃO mede velocidade</strong> — indica apenas a <em>posição</em> do equilíbrio</li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<!-- Rodapé -->
+<footer>
+    Aula 03 — Química: Equilíbrio Químico e Constante Kc<br>
+    Conteúdo adaptado para uso educacional — página totalmente offline e sem dependências externas
+</footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="3">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="3">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="3">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
+    <!-- Aula 04 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="4">Aula 04</button>
+        <div class="conteudo-aula" id="aula-4">
+            <h2>Aula 04: Quociente de equilíbrio
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04: Quociente de Equilíbrio — Química</title>
+    <style>
+        /* Estilos gerais e responsivos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f0f8ff;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2980b9, #1abc9c);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.2rem;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        h3 {
+            color: #16a085;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Ilustrações SVG embutidas — sem links externos */
+        .ilustracao {
+            display: block;
+            margin: 1.2rem auto;
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Fórmulas e destaque */
+        .formula {
+            background-color: #eef9f9;
+            border-left: 4px solid #16a085;
+            padding: 1rem;
+            margin: 1.2rem 0;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 1.15rem;
+            text-align: center;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .destaque {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 1rem;
+            margin: 1.2rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Tabela responsiva */
+        .tabela-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Resumo */
+        .resumo {
+            background-color: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #bde0e5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            margin-top: 2rem;
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            main {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .formula {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Química — Aula 04</h1>
+        <p>Quociente de Equilíbrio (Q)</p>
+    </header>
+
+    <main>
+        <!-- Introdução -->
+        <section>
+            <h2>Introdução</h2>
+            <p>O <strong>quociente de equilíbrio (Q)</strong> é uma expressão matemática que indica a relação entre as concentrações (ou pressões parciais) dos produtos e dos reagentes em um <em>determinado instante</em> de uma reação química. Ele nos diz "quão longe" o sistema está do equilíbrio em um dado momento.</p>
+
+            <!-- Ilustração 1: Reação genérica e fórmula embutida via SVG -->
+            <div class="ilustracao">
+                <svg width="480" height="140" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fundo suave -->
+                    <rect x="0" y="0" width="480" height="140" rx="10" fill="#f0f8ff" stroke="#bde0e5" stroke-width="2"/>
+                    
+                    <!-- Reação genérica -->
+                    <text x="30" y="50" font-family="Arial" font-size="22" fill="#2c3e50">aA + bB ⇌ cC + dD</text>
+                    
+                    <!-- Fórmula de Q -->
+                    <text x="30" y="95" font-family="Arial" font-size="20" fill="#2980b9">Q = [C]ᶜ · [D]ᵈ / [A]ᵃ · [B]ᵇ</text>
+                    
+                    <!-- Legenda -->
+                    <text x="30" y="125" font-family="Arial" font-size="12" fill="#7f8c8d">Q = produtos / reagentes — em qualquer instante</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Relação entre Q e K -->
+        <section>
+            <h2>Relação entre Q e a Constante de Equilíbrio (K<sub>c</sub>)</h2>
+            <p>A expressão de <strong>Q</strong> tem a <em>mesma forma</em> da expressão de <strong>K<sub>c</sub></strong>, mas há uma diferença fundamental:</p>
+
+            <div class="destaque">
+                <ul>
+                    <li><strong>Q</strong> é calculado em <em>qualquer momento</em> da reação.</li>
+                    <li><strong>K<sub>c</sub></strong> é calculado <em>apenas no equilíbrio</em>, e é constante para uma dada temperatura.</li>
+                </ul>
+            </div>
+
+            <!-- Ilustração 2: Comparação visual Q vs K embutida via SVG -->
+            <div class="ilustracao">
+                <svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fundo -->
+                    <rect x="0" y="0" width="520" height="200" rx="10" fill="#fff9e6" stroke="#f39c12" stroke-width="2"/>
+                    
+                    <!-- Linha de referência K -->
+                    <line x1="60" y1="100" x2="460" y2="100" stroke="#34495e" stroke-width="3" stroke-dasharray="8,4"/>
+                    <text x="470" y="105" font-size="14" fill="#34495e">K</text>
+                    
+                    <!-- Q < K → vai para produtos -->
+                    <circle cx="120" cy="70" r="8" fill="#27ae60"/>
+                    <text x="90" y="50" font-size="14" fill="#27ae60">Q &lt; K</text>
+                    <path d="M130 70 L170 90" stroke="#27ae60" stroke-width="3" marker-end="url(#seta)"/>
+                    <text x="140" y="130" font-size="12" fill="#27ae60">→ forma produtos</text>
+                    
+                    <!-- Q = K → equilíbrio -->
+                    <circle cx="260" cy="100" r="8" fill="#2980b9"/>
+                    <text x="245" y="70" font-size="14" fill="#2980b9">Q = K</text>
+                    <text x="235" y="130" font-size="12" fill="#2980b9">→ em equilíbrio</text>
+                    
+                    <!-- Q > K → vai para reagentes -->
+                    <circle cx="400" cy="130" r="8" fill="#e74c3c"/>
+                    <text x="410" y="155" font-size="14" fill="#e74c3c">Q &gt; K</text>
+                    <path d="M380 120 L340 105" stroke="#e74c3c" stroke-width="3" marker-end="url(#seta)"/>
+                    <text x="320" y="50" font-size="12" fill="#e74c3c">← forma reagentes</text>
+                    
+                    <!-- Definição de seta -->
+                    <defs>
+                        <marker id="seta" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <h3>Resumo da comparação</h3>
+            <div class="tabela-container">
+                <table>
                     <thead>
-                        <tr class="bg-blue-50">
-                            <th class="border border-gray-300 p-2">Tempo (min)</th>
-                            <th class="border border-gray-300 p-2">[H₂O₂] (mol·L⁻¹)</th>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Comportamento da reação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center">
-                            <td class="border border-gray-300 p-2">0</td>
-                            <td class="border border-gray-300 p-2">2,0</td>
+                        <tr>
+                            <td><strong>Q &lt; K<sub>c</sub></strong></td>
+                            <td>Tende a formar <strong>mais produtos</strong> → sentido direto</td>
                         </tr>
-                        <tr class="text-center">
-                            <td class="border border-gray-300 p-2">1</td>
-                            <td class="border border-gray-300 p-2">1,7</td>
+                        <tr>
+                            <td><strong>Q = K<sub>c</sub></strong></td>
+                            <td>O sistema está em <strong>equilíbrio</strong></td>
                         </tr>
-                        <tr class="text-center">
-                            <td class="border border-gray-300 p-2">2</td>
-                            <td class="border border-gray-300 p-2">1,4</td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="border border-gray-300 p-2">3</td>
-                            <td class="border border-gray-300 p-2">1,1</td>
+                        <tr>
+                            <td><strong>Q &gt; K<sub>c</sub></strong></td>
+                            <td>Tende a formar <strong>mais reagentes</strong> → sentido inverso</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+        </section>
 
-            <p class="mb-3 font-medium">Qual a velocidade média da reação em mol·L⁻¹·s⁻¹?</p>
-            <div class="space-y-2 mb-4">
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) 1,0</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) 0,01</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) 0,3</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">D) 0,005</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) 0,6</div>
+        <!-- Diferença entre Q e Kc -->
+        <section>
+            <h2>Diferença entre Q e K<sub>c</sub></h2>
+            <p>Uma forma simples de entender:</p>
+            <div class="formula">
+                Q = “Quão longe estou do equilíbrio?”<br>
+                K<sub>c</sub> = “Qual é a situação no equilíbrio?”
             </div>
 
-            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans1">
-                <p class="font-semibold text-green-700">Resposta Correta: D</p>
-                <p class="mt-2">Cálculo da velocidade média:</p>
-                <svg viewBox="0 0 480 90" class="mx-auto">
-                    <text x="10" y="25" font-size="14">v = |Δ[H₂O₂] / Δt|</text>
-                    <text x="10" y="45" font-size="14">Δ[H₂O₂] = 1,1 - 2,0 = -0,9 mol·L⁻¹</text>
-                    <text x="10" y="65" font-size="14">Δt = 3 min = 180 s</text>
-                    <text x="10" y="85" font-size="14">v = |-0,9 / 180| = 0,005 mol·L⁻¹·s⁻¹</text>
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Q (Quociente de reação)</th>
+                            <th>K<sub>c</sub> (Constante de equilíbrio)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Quando é calculado?</strong></td>
+                            <td>Em qualquer momento da reação</td>
+                            <td>Apenas em situação de equilíbrio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valor</strong></td>
+                            <td>Pode ser menor, igual ou maior que K<sub>c</sub></td>
+                            <td>Valor fixo para uma dada temperatura</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indica</strong></td>
+                            <td>Para qual lado a reação tende</td>
+                            <td>A posição do equilíbrio</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Aplicação prática -->
+        <section>
+            <h2>Aplicação Prática</h2>
+            <p>Considere a reação de síntese da amônia:</p>
+            <div class="formula">
+                N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g)
+            </div>
+
+            <p>O quociente Q é calculado com as concentrações <em>atuais</em> do sistema:</p>
+            <div class="formula">
+                Q = [NH₃]² / ([N₂] · [H₂]³)
+            </div>
+
+            <p>Ao compararmos Q com K<sub>c</sub> (conhecido para uma dada temperatura):</p>
+            <ul>
+                <li>✅ <strong>Q &lt; K<sub>c</sub>:</strong> há relativamente poucos produtos → a reação evolui para a <strong>direita</strong>, formando mais NH₃.</li>
+                <li>⚖️ <strong>Q = K<sub>c</sub>:</strong> o sistema está em equilíbrio — sem variação líquida.</li>
+                <li>⚠️ <strong>Q &gt; K<sub>c</sub>:</strong> há relativamente muitos produtos → a reação evolui para a <strong>esquerda</strong>, formando mais N₂ e H₂.</li>
+            </ul>
+        </section>
+
+        <!-- Resumo final -->
+        <section class="resumo">
+            <h2>Resumo Final</h2>
+            <p>O quociente de reação <strong>Q</strong> funciona como um <strong>diagnóstico instantâneo</strong> do sistema químico: ele revela o estado atual em um dado instante. Já a comparação de <strong>Q com K<sub>c</sub></strong> permite prever <strong>para onde</strong> a reação vai evoluir até atingir o equilíbrio.</p>
+            <p style="text-align:center; font-weight:bold; margin-top:0.5rem;">Q → onde estamos &nbsp;|&nbsp; Q vs K → para onde vamos</p>
+        </section>
+    </main>
+
+    <footer>
+        Aula 04 — Quociente de Equilíbrio (Q) | Disciplina de Química<br>
+        Conteúdo educacional de domínio público
+    </footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="4">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="4">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="4">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  
+    <!-- Aula 05 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="5">Aula 05</button>
+        <div class="conteudo-aula" id="aula-5">
+            <h2>Aula 05: Princípio de Le Chatelier
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05: Princípio de Le Chatelier — Química</title>
+    <style>
+        /* === Estilos gerais e responsivos === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f7ff;
+            color: #222;
+            line-height: 1.7;
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5f99, #4a80c4);
+            color: white;
+            padding: 30px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 10px; }
+        h2 { 
+            color: #2c5f99; 
+            margin: 30px 0 15px; 
+            border-left: 5px solid #4a80c4;
+            padding-left: 12px;
+            font-size: 1.4rem;
+        }
+        h3 { color: #333; margin: 20px 0 10px; font-size: 1.15rem; }
+
+        section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        p { margin-bottom: 12px; text-align: justify; }
+        ul, ol { margin: 12px 0 12px 28px; }
+        li { margin-bottom: 8px; }
+
+        .destaque {
+            background-color: #eaf4ff;
+            border: 2px solid #b8d4f1;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 18px 0;
+        }
+
+        .reacao {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 12px;
+            background-color: #f8fbff;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+        }
+        th, td {
+            border: 1px solid #bdd3e8;
+            padding: 10px;
+            text-align: center;
+        }
+        th { background-color: #e0edfa; color: #224b75; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f4f8fc; }
+
+        .ilustracao {
+            text-align: center;
+            margin: 20px 0;
+        }
+        svg { max-width: 100%; height: auto; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header, section { padding: 15px; }
+            h1 { font-size: 1.4rem; }
+            table { font-size: 0.88rem; }
+            th, td { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+    CABEÇALHO DA AULA
+======================================== -->
+<header>
+    <h1>🧪 Aula 05 — Princípio de Le Chatelier</h1>
+    <p style="text-align:center; opacity:0.9;">Entenda como pressão, temperatura e concentração alteram o equilíbrio químico</p>
+</header>
+
+<!-- ========================================
+    INTRODUÇÃO — EXEMPLO DO REFRIGERANTE
+======================================== -->
+<section>
+    <h2>Introdução: Por que o gás sai ao abrir a lata?</h2>
+    <p>Você já notou que ao abrir uma lata de refrigerante fechada aparecem muitas borbulhas? Isso é consequência direta do equilíbrio químico e das regras descritas pelo <strong>Princípio de Le Chatelier</strong>.</p>
+
+    <!-- ILUSTRAÇÃO 1: Lata fechada vs aberta → SVG embutido -->
+    <div class="ilustracao">
+        <svg width="520" height="220" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Lata Fechada -->
+            <rect x="40" y="30" width="130" height="170" rx="12" fill="#4a90e2" stroke="#2c5f99" stroke-width="4"/>
+            <ellipse cx="105" cy="30" rx="65" ry="14" fill="#6ab0f3"/>
+            <text x="105" y="110" text-anchor="middle" fill="white" font-size="16" font-weight="bold">FECHADA</text>
+            <g fill="#eaf4ff">
+                <circle cx="75" cy="140" r="6"/>
+                <circle cx="100" cy="160" r="7"/>
+                <circle cx="125" cy="145" r="5"/>
+                <circle cx="85" cy="175" r="6"/>
+                <circle cx="115" cy="172" r="5"/>
+            </g>
+            <text x="105" y="205" text-anchor="middle" fill="#222" font-size="13">Pressão alta → gás dissolvido</text>
+
+            <!-- Seta -->
+            <path d="M195 115 L235 115 L235 105 L250 120 L235 135 L235 125 L195 125 Z" fill="#333"/>
+
+            <!-- Lata Aberta -->
+            <rect x="290" y="30" width="130" height="170" rx="12" fill="#4a90e2" stroke="#2c5f99" stroke-width="4"/>
+            <ellipse cx="355" cy="30" rx="65" ry="14" fill="#888"/>
+            <path d="M320 22 L390 38" stroke="#222" stroke-width="3"/>
+            <text x="355" y="110" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ABERTA</text>
+            <g fill="#ffd92f">
+                <circle cx="320" cy="130" r="7"/>
+                <circle cx="355" cy="115" r="8"/>
+                <circle cx="385" cy="135" r="6"/>
+                <circle cx="335" cy="95" r="6"/>
+                <circle cx="370" cy="85" r="7"/>
+            </g>
+            <text x="355" y="205" text-anchor="middle" fill="#222" font-size="13">Pressão baixa → gás liberado</text>
+        </svg>
+    </div>
+
+    <p>Dentro da lata fechada, a pressão é alta, e isso mantém o gás CO₂ dissolvido no líquido. A reação é:</p>
+    <div class="reacao">CO₂ (gás) ⇄ CO₂ (dissolvido)</div>
+
+    <p>Ao abrir a lata, a pressão diminui. Pelo Princípio de Le Chatelier, o sistema se desloca para o lado com <strong>mais moléculas de gás</strong> para compensar a queda de pressão. Por isso, o gás sai da bebida e forma borbulhas.</p>
+
+    <div class="destaque">
+        <strong>📌 Resumo — Pressão e solubilidade:</strong><br>
+        Pressão alta → gás fica dissolvido ✅<br>
+        Pressão baixa → gás é liberado 💨
+    </div>
+
+    <h3>E se o refrigerante for aquecido?</h3>
+    <p>A dissolução do CO₂ é um processo que <strong>libera calor</strong> (exotérmico). Ao aquecer, o sistema tenta consumir esse calor extra, deslocando o equilíbrio no sentido endotérmico — ou seja, o gás deixa de estar dissolvido e escapa para o ar.</p>
+    <div class="destaque">
+        <strong>📌 Resumo — Temperatura e solubilidade:</strong><br>
+        Quanto mais quente o refrigerante, menos gás fica dissolvido.<br>
+        Ele perde o gás e fica "chato" 😞
+    </div>
+</section>
+
+<!-- ========================================
+    CONCEITO DE EQUILÍBRIO E DESLOCAMENTO
+======================================== -->
+<section>
+    <h2>O que é equilíbrio químico?</h2>
+    <p>É quando uma reação reversível acontece nos dois sentidos com a <strong>mesma velocidade</strong>: os reagentes viram produtos e os produtos voltam a ser reagentes no mesmo ritmo. Parece que nada mudou, mas está tudo se transformando o tempo todo — é um <strong>equilíbrio dinâmico</strong>.</p>
+
+    <h3>O que causa o deslocamento?</h3>
+    <p>O equilíbrio pode ser alterado quando algo muda no sistema. Chamamos essa mudança de <strong>perturbação</strong>. As principais são:</p>
+    <ul>
+        <li>🔀 Mudança de <strong>concentração</strong> (mais ou menos quantidade de alguma substância)</li>
+        <li>🌡️ Mudança de <strong>temperatura</strong> (esquentar ou esfriar)</li>
+        <li>💨 Mudança de <strong>pressão</strong> (só vale quando há gases)</li>
+    </ul>
+
+    <p>Quando vem a perturbação, o sistema não fica parado. Ele reage tentando <strong>anular o que aconteceu</strong> e se ajusta até chegar a um novo equilíbrio. É como a água em tanques conectados: se você tirar água de um lado, ela se redistribui até ficar equilibrada de novo!</p>
+
+    <h2>📖 O Princípio de Le Chatelier</h2>
+    <blockquote style="background:#eaf4ff; padding:15px; border-radius:8px; border-left:4px solid #4a80c4; font-style:italic;">
+        "Quando um sistema em equilíbrio sofre uma perturbação, ele se desloca no sentido que tende a <strong>anular essa perturbação</strong>, procurando se ajustar a um novo equilíbrio."
+    </blockquote>
+    <p style="margin-top:12px;">Em palavras simples: Você muda uma coisa → o sistema faz o contrário para se equilibrar de novo.</p>
+</section>
+
+<!-- ========================================
+    FATOR 1 — CONCENTRAÇÃO
+======================================== -->
+<section>
+    <h2>1️⃣ Variação da Concentração</h2>
+    <div class="destaque">
+        <strong>Regra:</strong><br>
+        ➕ Aumenta quantidade → sistema consome o excesso<br>
+        ➖ Diminui quantidade → sistema repõe o que saiu
+    </div>
+
+    <p>Para a reação: A + B ⇄ C + D</p>
+    <ul>
+        <li>Se adicionar mais A → sistema quer reduzir o excesso → desloca para a <strong>direita</strong> → forma mais C e D.</li>
+        <li>Se remover C → sistema quer repor o que foi tirado → desloca para a <strong>direita</strong> → forma mais C e D.</li>
+    </ul>
+
+    <h3>Exemplo prático: Cromato e Dicromato</h3>
+    <div class="reacao">
+        K₂CrO₄ + 2 H⁺ ⇄ K₂Cr₂O₇ + H₂O<br>
+        <span style="color:gold;">🟡 (amarelo)</span> &nbsp;&nbsp; → &nbsp;&nbsp; <span style="color:darkorange;">🟠 (alaranjado)</span>
+    </div>
+    <ul>
+        <li>K₂CrO₄ = Cromato de potássio (cor amarela)</li>
+        <li>K₂Cr₂O₇ = Dicromato de potássio (cor alaranjada)</li>
+        <li>H⁺ = Íons de hidrogênio (de um ácido)</li>
+    </ul>
+
+    <table>
+        <tr><th>Perturbação</th><th>Para onde vai?</th><th>Cor final</th></tr>
+        <tr><td>➕ Mais íons H⁺</td><td>→ Direita</td><td>🟠 Alaranjado</td></tr>
+        <tr><td>➖ Menos íons H⁺</td><td>← Esquerda</td><td>🟡 Amarelo</td></tr>
+    </table>
+</section>
+
+<!-- ========================================
+    FATOR 2 — TEMPERATURA
+======================================== -->
+<section>
+    <h2>2️⃣ Variação da Temperatura</h2>
+    <ul>
+        <li><strong>Endotérmico:</strong> absorve calor → precisa de calor para acontecer</li>
+        <li><strong>Exotérmico:</strong> libera calor → produz calor ao acontecer</li>
+    </ul>
+    <div class="destaque">
+        <strong>Regra:</strong><br>
+        🔥 Aumentar temperatura → vai para o lado que absorve calor (endotérmico)<br>
+        ❄️ Diminuir temperatura → vai para o lado que libera calor (exotérmico)
+    </div>
+
+    <h3>Exemplo: Cloreto de cobalto</h3>
+    <div class="reacao">
+        [Co(H₂O)₆]²⁺ + 4 Cl⁻ ⇄ [CoCl₄]²⁻ + 6 H₂O<br>
+        <span style="color:pink;">🩷 (rosa)</span> &nbsp;&nbsp; ←——— &nbsp;&nbsp; <span style="color:blue;">💙 (azul)</span><br>
+        exotérmico &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endotérmico
+    </div>
+
+    <table>
+        <tr><th>Temperatura</th><th>Sentido</th><th>Cor</th></tr>
+        <tr><td>🔥 Aumenta</td><td>→ Endotérmico (direita)</td><td>💙 Azul</td></tr>
+        <tr><td>❄️ Diminui</td><td>← Exotérmico (esquerda)</td><td>🩷 Rosa</td></tr>
+    </table>
+
+    <p><em>⚠️ Detalhe importante: a temperatura é a ÚNICA perturbação que altera o valor da constante de equilíbrio Kc!</em></p>
+</section>
+
+<!-- ========================================
+    FATOR 3 — PRESSÃO
+======================================== -->
+<section>
+    <h2>3️⃣ Variação da Pressão</h2>
+    <div class="destaque">
+        <strong>Regra:</strong><br>
+        ⬆️ Aumentar pressão → vai para o lado com <strong>menos</strong> moléculas de gás<br>
+        ⬇️ Diminuir pressão → vai para o lado com <strong>mais</strong> moléculas de gás<br>
+        ⚠️ Só funciona quando há substâncias no estado gasoso!
+    </div>
+
+    <p>Contamos apenas as substâncias no estado gasoso <strong>(g)</strong>, somando seus coeficientes.</p>
+
+    <h3>Exemplo: Síntese da amônia</h3>
+    <div class="reacao">
+        1 N₂(g) + 3 H₂(g) ⇄ 2 NH₃(g)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 4 moléculas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 moléculas
+    </div>
+
+    <table>
+        <tr><th>Pressão</th><th>Para onde vai?</th><th>Resultado</th></tr>
+        <tr><td>⬆️ Aumenta</td><td>→ Menos moléculas (direita)</td><td>Mais amônia ✅</td></tr>
+        <tr><td>⬇️ Diminui</td><td>← Mais moléculas (esquerda)</td><td>Menos amônia ❌</td></tr>
+    </table>
+</section>
+
+<!-- ========================================
+    FATOR 4 — CATALISADORES
+======================================== -->
+<section>
+    <h2>4️⃣ Ação de Catalisadores</h2>
+    <p>O catalisador é uma substância que <strong>acelera a reação</strong>, oferecendo um caminho com menor energia de ativação. Mas atenção:</p>
+    <table>
+        <tr><th>O catalisador...</th><th>Funciona?</th></tr>
+        <tr><td>Acelera a reação</td><td>✅ Sim</td></tr>
+        <tr><td>Desloca o equilíbrio</td><td>❌ Não</td></tr>
+        <tr><td>Altera o valor de Kc</td><td>❌ Não</td></tr>
+        <tr><td>Aumenta o rendimento</td><td>❌ Não</td></tr>
+    </table>
+    <p>💡 <em>Resumo: o catalisador acelera os dois sentidos na mesma medida. É como encurtar o caminho, mas não mudar o destino final!</em></p>
+</section>
+
+<!-- ========================================
+    QUADRO GERAL — LE CHATELIER
+======================================== -->
+<section>
+    <h2>📋 Quadro Geral — Resumo Completo</h2>
+    <table>
+        <tr>
+            <th>Perturbação</th>
+            <th>O sistema faz...</th>
+            <th>Para onde vai?</th>
+            <th>Exemplo</th>
+        </tr>
+        <tr>
+            <td>➕ Aumenta concentração</td>
+            <td>Consome o excesso</td>
+            <td>→ Direita</td>
+            <td>Mais reagente → mais produto</td>
+        </tr>
+        <tr>
+            <td>➖ Diminui concentração</td>
+            <td>Repõe o que saiu</td>
+            <td>→ Direita</td>
+            <td>Remove produto → forma mais produto</td>
+        </tr>
+        <tr>
+            <td>🔥 Aumenta temperatura</td>
+            <td>Absorve calor extra</td>
+            <td>→ Sentido endotérmico</td>
+            <td>Aquecer cobalto → fica azul 💙</td>
+        </tr>
+        <tr>
+            <td>❄️ Diminui temperatura</td>
+            <td>Libera calor</td>
+            <td>→ Sentido exotérmico</td>
+            <td>Esfriar cobalto → volta rosa 🩷</td>
+        </tr>
+        <tr>
+            <td>⬆️ Aumenta pressão</td>
+            <td>Reduz o volume</td>
+            <td>→ Menos moléculas de gás</td>
+            <td>Lata fechada → CO₂ dissolvido</td>
+        </tr>
+        <tr>
+            <td>⬇️ Diminui pressão</td>
+            <td>Aumenta o volume</td>
+            <td>→ Mais moléculas de gás</td>
+            <td>Abrir lata → CO₂ em borbulhas 💨</td>
+        </tr>
+        <tr>
+            <td>⚙️ Catalisador</td>
+            <td>Acelera os dois sentidos</td>
+            <td>Não desloca</td>
+            <td>Mesmo resultado, só mais rápido ⚡</td>
+        </tr>
+    </table>
+
+    <div class="destaque" style="margin-top:20px;">
+        <strong>🎯 Regra de ouro:</strong><br>
+        Aumentou algo? O sistema tenta diminuir.<br>
+        Diminuiu algo? O sistema tenta repor.<br>
+        Catalisador? Só acelera, não muda o resultado final.<br><br>
+        <em>"O sistema se defende da mudança para voltar ao equilíbrio." — Princípio de Le Chatelier</em> 💡
+    </div>
+</section>
+
+<!-- ========================================
+    RODAPÉ
+======================================== -->
+<footer>
+    Aula 05 — Princípio de Le Chatelier | Disciplina de Química 🧪<br>
+    Material educacional de domínio público
+</footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="5">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="5">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="5">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
+    <!-- Aula 06 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="6">Aula 06</button>
+        <div class="conteudo-aula" id="aula-6">
+            <h2>Aula 06: Deslocamento de equilíbrio – química em prática</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 06 | Atividades Interativas</title>
+    <style>
+        /* ========== ESTILOS GERAIS ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8f4fc 0%, #d4e8f5 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .ilustracao {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .ilustracao svg {
+            max-width: 220px;
+            height: auto;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .introducao {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 18px;
+            margin-bottom: 35px;
+            border-radius: 8px;
+        }
+
+        .questao {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .questao h3 {
+            color: #2d3748;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+
+        .enunciado {
+            margin-bottom: 20px;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+
+        .alternativa {
+            display: block;
+            padding: 12px 16px;
+            margin: 10px 0;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .alternativa:hover:not(.respondida) {
+            border-color: #3182ce;
+            background: #ebf8ff;
+            transform: translateX(5px);
+        }
+
+        .alternativa.correta {
+            border-color: #38a169;
+            background: #f0fff4;
+            color: #22543d;
+            font-weight: 500;
+        }
+
+        .alternativa.errada {
+            border-color: #e53e3e;
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .alternativa.respondida {
+            cursor: default;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback.acerto {
+            display: block;
+            background: #f0fff4;
+            border: 2px solid #38a169;
+            color: #22543d;
+        }
+
+        .feedback.erro {
+            display: block;
+            background: #fed7d7;
+            border: 2px solid #e53e3e;
+            color: #742a2a;
+        }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            background: #edf2f7;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 4px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #edf2f7;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #f7fafc;
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .questao {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- CABEÇALHO COM ILUSTRAÇÃO SVG -->
+        <header>
+            <h1>⚗️ Química — Aula 06</h1>
+            <p>Velocidade das reações, catalisadores e equilíbrio químico</p>
+        </header>
+
+        <main>
+            <!-- ILUSTRAÇÃO 1: Frasco de laboratório em SVG -->
+            <div class="ilustracao">
+                <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Frasco -->
+                    <path d="M60,30 L140,30 L130,120 C130,135 70,135 70,120 L60,30 Z" fill="#e3f2fd" stroke="#2b6cb0" stroke-width="3"/>
+                    <!-- Bolhas -->
+                    <circle cx="90" cy="50" r="6" fill="#ffcc00" opacity="0.8"/>
+                    <circle cx="110" cy="42" r="8" fill="#ff9800" opacity="0.7"/>
+                    <circle cx="100" cy="65" r="5" fill="#ffcc00" opacity="0.6"/>
+                    <!-- Líquido -->
+                    <path d="M70,100 L130,100 L130,120 C130,135 70,135 70,120 Z" fill="#64b5f6" opacity="0.5"/>
+                    <!-- Bolhas no líquido -->
+                    <circle cx="85" cy="108" r="4" fill="white" opacity="0.7"/>
+                    <circle cx="110" cy="112" r="5" fill="white" opacity="0.6"/>
+                    <circle cx="98" cy="105" r="3" fill="white" opacity="0.8"/>
                 </svg>
-                <p class="text-sm text-gray-600 mt-2">✅ Conversão correta do tempo para segundos e cálculo adequado da variação de concentração.</p>
-            </div>
-            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err1">
-                <p class="font-semibold text-red-700">Resposta Incorreta</p>
-                <p class="mt-2">• A: Superestima a velocidade, ignorando variação real<br>
-                • B: Erro na conversão de unidades<br>
-                • C: Não converteu minutos para segundos<br>
-                • E: Interpretação errada dos dados</p>
-            </div>
-        </section>
-
-        <!-- Exercício 2 -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 2 - (ENEM 2018)</h2>
-            <p class="mb-4">O vermelhão (HgS) escurece com o tempo devido à decomposição fotoquímica. O íon Cl⁻ presente na umidade atua como catalisador:</p>
-            
-            <svg viewBox="0 0 450 80" class="mx-auto">
-                <text x="20" y="30" font-size="15">2 HgS(s)  ────→  2 Hg(s) + S₂(g)</text>
-                <text x="150" y="20" font-size="12">luz</text>
-                <text x="150" y="45" font-size="12">Cl⁻ (catalisador)</text>
-            </svg>
-
-            <p class="mb-3 font-medium">Qual o papel do íon cloreto nessa reação?</p>
-            <div class="space-y-2 mb-4">
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Agente oxidante</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Absorve luz visível</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">C) Diminui a energia de ativação</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) Precipita cloreto de mercúrio</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) Desloca o equilíbrio químico</div>
             </div>
 
-            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans2">
-                <p class="font-semibold text-green-700">Resposta Correta: C</p>
-                <p class="mt-2">✅ Função do catalisador:</p>
-                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-                    <li>Oferece caminho alternativo com menor energia de ativação</li>
-                    <li>Não é consumido na reação</li>
-                    <li>Não altera a constante de equilíbrio</li>
-                    <li>Apenas acelera a velocidade da reação direta e inversa</li>
-                </ul>
-            </div>
-            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err2">
-                <p class="font-semibold text-red-700">Resposta Incorreta</p>
-                <p class="mt-2">• A: Não participa de oxirredução<br>
-                • B: A luz é absorvida pelo HgS<br>
-                • D: Não forma precipitado<br>
-                • E: Catalisadores não alteram equilíbrio</p>
-            </div>
-        </section>
+            <!-- INTRODUÇÃO -->
+            <section class="introducao">
+                <strong>📚 Olá, estudante!</strong> Resolva as questões abaixo clicando na alternativa que você acha correta. 
+                Se acertar, a resposta será mostrada em verde com a explicação completa. Se errar, aparecerá mensagem em vermelho com a resposta certa.
+            </section>
 
-        <!-- Exercício 3 -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 3 - (ENEM 2014)</h2>
-            <p class="mb-4">O excesso de CO₂ na atmosfera acidifica os oceanos, alterando o equilíbrio do sistema carbonato:</p>
-            
-            <svg viewBox="0 0 480 100" class="mx-auto">
-                <text x="10" y="25" font-size="14">CO₂(g) + H₂O(l) ⇌ H₂CO₃(aq)</text>
-                <text x="10" y="45" font-size="14">H₂CO₃(aq) ⇌ H⁺(aq) + HCO₃⁻(aq)</text>
-                <text x="10" y="65" font-size="14">HCO₃⁻(aq) ⇌ 2 H⁺(aq) + CO₃²⁻(aq)</text>
-                <text x="10" y="85" font-size="14">Corais: Ca²⁺ + CO₃²⁻ ⇌ CaCO₃(s) (esqueletos)</text>
-            </svg>
+            <!-- QUESTÃO 1 -->
+            <section class="questao" id="q1">
+                <h3>Questão 1 — Velocidade média de reação (CESMAC 2020)</h3>
+                <div class="enunciado">
+                    O peróxido de hidrogênio decompõe-se em água e oxigênio. A concentração foi monitorada com o tempo:
+                    <table>
+                        <tr><th>Tempo (min)</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+                        <tr><th>[H₂O₂] (mol·L⁻¹)</th><td>2,0</td><td>1,7</td><td>1,4</td><td>1,1</td></tr>
+                    </table>
+                    Qual a velocidade média, em mol·L⁻¹·s⁻¹?
+                </div>
 
-            <p class="mb-3 font-medium">O excesso de CO₂ causa qual efeito nos corais?</p>
-            <div class="space-y-2 mb-4">
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Branqueamento e morte</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Excesso de fixação de cálcio</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) Menor incorporação de carbono</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) Estímulo da atividade enzimática</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">E) Dano à estrutura calcária</div>
-            </div>
+                <label class="alternativa" onclick="responder(1, 'A', this)">A) 1,0</label>
+                <label class="alternativa" onclick="responder(1, 'B', this)">B) 0,01</label>
+                <label class="alternativa" onclick="responder(1, 'C', this)">C) 0,3</label>
+                <label class="alternativa" onclick="responder(1, 'D', this)">D) 0,005</label>
+                <label class="alternativa" onclick="responder(1, 'E', this)">E) 0,6</label>
 
-            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans3">
-                <p class="font-semibold text-green-700">Resposta Correta: E</p>
-                <p class="mt-2">Explicação:</p>
-                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-                    <li>Aumento de CO₂ → mais H⁺ → diminui concentração de CO₃²⁻</li>
-                    <li>Menos íons carbonato → menor formação de CaCO₃</li>
-                    <li>Descalcificação e enfraquecimento dos esqueletos dos corais</li>
-                    <li>Redução das populações de corais</li>
-                </ul>
-            </div>
-            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err3">
-                <p class="font-semibold text-red-700">Resposta Incorreta</p>
-                <p class="mt-2">• A: Causado por aumento de temperatura<br>
-                • B: Ao contrário, diminui a formação<br>
-                • C: Problema é falta de CO₃²⁻, não de carbono<br>
-                • D: Não envolve enzimas</p>
-            </div>
-        </section>
+                <div class="feedback" id="fb1"></div>
+            </section>
 
-        <!-- Exercício 4 -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 4 - (ENEM 2025)</h2>
-            <p class="mb-4">Reação de cloração do dióxido de titânio:</p>
-            
-            <svg viewBox="0 0 500 70" class="mx-auto">
-                <text x="20" y="30" font-size="15">TiO₂(s) + 2 Cl₂(g) ⇌ TiCl₄(g) + O₂(g)</text>
-                <text x="20" y="50" font-size="14">ΔH = +175 kJ/mol (reação endotérmica)</text>
-            </svg>
-
-            <p class="mb-3 font-medium">Como favorecer a formação de TiCl₄?</p>
-            <div class="space-y-2 mb-4">
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) Aumentar pressão total</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) Diminuir temperatura</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">C) Aumentar O₂</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">D) Aumentar pressão parcial de Cl₂</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) Variar quantidade de TiO₂</div>
+            <!-- ILUSTRAÇÃO 2: Moléculas em SVG -->
+            <div class="ilustracao">
+                <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Molécula H2O2 -->
+                    <circle cx="40" cy="50" r="18" fill="#ff6f61" stroke="#c0392b" stroke-width="2"/>
+                    <text x="35" y="56" fill="white" font-size="14" font-weight="bold">O</text>
+                    <circle cx="65" cy="50" r="10" fill="#4fc3f7" stroke="#0288d1" stroke-width="2"/>
+                    <text x="62" y="54" fill="white" font-size="10">H</text>
+                    <circle cx="95" cy="50" r="18" fill="#ff6f61" stroke="#c0392b" stroke-width="2"/>
+                    <text x="90" y="56" fill="white" font-size="14" font-weight="bold">O</text>
+                    <circle cx="120" cy="50" r="10" fill="#4fc3f7" stroke="#0288d1" stroke-width="2"/>
+                    <text x="117" y="54" fill="white" font-size="10">H</text>
+                    
+                    <!-- Seta -->
+                    <path d="M145,45 L175,45 L175,40 L185,48 L175,56 L175,51 L145,51 Z" fill="#2b6cb0"/>
+                    
+                    <!-- Produtos: H2O e O2 -->
+                    <circle cx="200" cy="40" r="16" fill="#4fc3f7" stroke="#0288d1" stroke-width="2"/>
+                    <text x="196" y="46" fill="white" font-size="12">O</text>
+                    <circle cx="215" cy="60" r="9" fill="#ff6f61" stroke="#c0392b" stroke-width="2"/>
+                    <circle cx="225" cy="40" r="9" fill="#ff6f61" stroke="#c0392b" stroke-width="2"/>
+                    <text x="218" y="70" fill="#2d3748" font-size="10">H₂O</text>
+                    
+                    <circle cx="60" cy="85" r="14" fill="#81c784" stroke="#388e3c" stroke-width="2"/>
+                    <circle cx="80" cy="85" r="14" fill="#81c784" stroke="#388e3c" stroke-width="2"/>
+                    <text x="68" y="90" fill="white" font-size="12">O₂</text>
+                </svg>
             </div>
 
-            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans4">
-                <p class="font-semibold text-green">Resposta Correta: D</p>
-                <p class="mt-2">Análise pelo Princípio de Le Châtelier:</p>
-                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-                    <li>TiO₂ é sólido → não interfere no equilíbrio</li>
-                    <li>Mols de gás: reagentes = 2, produtos = 2 → pressão total não altera equilíbrio</li>
-                    <li>Reação endotérmica → aumentar temperatura favorece formação de produtos</li>
-                    <li>Aumentar Cl₂ (reagente) desloca equilíbrio para direita → mais TiCl₄</li>
-                </ul>
-            </div>
-            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err4">
-                <p class="font-semibold text-red-700">Resposta Incorreta</p>
-                <p class="mt-2">• A: Número de mols de gás igual nos dois lados<br>
-                • B: Reação é endotérmica → diminuir T reduz produtos<br>
-                • C: Aumentar produto desloca para esquerda<br>
-                • E: Sólidos não alteram equilíbrio</p>
-            </div>
-        </section>
+            <!-- QUESTÃO 2 -->
+            <section class="questao" id="q2">
+                <h3>Questão 2 — Catalisador (ENEM 2018)</h3>
+                <div class="enunciado">
+                    O sulfeto de mercúrio(II) (vermelhão) escurece com o tempo. A hipótese é que ele se decomponha pela ação da luz, e essa reação seja catalisada pelo íon cloreto presente na umidade do ar. Nessa hipótese, o íon cloreto atua:
+                </div>
 
-        <!-- Exercício 5 -->
-        <section class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-semibold text-blue-600 mb-4">Atividade 5 - (UNESP 2022)</h2>
-            <p class="mb-4">Reforma do gás natural para produção de hidrogênio:</p>
-            
-            <svg viewBox="0 0 520 80" class="mx-auto">
-                <text x="10" y="30" font-size="15">CH₄(g) + H₂O(g) ⇌ CO(g) + 3 H₂(g)</text>
-                <text x="10" y="55" font-size="14">ΔH > 0 (endotérmica)</text>
-                <text x="10" y="75" font-size="13">Mols de gás: esquerda = 2 | direita = 4</text>
-            </svg>
+                <label class="alternativa" onclick="responder(2, 'A', this)">A) Como agente oxidante.</label>
+                <label class="alternativa" onclick="responder(2, 'B', this)">B) Absorvendo energia da luz visível.</label>
+                <label class="alternativa" onclick="responder(2, 'C', this)">C) Precipitando cloreto de mercúrio.</label>
+                <label class="alternativa" onclick="responder(2, 'D', this)">D) Diminuindo a energia de ativação.</label>
+                <label class="alternativa" onclick="responder(2, 'E', this)">E) Deslocando o equilíbrio químico.</label>
 
-            <p class="mb-3 font-medium">Quais procedimentos aumentam o rendimento de H₂?</p>
-            <div class="space-y-2 mb-4">
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">A) 1 e 2</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">B) 1 e 3</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'correct')">C) 2 e 4</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">D) 3 e 4</div>
-                <div class="option border border-gray-300 rounded-lg p-3 cursor-pointer" onclick="checkAnswer(this, 'wrong')">E) 2 e 3</div>
-            </div>
+                <div class="feedback" id="fb2"></div>
+            </section>
 
-            <div class="answer-box border border-green-200 bg-green-50 rounded-lg p-4 mt-3" id="ans5">
-                <p class="font-semibold text-green-700">Resposta Correta: C</p>
-                <p class="mt-2">Análise dos procedimentos:</p>
-                <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-                    <li>1. Aumentar pressão → desloca para esquerda (menos mols de gás) → DIMINUI H₂</li>
-                    <li>2. Aumentar temperatura → reação endotérmica → desloca para direita → AUMENTA H₂</li>
-                    <li>3. Catalisador → NÃO ALTERA posição do equilíbrio</li>
-                    <li>4. Remover CO → sistema produz mais produtos → AUMENTA H₂</li>
-                    <li>✅ Procedimentos corretos: 2 e 4</li>
-                </ul>
-            </div>
-            <div class="answer-box border border-red-200 bg-red-50 rounded-lg p-4 mt-3 hidden" id="err5">
-                <p class="font-semibold text-red-700">Resposta Incorreta</p>
-                <p class="mt-2">• Lembre-se: catalisador só acelera, não muda rendimento<br>
-                • Pressão afeta reações com diferença de mols de gás</p>
-            </div>
-        </section>
+            <!-- QUESTÃO 3 -->
+            <section class="questao" id="q3">
+                <h3>Questão 3 — Equilíbrio marinho e corais (ENEM 2014)</h3>
+                <div class="enunciado">
+                    Parte do CO₂ atmosférico é absorvida pelos oceanos. O excesso de dióxido de carbono altera o equilíbrio químico da água do mar. Qual é o resultado desse processo nos corais?
+                </div>
 
-        <footer class="text-center text-gray-500 text-sm pt-4 border-t">
-            <p>Material baseado em: quimica.pdf | Atualizado: 2026</p>
+                <label class="alternativa" onclick="responder(3, 'A', this)">A) Seu branqueamento, levando à morte e extinção.</label>
+                <label class="alternativa" onclick="responder(3, 'B', this)">B) Dano à estrutura dos esqueletos calcários, diminuindo as populações.</label>
+                <label class="alternativa" onclick="responder(3, 'C', this)">C) Estímulo da atividade enzimática, evitando a descalcificação.</label>
+                <label class="alternativa" onclick="responder(3, 'D', this)">D) Menor incorporação de carbono, afetando o metabolismo energético.</label>
+                <label class="alternativa" onclick="responder(3, 'E', this)">E) Excesso de fixação de cálcio, provocando calcificação indesejável.</label>
+
+                <div class="feedback" id="fb3"></div>
+            </section>
+
+            <!-- QUESTÃO 4 -->
+            <section class="questao" id="q4">
+                <h3>Questão 4 — Deslocamento de equilíbrio (ENEM 2025)</h3>
+                <div class="enunciado">
+                    Reação: <span class="formula">TiO₂(s) + 2 Cl₂(g) ⇌ TiCl₄(g) + O₂(g) &nbsp; ΔH = +175 kJ/mol</span><br>
+                    Como favorecer a formação do TiCl₄ após o equilíbrio?
+                </div>
+
+                <label class="alternativa" onclick="responder(4, 'A', this)">A) Aumentando a pressão total do sistema.</label>
+                <label class="alternativa" onclick="responder(4, 'B', this)">B) Variando a quantidade de TiO₂.</label>
+                <label class="alternativa" onclick="responder(4, 'C', this)">C) Aumentando a pressão parcial de Cl₂.</label>
+                <label class="alternativa" onclick="responder(4, 'D', this)">D) Aumentando a pressão parcial de O₂.</label>
+                <label class="alternativa" onclick="responder(4, 'E', this)">E) Diminuindo a temperatura do sistema.</label>
+
+                <div class="feedback" id="fb4"></div>
+            </section>
+
+            <!-- QUESTÃO 5 -->
+            <section class="questao" id="q5">
+                <h3>Questão 5 — Rendimento na produção de hidrogênio (UNESP 2022)</h3>
+                <div class="enunciado">
+                    Reação: <span class="formula">CH₄(g) + H₂O(g) ⇌ CO(g) + 3 H₂(g) &nbsp; ΔH > 0</span><br>
+                    Quais procedimentos aumentam o rendimento de H₂ no equilíbrio?<br>
+                    1. Aumento de pressão &nbsp; 2. Aumento de temperatura &nbsp; 3. Adição de catalisador &nbsp; 4. Remoção de CO
+                </div>
+
+                <label class="alternativa" onclick="responder(5, 'A', this)">A) 1 e 2</label>
+                <label class="alternativa" onclick="responder(5, 'B', this)">B) 1 e 3</label>
+                <label class="alternativa" onclick="responder(5, 'C', this)">C) 2 e 4</label>
+                <label class="alternativa" onclick="responder(5, 'D', this)">D) 3 e 4</label>
+                <label class="alternativa" onclick="responder(5, 'E', this)">E) 2 e 3</label>
+
+                <div class="feedback" id="fb5"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            🔬 Aula de Química — Atividades Interativas | Conteúdo adaptado de CESMAC, ENEM e UNESP
         </footer>
     </div>
 
     <script>
-        function checkAnswer(element, status) {
-            const parent = element.parentElement;
-            const allOptions = parent.querySelectorAll('.option');
-            const exerciseId = parent.parentElement.querySelector('.answer-box').id.replace('ans', '');
-            const correctBox = document.getElementById('ans' + exerciseId);
-            const errorBox = document.getElementById('err' + exerciseId);
+        // ===== GABARITO E EXPLICAÇÕES =====
+        const respostas = {
+            1: {
+                certa: 'D',
+                explicacao: `
+                    <strong>✅ Resposta correta: D) 0,005</strong><br><br>
+                    📌 Cálculo:<br>
+                    Variação de concentração: ΔC = 2,0 − 1,1 = 0,9 mol·L⁻¹<br>
+                    Variação de tempo: Δt = 3 min = 180 s<br>
+                    Velocidade média = ΔC ÷ Δt = 0,9 ÷ 180 = <strong>0,005 mol·L⁻¹·s⁻¹</strong>
+                `
+            },
+            2: {
+                certa: 'D',
+                explicacao: `
+                    <strong>✅ Resposta correta: D) Diminuindo a energia de ativação</strong><br><br>
+                    📌 O íon cloreto age como <strong>catalisador</strong>. Catalisadores aceleram reações 
+                    <u>reduzindo a energia de ativação</u> e <u>não</u> são consumidos. 
+                    Não alteram o equilíbrio nem agem como reagentes.
+                `
+            },
+            3: {
+                certa: 'B',
+                explicacao: `
+                    <strong>✅ Resposta correta: B) Dano à estrutura dos esqueletos calcários, diminuindo as populações</strong><br><br>
+                    📌 Mais CO₂ → mais H⁺ → menor concentração de íons carbonato na água do mar. 
+                    Corais precisam de carbonato para formar CaCO₃ (esqueleto). Com menos carbonato, 
+                    <strong>dificulta-se a formação e provoca descalcificação</strong>.
+                `
+            },
+            4: {
+                certa: 'C',
+                explicacao: `
+                    <strong>✅ Resposta correta: C) Aumentando a pressão parcial de Cl₂</strong><br><br>
+                    📌 Pelo princípio de Le Chatelier:<br>
+                    • Aumentar pressão de reagente (Cl₂) → desloca para a direita ✅<br>
+                    • TiO₂ é sólido — concentração não muda ❌<br>
+                    • Aumentar pressão total: 3 mols gás ↔ 2 mols gás → desloca à esquerda ❌<br>
+                    • Aumentar O₂ (produto) → desloca à esquerda ❌<br>
+                    • Reação endotérmica (ΔH > 0) → diminuir T → desloca à esquerda ❌
+                `
+            },
+            5: {
+                certa: 'C',
+                explicacao: `
+                    <strong>✅ Resposta correta: C) 2 e 4</strong><br><br>
+                    📌 Análise dos procedimentos:<br>
+                    1. Aumento de pressão → desloca para menos gás (esquerda) ❌<br>
+                    2. Aumento de temperatura → favorece endotérmica (direita) ✅<br>
+                    3. Catalisador → só acelera, não muda rendimento ❌<br>
+                    4. Remover CO → desloca para direita ✅
+                `
+            }
+        };
 
-            // Limpa estilos anteriores
-            allOptions.forEach(opt => {
-                opt.classList.remove('correct', 'wrong');
-            });
+        // ===== FUNÇÃO DE RESPOSTA =====
+        function responder(numQuestao, letra, elemento) {
+            // Impede nova resposta
+            const questao = document.getElementById(`q${numQuestao}`);
+            const alternativas = questao.querySelectorAll('.alternativa');
+            alternativas.forEach(alt => alt.classList.add('respondida'));
 
-            if(status === 'correct') {
-                element.classList.add('correct');
-                correctBox.style.display = 'block';
-                errorBox.classList.add('hidden');
+            const fb = document.getElementById(`fb${numQuestao}`);
+            const dado = respostas[numQuestao];
+
+            if (letra === dado.certa) {
+                elemento.classList.add('correta');
+                fb.className = 'feedback acerto';
+                fb.innerHTML = dado.explicacao;
             } else {
-                element.classList.add('wrong');
-                errorBox.classList.remove('hidden');
-                correctBox.style.display = 'none';
+                elemento.classList.add('errada');
+                // Marca a correta
+                alternativas.forEach(alt => {
+                    if (alt.textContent.startsWith(dado.certa + ')')) {
+                        alt.classList.add('correta');
+                    }
+                });
+                fb.className = 'feedback erro';
+                fb.innerHTML = `
+                    <strong>❌ Ops, não é essa!</strong><br><br>
+                    A resposta correta é a alternativa <strong>${dado.certa}</strong>.<br><br>
+                    ${dado.explicacao}
+                `;
             }
         }
     </script>
-</body>
+    </style>
+</head>
 </html></p>
-        </div>
-
-
-
-
-
-
-        
-        <div class="conteudo-aula" id="aula-7">
-            <h2>Aula 07: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-8">
-            <h2>Aula 08: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-9">
-            <h2>Aula 09: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-10">
-            <h2>Aula 10: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-11">
-            <h2>Aula 11: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-12">
-            <h2>Aula 12: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-13">
-            <h2>Aula 13: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
-        </div>
-        <div class="conteudo-aula" id="aula-14">
-            <h2>Aula 14: Em preparação</h2>
-            <p>Conteúdo será disponibilizado em breve.</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="6">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="6">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="6">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
         </div>
     </div>
 
-    <script>
-        const botoes = document.querySelectorAll('.botao-aula');
-        const conteudos = document.querySelectorAll('.conteudo-aula');
 
-        botoes.forEach(botao => {
-            botao.addEventListener('click', () => {
-                botoes.forEach(btn => btn.classList.remove('ativa'));
-                conteudos.forEach(ctd => ctd.classList.remove('visivel'));
 
-                const aula = botao.getAttribute('data-aula');
-                botao.classList.add('ativa');
-                document.getElementById(`aula-${aula}`).classList.add('visivel');
-            });
-        });
-    </script>
 
-    <footer style="text-align:center; margin-top:40px; color:#718096; font-size:0.9rem;">
-        Prof. Valter © 2026
+
+
+
+  
+    <!-- Aula 07 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="7">Aula 07</button>
+        <div class="conteudo-aula" id="aula-7">
+            <h2>Aula 07: Constante de ionização
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 07: Constante de Ionização</title>
+    
+    <style>
+        /* Estilos gerais e responsivos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2e8b57;
+            margin: 30px 0 15px;
+            border-left: 5px solid #3cb371;
+            padding-left: 12px;
+        }
+
+        h3 {
+            color: #2f4f4f;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .ilustracao {
+            text-align: center;
+            margin: 25px auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            max-width: 450px;
+        }
+
+        .ilustracao svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .destaque {
+            background-color: #fff8dc;
+            border: 2px solid #f0e68c;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+
+        .exemplo {
+            background-color: #e6f2ff;
+            border-left: 4px solid #4169e1;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3cb371;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.4rem; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 8px; }
+            .ilustracao { margin: 15px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔬 Química — Aula 07</h1>
+        <p style="text-align:center; font-size:1.1rem; margin-top:8px;">Constante de Ionização: A Força dos Ácidos e das Bases</p>
+    </header>
+
+    <main>
+        <!-- Introdução -->
+        <h2>Introdução: Ácidos e Bases no Dia a Dia</h2>
+        <p>Você já parou para pensar por que o limão é mais ácido que a laranja, sendo ambas frutas cítricas? Ou por que algumas pessoas precisam tomar antiácido após certas refeições e outras não? A resposta está na forma como cada substância se comporta em solução aquosa — e é isso que vamos estudar nesta aula!</p>
+
+        <!-- Primeira ilustração embutida: Ácidos e frutas cítricas -->
+        <div class="ilustracao">
+            <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ilustração criada do zero: comparação limão × laranja -->
+                <ellipse cx="100" cy="100" rx="60" ry="75" fill="#FFD700" stroke="#CCAA00" stroke-width="3"/>
+                <ellipse cx="85" cy="90" rx="8" ry="12" fill="#FFE44D" opacity="0.7"/>
+                <path d="M100 30 Q115 15 105 25 Q95 20 100 30" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+                <text x="100" y="190" text-anchor="middle" font-size="16" fill="#333">🍋 Limão</text>
+                <text x="100" y="15" text-anchor="middle" font-size="12" fill="#555">Mais ácido → pH menor</text>
+
+                <ellipse cx="300" cy="105" rx="65" ry="70" fill="#FFA500" stroke="#CC8400" stroke-width="3"/>
+                <ellipse cx="280" cy="90" rx="10" ry="15" fill="#FFC84D" opacity="0.6"/>
+                <path d="M300 35 Q320 18 308 28 Q290 22 300 35" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+                <text x="300" y="190" text-anchor="middle" font-size="16" fill="#333">🍊 Laranja</text>
+                <text x="300" y="15" text-anchor="middle" font-size="12" fill="#555">Menos ácido → pH maior</text>
+
+                <path d="M175 90 L225 90" stroke="#555" stroke-width="2" marker-end="url(#seta)"/>
+                <defs>
+                    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <polygon points="0 0, 10 5, 0 10" fill="#555"/>
+                    </marker>
+                </defs>
+                <text x="200" y="65" text-anchor="middle" font-size="11" fill="#666">Menos H⁺ | Mais H⁺</text>
+            </svg>
+            <p style="font-size:0.9rem; color:#555; margin-top:8px;">Figura 1 — Comparação entre a acidez do limão e da laranja</p>
+        </div>
+
+        <h3>Por que o limão é mais ácido que a laranja?</h3>
+        <p>O limão é mais ácido que a laranja principalmente porque possui <strong>maior concentração de ácido cítrico</strong>. Quanto maior a concentração de íons H⁺ (ou H₃O⁺) na solução, maior é a acidez e menor é o pH.</p>
+        <ul style="margin: 10px 0 20px 30px;">
+            <li>🍋 <strong>Limão:</strong> mais ácido cítrico → mais íons H⁺ → pH mais baixo → sabor mais azedo.</li>
+            <li>🍊 <strong>Laranja:</strong> menos ácido cítrico e mais açúcares → menos íons H⁺ → pH mais alto → sabor menos ácido.</li>
+        </ul>
+
+        <h3>Por que algumas pessoas precisam de antiácido e outras não?</h3>
+        <p>Isso ocorre porque a quantidade de ácido produzida no estômago e a sensibilidade de cada pessoa são diferentes. Alimentos gordurosos ou refeições grandes podem provocar o retorno do conteúdo ácido do estômago ao esôfago, causando azia e queimação. O antiácido é uma <strong>base</strong> que neutraliza parte desse ácido, aliviando os sintomas.</p>
+
+        <div class="destaque">
+            <strong>💡 Importante:</strong> A <em>concentração</em> (quantidade) é diferente da <em>força</em> do ácido ou da base! Um ácido pode estar em baixa concentração e ainda assim ser forte, ou ter muita quantidade e ser fraco. É isso que vamos compreender melhor agora.
+        </div>
+
+        <!-- Ácidos e bases fortes vs fracos -->
+        <h2>Comportamento de Ácidos e Bases em Solução Aquosa</h2>
+        <p>Nem todos os ácidos e bases se comportam da mesma forma na água. Alguns se ionizam quase totalmente e são classificados como <strong>fortes</strong>; outros se ionizam apenas parcialmente e são chamados de <strong>fracos</strong>.</p>
+
+        <div class="exemplo">
+            <strong>Exemplos:</strong><br>
+            ✅ Ácido clorídrico (HCl) → ácido <strong>forte</strong> — ionização quase total.<br>
+            ✅ Hidróxido de sódio (NaOH) → base <strong>forte</strong> — dissociação quase total.<br>
+            ⚠️ Ácido acético (vinagre) → ácido <strong>fraco</strong> — ionização parcial.<br>
+            ⚠️ Amônia (NH₃) → base <strong>fraca</strong> — reação parcial com a água.
+        </div>
+
+        <!-- Segunda ilustração embutida: equilíbrio e ionização -->
+        <div class="ilustracao">
+            <svg width="420" height="220" viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ácido forte -->
+                <rect x="20" y="20" width="160" height="140" fill="#E6F2FF" stroke="#4169E1" stroke-width="2" rx="8"/>
+                <text x="100" y="42" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">ÁCIDO FORTE</text>
+                <circle cx="50" cy="80" r="10" fill="#FF6B6B"/><text x="50" y="84" text-anchor="middle" font-size="10" fill="white">H⁺</text>
+                <circle cx="90" cy="80" r="10" fill="#6B8CFF"/><text x="90" y="84" text-anchor="middle" font-size="10" fill="white">A⁻</text>
+                <circle cx="130" cy="110" r="10" fill="#FF6B6B"/><text x="130" y="114" text-anchor="middle" font-size="10" fill="white">H⁺</text>
+                <circle cx="70" cy="120" r="10" fill="#6B8CFF"/><text x="70" y="124" text-anchor="middle" font-size="10" fill="white">A⁻</text>
+                <text x="100" y="150" text-anchor="middle" font-size="11" fill="#2E5B99">Ionização quase total</text>
+
+                <!-- Ácido fraco -->
+                <rect x="240" y="20" width="160" height="140" fill="#FFECEC" stroke="#E65C3C" stroke-width="2" rx="8"/>
+                <text x="320" y="42" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">ÁCIDO FRACO</text>
+                <rect x="285" y="75" width="30" height="20" rx="4" fill="#D4A373" stroke="#A07842" stroke-width="1"/>
+                <text x="300" y="90" text-anchor="middle" font-size="9" fill="#333">HA</text>
+                <rect x="335" y="105" width="30" height="20" rx="4" fill="#D4A373" stroke="#A07842" stroke-width="1"/>
+                <text x="350" y="120" text-anchor="middle" font-size="9" fill="#333">HA</text>
+                <circle cx="265" cy="110" r="8" fill="#FF6B6B"/><text x="265" y="113" text-anchor="middle" font-size="8" fill="white">H⁺</text>
+                <circle cx="375" cy="80" r="8" fill="#6B8CFF"/><text x="375" y="83" text-anchor="middle" font-size="8" fill="white">A⁻</text>
+                <text x="320" y="150" text-anchor="middle" font-size="11" fill="#A04020">Predominam moléculas não ionizadas</text>
+
+                <text x="210" y="205" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">↑ Mais íons → Kₐ maior ↑ ─────── ↓ Menos íons → Kₐ menor ↓</text>
+            </svg>
+            <p style="font-size:0.9rem; color:#555; margin-top:8px;">Figura 2 — Comparação entre ácido forte e ácido fraco em solução</p>
+        </div>
+
+        <!-- Constante de ionização -->
+        <h2>Constante de Ionização (Kₐ e Kb)</h2>
+        <p>A constante de ionização indica a <strong>tendência</strong> de um ácido ou de uma base de formar íons ao ser dissolvido em água:</p>
+        <ul style="margin: 10px 0 20px 30px;">
+            <li><strong>Kₐ</strong> → constante de ionização de <strong>ácidos</strong>.</li>
+            <li><strong>Kb</strong> → constante de ionização de <strong>bases</strong>.</li>
+        </ul>
+
+        <div class="destaque">
+            <p>✅ <strong>Kₐ ou Kb maior</strong> → maior tendência à ionização → substância mais forte.<br>
+            ✅ <strong>Kₐ ou Kb menor</strong> → menor tendência à ionização → substância mais fraca.</p>
+        </div>
+
+        <h3>Equilíbrio Químico em Soluções Ácidas e Básicas</h3>
+        <p>O equilíbrio químico <strong>não significa que a reação parou</strong>! No caso de um ácido fraco, por exemplo, a ionização e a recombinação dos íons continuam acontecendo, mas <strong>com a mesma velocidade</strong>. Por isso, as concentrações permanecem constantes.</p>
+
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>Soluções ÁCIDAS</th>
+                <th>Soluções BÁSICAS</th>
+            </tr>
+            <tr>
+                <td>Espécie formada</td>
+                <td>Íons H₃O⁺ (hidrônio)</td>
+                <td>Íons OH⁻ (hidróxido)</td>
+            </tr>
+            <tr>
+                <td>Equilíbrio entre</td>
+                <td>Ácido não ionizado e íons formados</td>
+                <td>Base não ionizada e íons formados</td>
+            </tr>
+            <tr>
+                <td>Constante</td>
+                <td>Kₐ</td>
+                <td>Kb</td>
+            </tr>
+            <tr>
+                <td>K elevado →</td>
+                <td>Ácido mais forte</td>
+                <td>Base mais forte</td>
+            </tr>
+            <tr>
+                <td>Comportamento</td>
+                <td>Fortes: equilíbrio deslocado para íons<br>Frágeis: predomínio de moléculas neutras</td>
+                <td>Fortes: equilíbrio deslocado para íons<br>Frágeis: predomínio de moléculas neutras</td>
+            </tr>
+        </table>
+
+        <h3>Grau de Ionização (α)</h3>
+        <p>O grau de ionização (<strong>α</strong>) representa a fração da substância que efetivamente se transformou em íons na solução:</p>
+        <ul style="margin: 10px 0 20px 30px;">
+            <li>α próximo de 1 → ionização quase total → ácido ou base <strong>forte</strong>.</li>
+            <li>α pequeno → ionização parcial → ácido ou base <strong>fraco</strong>.</li>
+            <li>Exemplo: α = 0,20 significa que cerca de 20% das partículas se ionizaram.</li>
+        </ul>
+        <p><strong>Diferença chave:</strong> Kₐ/Kb indicam a <em>tendência</em> de ionização; α indica quanto <em>efetivamente</em> se ionizou. O grau de ionização também depende da <strong>concentração</strong> da solução!</p>
+
+        <h3>Lei da Diluição de Ostwald</h3>
+        <p>Para eletrólitos fracos, a diluição <strong>favorece a ionização</strong>:</p>
+        <ul style="margin: 10px 0 20px 30px;">
+            <li>Quanto <strong>maior</strong> a concentração → <strong>menor</strong> o grau de ionização (α).</li>
+            <li>Quanto <strong>menor</strong> a concentração → <strong>maior</strong> o grau de ionização (α).</li>
+            <li>Maior Kₐ ou Kb → maior tendência à ionização, independentemente da concentração.</li>
+        </ul>
+
+        <!-- Tabela resumo -->
+        <h2>Resumo para Memorizar</h2>
+        <table>
+            <tr>
+                <th>Constante</th>
+                <th>Indica</th>
+                <th>Quanto maior o valor...</th>
+                <th>Exemplo</th>
+            </tr>
+            <tr>
+                <td><strong>Kₐ alto</strong></td>
+                <td>Equilíbrio deslocado para íons</td>
+                <td>Ácido mais forte</td>
+                <td>HCl (ácido clorídrico)</td>
+            </tr>
+            <tr>
+                <td><strong>Kₐ baixo</strong></td>
+                <td>Poucos íons formados</td>
+                <td>Ácido mais fraco</td>
+                <td>CH₃COOH (ácido acético)</td>
+            </tr>
+            <tr>
+                <td><strong>Kb alto</strong></td>
+                <td>Equilíbrio deslocado para íons</td>
+                <td>Base mais forte</td>
+                <td>NaOH (hidróxido de sódio)</td>
+            </tr>
+            <tr>
+                <td><strong>Kb baixo</strong></td>
+                <td>Poucos íons formados</td>
+                <td>Base mais fraca</td>
+                <td>NH₃ (amônia)</td>
+            </tr>
+        </table>
+
+        <div class="destaque">
+            <strong>📌 Resumo final:</strong><br>
+            Kₐ ↑ → força do ácido ↑  Kb ↑ → força da base ↑<br>
+            Kₐ e Kb = tendência à ionização | α = quanto se ionizou efetivamente<br>
+            ⚠️ Concentração ≠ Força!
+        </div>
+    </main>
+
+    <footer>
+        Química — Aula 07: Constante de Ionização | Material educativo de uso livre ✏️
     </footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="7">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="7">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="7">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
+
+  <!-- Aula 08 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="9">Aula 08</button>
+        <div class="conteudo-aula" id="aula-9">
+            <h2>Aula 08: Produto iônico da água e pH
+</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 08: Produto Iônico da Água e pH</title>
+    <style>
+        /* ===== ESTILO GERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ===== CABEÇALHO ===== */
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #2980b9, #1abc9c);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* ===== SEÇÕES ===== */
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-bottom: 18px;
+            border-left: 4px solid #1abc9c;
+            padding-left: 12px;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: #16a085;
+            margin: 16px 0 10px;
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* ===== CAIXA DE DESTAQUE / FÓRMULAS ===== */
+        .destaque, .formula, .exemplo {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 18px 0;
+            border-radius: 6px;
+        }
+
+        .formula {
+            background-color: #fef9e7;
+            border-left-color: #f39c12;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .exemplo {
+            background-color: #eafaf1;
+            border-left-color: #27ae60;
+        }
+
+        /* ===== TABELA ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* ===== ILUSTRAÇÕES SVG ===== */
+        .ilustracao {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+            section {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- CABEÇALHO DA AULA -->
+<header>
+    <h1>Química — Aula 08</h1>
+    <p>Produto Iônico da Água e pH<br>“Toda água é igual?”</p>
+</header>
+
+<!-- SEÇÃO 1: INTRODUÇÃO -->
+<section>
+    <h2>💧 Água pura e águas naturais</h2>
+    <p>Quando dizemos que uma água é <strong>“pura”</strong>, significa que ela contém somente moléculas de água (H₂O), sem outras substâncias dissolvidas ou misturadas.</p>
+    <p>Na natureza, porém, a água quase nunca é totalmente pura: ela pode conter sais minerais, gases, microrganismos e outras substâncias. Por isso, em Ciências, “água pura” refere-se à água formada apenas por H₂O, enquanto a água potável pode conter pequenas quantidades de minerais e ainda ser própria para consumo.</p>
+
+    <!-- ILUSTRAÇÃO 1: Comparação entre água pura e água com íons (SVG embutido) -->
+    <div class="ilustracao">
+        <svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundo e rótulo esquerdo -->
+            <rect x="20" y="30" width="200" height="140" fill="#e3f2fd" stroke="#2980b9" stroke-width="2" rx="8"/>
+            <text x="120" y="185" text-anchor="middle" fill="#2c3e50" font-size="16" font-weight="bold">Água pura</text>
+            <!-- Moléculas de água -->
+            <g transform="translate(60,60)">
+                <circle cx="0" cy="0" r="14" fill="#e74c3c"/><circle cx="-10" cy="11" r="8" fill="#3498db"/><circle cx="10" cy="11" r="8" fill="#3498db"/>
+            </g>
+            <g transform="translate(120,90)">
+                <circle cx="0" cy="0" r="14" fill="#e74c3c"/><circle cx="-10" cy="11" r="8" fill="#3498db"/><circle cx="10" cy="11" r="8" fill="#3498db"/>
+            </g>
+            <g transform="translate(150,55)">
+                <circle cx="0" cy="0" r="14" fill="#e74c3c"/><circle cx="-10" cy="11" r="8" fill="#3498db"/><circle cx="10" cy="11" r="8" fill="#3498db"/>
+            </g>
+
+            <!-- Fundo e rótulo direito -->
+            <rect x="300" y="30" width="200" height="140" fill="#fff3e0" stroke="#e67e22" stroke-width="2" rx="8"/>
+            <text x="400" y="185" text-anchor="middle" fill="#2c3e50" font-size="16" font-weight="bold">Água com íons</text>
+            <!-- Moléculas de água -->
+            <g transform="translate(330,60)">
+                <circle cx="0" cy="0" r="12" fill="#e74c3c"/><circle cx="-8" cy="9" r="7" fill="#3498db"/><circle cx="8" cy="9" r="7" fill="#3498db"/>
+            </g>
+            <g transform="translate(410,100)">
+                <circle cx="0" cy="0" r="12" fill="#e74c3c"/><circle cx="-8" cy="9" r="7" fill="#3498db"/><circle cx="8" cy="9" r="7" fill="#3498db"/>
+            </g>
+            <!-- Íons -->
+            <circle cx="370" cy="75" r="1" fill="#f1c40f"/><text x="370" y="79" text-anchor="middle" font-size="11" fill="#000">Na⁺</text>
+            <circle cx="440" cy="65" r="11" fill="#9b59b6"/><text x="440" y="69" text-anchor="middle" font-size="11" fill="#fff">Cl⁻</text>
+            <circle cx="350" cy="115" r="11" fill="#2ecc71"/><text x="350" y="119" text-anchor="middle" font-size="11" fill="#000">Ca²⁺</text>
+        </svg>
+    </div>
+
+    <h3>Água mineral e água do mar diferem apenas na quantidade de sal?</h3>
+    <p><strong>Não.</strong> Elas diferem não só na quantidade de sal, mas também na composição das substâncias dissolvidas.</p>
+    <ul>
+        <li><strong>Água mineral:</strong> contém sais minerais e outros componentes naturais, geralmente em pequenas quantidades.</li>
+        <li><strong>Água do mar:</strong> possui concentração muito maior de sais, principalmente cloreto de sódio, além de outros minerais.</li>
+    </ul>
+    <p>Portanto, a principal diferença é a <strong>quantidade e o tipo</strong> de substâncias dissolvidas.</p>
+
+    <h3>Mesmo sem sabor ou cheiro, a água pode conter partículas dissolvidas?</h3>
+    <p><strong>Sim.</strong> A água pode conter substâncias dissolvidas mesmo sem apresentar sabor, cheiro ou cor — por exemplo, sais minerais e gases em pequenas quantidades que não percebemos pelos sentidos. A ausência de cor, sabor e cheiro <strong>não significa</strong> que a água seja completamente pura.</p>
+</section>
+
+<!-- SEÇÃO 2: AUTOIONIZAÇÃO E Kw -->
+<section>
+    <h2>⚗️ Equilíbrio iônico da água — Autoionização</h2>
+    <p>Mesmo na água pura, uma quantidade muito pequena de moléculas reage entre si, formando íons:</p>
+
+    <div class="formula">
+        H₂O + H₂O ⇌ H₃O⁺ + OH⁻
+    </div>
+
+    <p>Esse processo é chamado de <strong>autoionização da água</strong>. Na água pura, a quantidade de íons H₃O⁺ (hidrônio) é <strong>igual</strong> à de OH⁻ (hidróxido) — por isso a água pura é <strong>neutra</strong>.</p>
+    <p>A concentração desses íons depende da temperatura. A <strong>25 °C</strong>:</p>
+    <div class="formula">
+        [H₃O⁺] = [OH⁻] = 1,0 × 10⁻⁷ mol/L
+    </div>
+
+    <h3>Produto Iônico da Água (Kw)</h3>
+    <p>É o produto das concentrações dos íons H₃O⁺ e OH⁻:</p>
+    <div class="formula">
+        Kw = [H₃O⁺] · [OH⁻]
+    </div>
+    <p>A 25 °C:</p>
+    <div class="formula">
+        Kw = (1,0 × 10⁻⁷) × (1,0 × 10⁻⁷) = <strong>1,0 × 10⁻¹⁴</strong>
+    </div>
+
+    <div class="destaque">
+        🔹 <strong>Neutra:</strong> [H₃O⁺] = [OH⁻]<br>
+        🔹 <strong>Ácida:</strong> [H₃O⁺] > [OH⁻]<br>
+        🔹 <strong>Básica:</strong> [OH⁻] > [H₃O⁺]
+    </div>
+
+    <p><em>⚠️ Importante: o valor 1×10⁻⁷ mol/L para a neutralidade é válido a 25 °C. Em outras temperaturas, o Kw muda, mas a condição de neutralidade permanece: [H₃O⁺] = [OH⁻].</em></p>
+</section>
+
+<!-- SEÇÃO 3: pH E pOH -->
+<section>
+    <h2>📊 Definição de pH e pOH</h2>
+    <p>O <strong>pH</strong> expressa a acidez de uma solução aquosa a partir da concentração de íons hidrônio (H₃O⁺). O <strong>pOH</strong> expressa a basicidade a partir dos íons hidróxido (OH⁻).</p>
+
+    <div class="formula">
+        pH = −log [H₃O⁺]<br>
+        pOH = −log [OH⁻]
+    </div>
+
+    <!-- ILUSTRAÇÃO 2: Escala de pH (SVG embutido) -->
+    <div class="ilustracao">
+        <svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Faixa colorida da escala -->
+            <defs>
+                <linearGradient id="gradpH" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#c0392b"/>
+                    <stop offset="35%" stop-color="#e67e22"/>
+                    <stop offset="50%" stop-color="#f1c40f"/>
+                    <stop offset="65%" stop-color="#27ae60"/>
+                    <stop offset="100%" stop-color="#2980b9"/>
+                </linearGradient>
+            </defs>
+
+            <!-- Barra da escala -->
+            <rect x="30" y="40" width="540" height="45" rx="6" fill="url(#gradpH)" stroke="#2c3e50" stroke-width="2"/>
+
+            <!-- Números da escala -->
+            <g fill="#2c3e50" font-size="15" text-anchor="middle" font-weight="bold">
+                <text x="30" y="100">0</text>
+                <text x="107" y="100">2</text>
+                <text x="184" y="100">4</text>
+                <text x="261" y="100">6</text>
+                <text x="298" y="100" fill="#27ae60">7</text>
+                <text x="335" y="100">8</text>
+                <text x="412" y="100">10</text>
+                <text x="489" y="100">12</text>
+                <text x="570" y="100">14</text>
+            </g>
+
+            <!-- Marcador de neutralidade -->
+            <line x1="300" y1="40" x2="300" y2="85" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="300" y="130" text-anchor="middle" font-size="14" fill="#27ae60" font-weight="bold">Neutro</text>
+
+            <!-- Rótulos -->
+            <text x="120" y="165" text-anchor="middle" font-size="15" fill="#c0392b" font-weight="bold">⬅ Mais ácido</text>
+            <text x="480" y="165" text-anchor="middle" font-size="15" fill="#2980b9" font-weight="bold">Mais básico ➡</text>
+
+            <!-- Título -->
+            <text x="300" y="25" text-anchor="middle" font-size="18" fill="#2c3e50" font-weight="bold">Escala de pH (a 25 °C)</text>
+        </svg>
+    </div>
+
+    <h3>Relação entre pH e pOH</h3>
+    <p>A 25 °C:</p>
+    <div class="formula">pH + pOH = 14</div>
+
+    <div class="destaque">
+        pH &lt; 7 → solução <strong>ácida</strong><br>
+        pH = 7 → solução <strong>neutra</strong> (a 25 °C)<br>
+        pH &gt; 7 → solução <strong>básica</strong>
+    </div>
+
+    <h3>Escala logarítmica</h3>
+    <p>Uma mudança de <strong>1 unidade de pH</strong> representa uma mudança de <strong>10 vezes</strong> na concentração de H₃O⁺. Por exemplo:</p>
+    <div class="exemplo">
+        💡 pH = 3 → [H₃O⁺] = 10⁻³ mol/L<br>
+        💡 pH = 4 → [H₃O⁺] = 10⁻⁴ mol/L<br>
+        → pH 3 tem <strong>10 vezes mais íons H₃O⁺</strong> que pH 4.
+    </div>
+</section>
+
+<!-- SEÇÃO 4: TABELA E RESUMO -->
+<section>
+    <h2>📋 Valores aproximados de pH de soluções comuns</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Solução</th>
+                <th>pH aproximado</th>
+                <th>Classificação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ácido gástrico</td>
+                <td>1 – 2</td>
+                <td>Ácida</td>
+            </tr>
+            <tr>
+                <td>Suco de limão</td>
+                <td>≈ 2</td>
+                <td>Ácida</td>
+            </tr>
+            <tr>
+                <td>Refrigerante</td>
+                <td>2,5 – 3,5</td>
+                <td>Ácida</td>
+            </tr>
+            <tr>
+                <td>Água destilada (ar)</td>
+                <td>5,5 – 6</td>
+                <td>Levemente ácida</td>
+            </tr>
+            <tr>
+                <td>Água mineral</td>
+                <td>6 – 7</td>
+                <td>Próxima da neutralidade</td>
+            </tr>
+            <tr>
+                <td>Água pura (25 °C)</td>
+                <td>7</td>
+                <td>Neutra</td>
+            </tr>
+            <tr>
+                <td>Água do mar</td>
+                <td>≈ 8</td>
+                <td>Levemente básica</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="destaque">
+        <strong>🔑 Resumo prático:</strong><br>
+        🔴 Ácida → [H₃O⁺] &gt; [OH⁻] e pH &lt; 7<br>
+        ⚪ Neutra → [H₃O⁺] = [OH⁻] e pH = 7 (a 25 °C)<br>
+        🔵 Básica → [H₃O⁺] &lt; [OH⁻] e pH &gt; 7<br>
+        ⚠️ A escala é logarítmica: pH 2 tem 10× mais H₃O⁺ que pH 3 e 100× mais que pH 4.
+    </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+    Aula 08 — Produto Iônico da Água e pH | Química<br>
+    Conteúdo adaptado para fins educativos — 25 °C é a temperatura padrão citada.
+</footer>
+
+</body>
+</html></p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="9">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="9">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="9">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+  
+
+
+  
+    <!-- Aula 09 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="9">Aula 09</button>
+        <div class="conteudo-aula" id="aula-9">
+            <h2>Aula 09</h2>
+            <p>Conteúdo da Aula 09...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="9">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="9">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="9">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  
+    <!-- Aula 10 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="10">Aula 10</button>
+        <div class="conteudo-aula" id="aula-10">
+            <h2>Aula 10</h2>
+            <p>Conteúdo da Aula 10...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="10">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="10">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="10">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 11 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="11">Aula 11</button>
+        <div class="conteudo-aula" id="aula-11">
+            <h2>Aula 11</h2>
+            <p>Conteúdo da Aula 11...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="11">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="11">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="11">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 12 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="12">Aula 12</button>
+        <div class="conteudo-aula" id="aula-12">
+            <h2>Aula 12</h2>
+            <p>Conteúdo da Aula 12...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="12">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="12">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="12">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 13 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="13">Aula 13</button>
+        <div class="conteudo-aula" id="aula-13">
+            <h2>Aula 13</h2>
+            <p>Conteúdo da Aula 13...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="13">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="13">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="13">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 14 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="14">Aula 14 — Conclusão</button>
+        <div class="conteudo-aula" id="aula-14">
+            <h2>Aula 14 — Conclusão</h2>
+            <p>Conteúdo da última aula. Coloque aqui resumos, avaliações finais e materiais complementares.</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="14">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="14">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="14" disabled>Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const botoes = document.querySelectorAll('.botao-aula');
+    const conteudos = document.querySelectorAll('.conteudo-aula');
+    const totalAulas = botoes.length;
+    let aulaAtual = null;
+
+    // Exibe uma aula e fecha as demais
+    function exibirAula(numero) {
+        // Fecha todas as aulas
+        botoes.forEach(btn => btn.classList.remove('ativa'));
+        conteudos.forEach(ctd => ctd.classList.remove('visivel'));
+
+        // Abre a aula selecionada
+        aulaAtual = numero;
+        document.querySelector(`.botao-aula[data-aula="${numero}"]`).classList.add('ativa');
+        const conteudo = document.getElementById(`aula-${numero}`);
+        conteudo.classList.add('visivel');
+
+        // Rola suavemente até o conteúdo
+        conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        atualizarEstadoBotoes();
+    }
+
+    // Ativa/desativa botões de navegação conforme a aula atual
+    function atualizarEstadoBotoes() {
+        document.querySelectorAll('.btn-anterior').forEach(btn => btn.disabled = (aulaAtual <= 1));
+        document.querySelectorAll('.btn-proximo').forEach(btn => btn.disabled = (aulaAtual >= totalAulas));
+    }
+
+    // Volta ao início (fecha todas as aulas e sobe ao topo)
+    function voltarInicio() {
+        aulaAtual = null;
+        botoes.forEach(btn => btn.classList.remove('ativa'));
+        conteudos.forEach(ctd => ctd.classList.remove('visivel'));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Clique nos botões das aulas
+    botoes.forEach(botao => {
+        botao.addEventListener('click', () => {
+            exibirAula(parseInt(botao.dataset.aula));
+        });
+    });
+
+    // Navegação pelos botões dentro do conteúdo
+    document.addEventListener('click', e => {
+        if (e.target.classList.contains('btn-proximo') && aulaAtual < totalAulas) {
+            exibirAula(aulaAtual + 1);
+        }
+        if (e.target.classList.contains('btn-anterior') && aulaAtual > 1) {
+            exibirAula(aulaAtual - 1);
+        }
+        if (e.target.classList.contains('btn-inicio')) {
+            voltarInicio();
+        }
+    });
+
+    // Navegação pelo TECLADO
+    document.addEventListener('keydown', e => {
+        if (!aulaAtual) return;
+
+        if (e.key === 'ArrowLeft' && aulaAtual > 1) {
+            e.preventDefault();
+            exibirAula(aulaAtual - 1);
+        }
+        else if (e.key === 'ArrowRight' && aulaAtual < totalAulas) {
+            e.preventDefault();
+            exibirAula(aulaAtual + 1);
+        }
+        else if (e.key === 'Escape') {
+            e.preventDefault();
+            voltarInicio();
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+</main>
+
+<footer>
+     Prof.Valter@2026
+</footer>
+
 </body>
 </html>
