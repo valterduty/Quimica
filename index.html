@@ -3,7 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas - Conteúdo</title>
+    <title>Química 3º EM</title>
+    <style>
+        .titulo-destaque {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 2rem 0;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            
+            /* Configuração da animação */
+            animation: surgimentoSuave 1.2s ease-out forwards;
+            opacity: 0; /* Começa invisível */
+        }
+
+        /* Definição dos movimentos da animação */
+        @keyframes surgimentoSuave {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Começa um pouco abaixo */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Termina na posição original */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="titulo-destaque">Química 3º EM</h1>
+ 
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química 3º EM</title>
     <style>
         * {
             margin: 0;
@@ -134,15 +178,157 @@
 </head>
 <body>
 
-    <h1>📚 Química 3º EM</h1>
- <h1>3º Bimestre - 2026</h1>
+
+
+
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química 3º EM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 2.5rem;
+        }
+
+        .item-aula {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .botao-aula {
+            padding: 1rem 1.2rem;
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .botao-aula:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .botao-aula.ativa {
+            background-color: #2f855a;
+            box-shadow: 0 4px 14px rgba(47,133,90,0.3);
+        }
+
+        .conteudo-aula {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            margin-top: -4px;
+            display: none;
+            animation: aparece 0.4s ease;
+        }
+
+        .conteudo-aula.visivel {
+            display: block;
+        }
+
+        .conteudo-aula h2 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .botao-nav {
+            padding: 0.7rem 1.1rem;
+            background-color: #744210;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .botao-nav:hover {
+            background-color: #5a350e;
+            transform: translateY(-2px);
+        }
+
+        .botao-nav:disabled {
+            background-color: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+            opacity: 0.7;
+        }
+
+        .atalhos {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: #718096;
+            text-align: center;
+            width: 100%;
+        }
+
+        @keyframes aparece {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .navegacao {
+                flex-direction: column;
+            }
+            .botao-nav {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>3º Bimestre</h1>
+
+
+
+
+  
     <!-- Aula 01 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="1">Aula 01</button>
+        <button class="botao-aula" data-aula="1">Aula 01: Condições para ocorrência de reações químicas</button>
         <div class="conteudo-aula" id="aula-1">
-            <h2>Aula 01: Condições para ocorrência de reações químicas
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 01: Condições para ocorrência de reações químicas</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -597,7 +783,7 @@
     </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="1" disabled>⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="1">🏠 Voltar ao Início</button>
@@ -611,16 +797,13 @@
 
 
 
-
-
   
     <!-- Aula 02 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="2">Aula 02</button>
+        <button class="botao-aula" data-aula="2">Aula 02: Fatores que influenciam a rapidez de uma reação</button>
         <div class="conteudo-aula" id="aula-2">
-            <h2>Aula 02: Fatores que influenciam a rapidez de uma reação
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 02: Fatores que influenciam a rapidez de uma reação</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -927,7 +1110,7 @@
     </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="2">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="2">🏠 Voltar ao Início</button>
@@ -941,15 +1124,13 @@
 
 
 
-
   
     <!-- Aula 03 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="3">Aula 03</button>
+        <button class="botao-aula" data-aula="3">Aula 03: Equilíbrio químico: interpretando o Kc</button>
         <div class="conteudo-aula" id="aula-3">
-            <h2>Cópia de Aula 03: Equilíbrio químico: interpretando o Kc
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 03: Equilíbrio químico: interpretando o Kc</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1386,7 +1567,7 @@
 </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="3">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="3">🏠 Voltar ao Início</button>
@@ -1400,15 +1581,13 @@
 
 
 
-
   
     <!-- Aula 04 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="4">Aula 04</button>
+        <button class="botao-aula" data-aula="4">Aula 04: Quociente de equilíbrio</button>
         <div class="conteudo-aula" id="aula-4">
-            <h2>Aula 04: Quociente de equilíbrio
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 04: Quociente de equilíbrio</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1753,7 +1932,7 @@
     </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="4">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="4">🏠 Voltar ao Início</button>
@@ -1766,14 +1945,14 @@
 
 
 
+
   
     <!-- Aula 05 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="5">Aula 05</button>
+        <button class="botao-aula" data-aula="5">Aula 05: Princípio de Le Chatelier</button>
         <div class="conteudo-aula" id="aula-5">
-            <h2>Aula 05: Princípio de Le Chatelier
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 05: Princípio de Le Chatelier</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -1915,7 +2094,7 @@
                 <circle cx="85" cy="175" r="6"/>
                 <circle cx="115" cy="172" r="5"/>
             </g>
-            <text x="105" y="205" text-anchor="middle" fill="#222" font-size="13">Pressão alta → gás dissolvido</text>
+            <text x="105" y="220" text-anchor="middle" fill="#222" font-size="13">Pressão alta → gás dissolvido</text>
 
             <!-- Seta -->
             <path d="M195 115 L235 115 L235 105 L250 120 L235 135 L235 125 L195 125 Z" fill="#333"/>
@@ -1924,7 +2103,7 @@
             <rect x="290" y="30" width="130" height="170" rx="12" fill="#4a90e2" stroke="#2c5f99" stroke-width="4"/>
             <ellipse cx="355" cy="30" rx="65" ry="14" fill="#888"/>
             <path d="M320 22 L390 38" stroke="#222" stroke-width="3"/>
-            <text x="355" y="110" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ABERTA</text>
+            <text x="355" y="160" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ABERTA</text>
             <g fill="#ffd92f">
                 <circle cx="320" cy="130" r="7"/>
                 <circle cx="355" cy="115" r="8"/>
@@ -1932,7 +2111,7 @@
                 <circle cx="335" cy="95" r="6"/>
                 <circle cx="370" cy="85" r="7"/>
             </g>
-            <text x="355" y="205" text-anchor="middle" fill="#222" font-size="13">Pressão baixa → gás liberado</text>
+            <text x="355" y="220" text-anchor="middle" fill="#222" font-size="13">Pressão baixa → gás liberado</text>
         </svg>
     </div>
 
@@ -2163,7 +2342,7 @@
 </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="5">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="5">🏠 Voltar ao Início</button>
@@ -2177,14 +2356,13 @@
 
 
 
-
   
     <!-- Aula 06 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="6">Aula 06</button>
+        <button class="botao-aula" data-aula="6">Aula 06: Deslocamento de equilíbrio – química em prática</button>
         <div class="conteudo-aula" id="aula-6">
             <h2>Aula 06: Deslocamento de equilíbrio – química em prática</h2>
-            <p><!DOCTYPE html>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -2629,7 +2807,7 @@
     </script>
     </style>
 </head>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="6">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="6">🏠 Voltar ao Início</button>
@@ -2643,16 +2821,13 @@
 
 
 
-
-
   
     <!-- Aula 07 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="7">Aula 07</button>
+        <button class="botao-aula" data-aula="7">Aula 07: Constante de ionização</button>
         <div class="conteudo-aula" id="aula-7">
-            <h2>Aula 07: Constante de ionização
-</h2>
-            <p><!DOCTYPE html>
+            <h2>Aula 07: Constante de ionização</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <!-- Metadados da página -->
@@ -2860,7 +3035,7 @@
                 <circle cx="90" cy="80" r="10" fill="#6B8CFF"/><text x="90" y="84" text-anchor="middle" font-size="10" fill="white">A⁻</text>
                 <circle cx="130" cy="110" r="10" fill="#FF6B6B"/><text x="130" y="114" text-anchor="middle" font-size="10" fill="white">H⁺</text>
                 <circle cx="70" cy="120" r="10" fill="#6B8CFF"/><text x="70" y="124" text-anchor="middle" font-size="10" fill="white">A⁻</text>
-                <text x="100" y="150" text-anchor="middle" font-size="11" fill="#2E5B99">Ionização quase total</text>
+                <text x="100" y="180" text-anchor="middle" font-size="11" fill="#2E5B99">Ionização quase total</text>
 
                 <!-- Ácido fraco -->
                 <rect x="240" y="20" width="160" height="140" fill="#FFECEC" stroke="#E65C3C" stroke-width="2" rx="8"/>
@@ -2871,7 +3046,7 @@
                 <text x="350" y="120" text-anchor="middle" font-size="9" fill="#333">HA</text>
                 <circle cx="265" cy="110" r="8" fill="#FF6B6B"/><text x="265" y="113" text-anchor="middle" font-size="8" fill="white">H⁺</text>
                 <circle cx="375" cy="80" r="8" fill="#6B8CFF"/><text x="375" y="83" text-anchor="middle" font-size="8" fill="white">A⁻</text>
-                <text x="320" y="150" text-anchor="middle" font-size="11" fill="#A04020">Predominam moléculas não ionizadas</text>
+                <text x="320" y="180" text-anchor="middle" font-size="11" fill="#A04020">Predominam moléculas não ionizadas</text>
 
                 <text x="210" y="205" text-anchor="middle" font-size="13" font-weight="bold" fill="#444">↑ Mais íons → Kₐ maior ↑ ─────── ↓ Menos íons → Kₐ menor ↓</text>
             </svg>
@@ -2992,7 +3167,7 @@
     </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="7">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="7">🏠 Voltar ao Início</button>
@@ -3006,16 +3181,13 @@
 
 
 
-
   
-
-  <!-- Aula 08 -->
+    <!-- Aula 08 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="9">Aula 08</button>
-        <div class="conteudo-aula" id="aula-9">
-            <h2>Aula 08: Produto iônico da água e pH
-</h2>
-            <p><!DOCTYPE html>
+        <button class="botao-aula" data-aula="8">Aula 08: Produto iônico da água e pH</button>
+        <div class="conteudo-aula" id="aula-8">
+            <h2>Aula 08: Produto iônico da água e pH</h2>
+            <p><p><!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -3327,7 +3499,7 @@
     </div>
 
     <h3>Relação entre pH e pOH</h3>
-    <p>A 25 °C:</p>
+   <h3> <p>A 25 °C:</p></h3>
     <div class="formula">pH + pOH = 14</div>
 
     <div class="destaque">
@@ -3411,18 +3583,18 @@
 </footer>
 
 </body>
-</html></p>
+</html></p></p>
             <div class="navegacao">
-                <button class="botao-nav btn-anterior" data-ref="9">⬅ Aula Anterior</button>
-                <button class="botao-nav btn-inicio" data-ref="9">🏠 Voltar ao Início</button>
-                <button class="botao-nav btn-proximo" data-ref="9">Próxima Aula ➡</button>
+                <button class="botao-nav btn-anterior" data-ref="8">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="8">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="8">Próxima Aula ➡</button>
                 <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
             </div>
         </div>
     </div>
 
 
-  
+
 
 
   
@@ -3445,10 +3617,6 @@
 
 
 
-
-
-
-
   
     <!-- Aula 10 -->
     <div class="item-aula">
@@ -3465,6 +3633,11 @@
         </div>
     </div>
 
+
+
+
+
+  
     <!-- Aula 11 -->
     <div class="item-aula">
         <button class="botao-aula" data-aula="11">Aula 11</button>
@@ -3480,6 +3653,11 @@
         </div>
     </div>
 
+
+
+
+
+  
     <!-- Aula 12 -->
     <div class="item-aula">
         <button class="botao-aula" data-aula="12">Aula 12</button>
@@ -3515,11 +3693,101 @@
         <button class="botao-aula" data-aula="14">Aula 14 — Conclusão</button>
         <div class="conteudo-aula" id="aula-14">
             <h2>Aula 14 — Conclusão</h2>
-            <p>Conteúdo da última aula. Coloque aqui resumos, avaliações finais e materiais complementares.</p>
+            <p>Conteúdo da Aula 14...</p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="14">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="14">🏠 Voltar ao Início</button>
-                <button class="botao-nav btn-proximo" data-ref="14" disabled>Próxima Aula ➡</button>
+                <button class="botao-nav btn-proximo" data-ref="14">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 15 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="15">Aula 15</button>
+        <div class="conteudo-aula" id="aula-15">
+            <h2>Aula 15</h2>
+            <p>Conteúdo da Aula 15...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="15">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="15">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="15">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 16 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="16">Aula 16</button>
+        <div class="conteudo-aula" id="aula-16">
+            <h2>Aula 16</h2>
+            <p>Conteúdo da Aula 16...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="16">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="16">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="16">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 17 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="17">Aula 17</button>
+        <div class="conteudo-aula" id="aula-17">
+            <h2>Aula 17</h2>
+            <p>Conteúdo da Aula 17...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="17">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="17">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="17">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 18 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="18">Aula 18</button>
+        <div class="conteudo-aula" id="aula-18">
+            <h2>Aula 18</h2>
+            <p>Conteúdo da Aula 18...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="18">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="18">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="18">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 19 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="19">Aula 19</button>
+        <div class="conteudo-aula" id="aula-19">
+            <h2>Aula 19</h2>
+            <p>Conteúdo da Aula 19...</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="19">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="19">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="19">Próxima Aula ➡</button>
+                <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aula 20 -->
+    <div class="item-aula">
+        <button class="botao-aula" data-aula="20">Aula 20 — Conclusão Final</button>
+        <div class="conteudo-aula" id="aula-20">
+            <h2>Aula 20 — Conclusão Final</h2>
+            <p>Conteúdo da última aula. Coloque aqui resumos, avaliações finais e materiais complementares.</p>
+            <div class="navegacao">
+                <button class="botao-nav btn-anterior" data-ref="20">⬅ Aula Anterior</button>
+                <button class="botao-nav btn-inicio" data-ref="20">🏠 Voltar ao Início</button>
+                <button class="botao-nav btn-proximo" data-ref="20" disabled>Próxima Aula ➡</button>
                 <span class="atalhos">💡 Atalhos: ← Anterior | → Próxima | Esc Voltar ao Início</span>
             </div>
         </div>
@@ -3610,12 +3878,10 @@
 
 
 
-
-
 </main>
 
 <footer>
-     Prof.Valter@2026
+     @2026 Professor Valter
 </footer>
 
 </body>
