@@ -3600,10 +3600,394 @@
   
     <!-- Aula 09 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="9">Aula 09</button>
+        <button class="botao-aula" data-aula="9">Aula 09: Potencial hidrogeniônico -  química em prática</button>
         <div class="conteudo-aula" id="aula-9">
-            <h2>Aula 09</h2>
-            <p>Conteúdo da Aula 09...</p>
+            <h2>Aula 09: Potencial hidrogeniônico -  química em prática</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 09: Potencial Hidrogeniônico - Química em Prática</title>
+    <style>
+        /* Estilos gerais e responsivos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2980b9, #6ab0de);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #6ab0de;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #1a5276;
+            margin: 20px 0 10px;
+        }
+
+        .ilustracao {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .conteudo {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .formula {
+            background: #eaf4fc;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tabela th, .tabela td {
+            border: 1px solid #b8d8f0;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .tabela th {
+            background-color: #d4e9f7;
+            color: #1a5276;
+        }
+
+        .questao {
+            background-color: #f0f9ff;
+            border-left: 4px solid #2980b9;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .questao:hover {
+            background-color: #e1f2fc;
+        }
+
+        .resposta {
+            margin-top: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .correta {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .errada {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        .clicavel {
+            color: #2980b9;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #555;
+            font-size: 0.95rem;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4rem; }
+            .conteudo { padding: 15px; }
+            .formula { font-size: 1rem; }
+            .tabela th, .tabela td { padding: 8px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Aula 09: Potencial Hidrogeniônico</h1>
+    <p>Química em Prática — Equilíbrio Iônico, pH e Constante de Ionização</p>
+</header>
+
+<!-- Ilustração embutida com SVG - Átomos e íons em solução -->
+<div class="ilustracao">
+    <svg width="400" height="180" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fundo do frasco -->
+        <path d="M60 30 L60 150 Q60 165 75 165 L325 165 Q340 165 340 150 L340 30 Z" fill="#eaf4fc" stroke="#2980b9" stroke-width="3"/>
+        <!-- Líquido -->
+        <path d="M60 70 L60 150 Q60 165 75 165 L325 165 Q340 165 340 150 L340 70 Z" fill="#aed6f1" opacity="0.6"/>
+        <!-- Íons H+ -->
+        <circle cx="120" cy="100" r="12" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+        <text x="116" y="105" font-size="11" fill="white" font-weight="bold">H⁺</text>
+        <circle cx="180" cy="120" r="12" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+        <text x="176" y="125" font-size="11" fill="white" font-weight="bold">H⁺</text>
+        <!-- Íons OH⁻ -->
+        <circle cx="260" cy="105" r="14" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+        <text x="250" y="110" font-size="10" fill="white" font-weight="bold">OH⁻</text>
+        <!-- Molécula de água -->
+        <circle cx="200" cy="80" r="14" fill="#3498db" stroke="#2471a3" stroke-width="2"/>
+        <text x="193" y="85" font-size="10" fill="white" font-weight="bold">H₂O</text>
+        <!-- Rótulo -->
+        <text x="150" y="177" font-size="13" fill="#2980b9" font-weight="bold">Equilíbrio iônico da água</text>
+    </svg>
+</div>
+
+<section class="conteudo">
+    <h2>Introdução</h2>
+    <p>Nesta aula, vamos estudar o <strong>potencial hidrogeniônico (pH)</strong>, a constante de ionização, a Lei da Diluição de Ostwald e o equilíbrio iônico da água — conceitos fundamentais para compreender o comportamento de soluções ácidas, neutras e básicas.</p>
+
+    <h2>Constante de Ionização (Kᵢ)</h2>
+    <p>A constante de ionização (<em>Kᵢ</em>) indica o quanto uma substância se ioniza em água, estabelecendo um equilíbrio entre a forma não ionizada e os íons formados.</p>
+
+    <p>Para um ácido genérico HA:</p>
+    <div class="formula">HA ⇌ H⁺ + A⁻</div>
+
+    <p>A constante de ionização ácida (Kₐ) é:</p>
+    <div class="formula">Kₐ = [H⁺] · [A⁻] / [HA]</div>
+
+    <ul style="margin: 15px 25px;">
+        <li><strong>Kₐ grande</strong> → maior ionização → ácido mais forte.</li>
+        <li><strong>Kₐ pequeno</strong> → menor ionização → ácido mais fraco.</li>
+    </ul>
+
+    <p><em>Resumo:</em> quanto maior o valor de Kₐ ou Kb, maior a tendência de ionização da espécie correspondente.</p>
+
+    <h2>Lei da Diluição de Ostwald</h2>
+    <p>Relaciona a constante de ionização com o grau de ionização (α) de um eletrólito fraco.</p>
+
+    <p>Para um ácido fraco de concentração inicial C e grau de ionização α:</p>
+    <div class="formula">Kₐ = (α² · C) / (1 − α)</div>
+
+    <p>Quando o ácido é muito fraco, α é muito pequeno e podemos aproximar 1 − α ≈ 1:</p>
+    <div class="formula">Kₐ ≈ α² · C &nbsp;&nbsp;→&nbsp;&nbsp; α ≈ √(Kₐ / C)</div>
+
+    <h3>O que isso significa?</h3>
+    <p>✅ Diluir → C diminui → α aumenta.<br>
+    ✅ Quanto mais diluído um eletrólito fraco, maior seu grau de ionização.<br>
+    ✅ A constante Kₐ <strong>não muda</strong> com a diluição, desde que a temperatura permaneça constante.</p>
+
+    <h2>Equilíbrio Iônico da Água e Produto Iônico (Kw)</h2>
+    <p>A água sofre autoionização: algumas moléculas se ionizam espontaneamente:</p>
+    <div class="formula">H₂O + H₂O ⇌ H₃O⁺ + OH⁻ &nbsp;&nbsp; ou &nbsp;&nbsp; H₂O ⇌ H⁺ + OH⁻</div>
+
+    <p>O produto iônico da água (Kw) é:</p>
+    <div class="formula">Kw = [H⁺] · [OH⁻]</div>
+
+    <p>A 25 °C, em água pura:</p>
+    <div class="formula">[H⁺] = [OH⁻] = 10⁻⁷ mol/L &nbsp;&nbsp;→&nbsp;&nbsp; Kw = 10⁻¹⁴</div>
+
+    <h2>Potencial Hidrogeniônico — pH</h2>
+    <p>O pH indica a concentração de íons H⁺ na solução:</p>
+    <div class="formula">pH = −log [H⁺]</div>
+    <p>E de forma semelhante: pOH = −log [OH⁻]</p>
+    <p><strong>Relação fundamental (a 25 °C):</strong></p>
+    <div class="formula">pH + pOH = 14</div>
+
+    <h3>Classificação das soluções (a 25 °C):</h3>
+    <table class="tabela">
+        <tr>
+            <th>Solução</th>
+            <th>[H⁺] (mol/L)</th>
+            <th>pH</th>
+            <th>Característica</th>
+        </tr>
+        <tr>
+            <td>Ácida</td>
+            <td>> 10⁻⁷</td>
+            <td>< 7</td>
+            <td>Mais íons H⁺ que OH⁻</td>
+        </tr>
+        <tr>
+            <td>Neutra</td>
+            <td>= 10⁻⁷</td>
+            <td>= 7</td>
+            <td>[H⁺] = [OH⁻]</td>
+        </tr>
+        <tr>
+            <td>Básica</td>
+            <td>< 10⁻⁷</td>
+            <td>> 7</td>
+            <td>Mais íons OH⁻ que H⁺</td>
+        </tr>
+    </table>
+
+    <div style="background:#fff3cd; padding:15px; border-radius:8px; margin-top:20px;">
+        <strong>📌 Resumo para decorar:</strong><br>
+        • Meio ácido: [H⁺] > [OH⁻] → pH < 7<br>
+        • Meio neutro: [H⁺] = [OH⁻] → pH = 7<br>
+        • Meio básico: [H⁺] < [OH⁻] → pH > 7
+    </div>
+</section>
+
+<!-- Ilustração embutida com SVG - Escala de pH -->
+<div class="ilustracao">
+    <svg width="450" height="140" viewBox="0 0 450 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Título -->
+        <text x="170" y="30" font-size="16" fill="#2980b9" font-weight="bold">Escala de pH (0 a 14)</text>
+        <!-- Barra da escala -->
+        <rect x="25" y="50" width="400" height="35" rx="6" fill="none" stroke="#333" stroke-width="2"/>
+        <!-- Cores da escala -->
+        <rect x="25" y="50" width="57" height="35" fill="#d32f2f"/>
+        <rect x="82" y="50" width="57" height="35" fill="#f57c00"/>
+        <rect x="139" y="50" width="57" height="35" fill="#fbc02d"/>
+        <rect x="196" y="50" width="57" height="35" fill="#fdd835"/>
+        <rect x="253" y="50" width="57" height="35" fill="#9ccc65"/>
+        <rect x="310" y="50" width="57" height="35" fill="#4caf50"/>
+        <rect x="367" y="50" width="58" height="35" fill="#0288d1"/>
+        <!-- Números da escala -->
+        <text x="35" y="73" font-size="13" fill="white" font-weight="bold">0-2</text>
+        <text x="92" y="73" font-size="13" fill="white" font-weight="bold">3-4</text>
+        <text x="149" y="73" font-size="13" fill="#333" font-weight="bold">5-6</text>
+        <text x="206" y="73" font-size="13" fill="#333" font-weight="bold">7</text>
+        <text x="263" y="73" font-size="13" fill="white" font-weight="bold">8-9</text>
+        <text x="320" y="73" font-size="13" fill="white" font-weight="bold">10-11</text>
+        <text x="374" y="73" font-size="12" fill="white" font-weight="bold">12-14</text>
+        <!-- Rótulos -->
+        <text x="50" y="115" font-size="13" fill="#c0392b" font-weight="bold">ÁCIDO</text>
+        <text x="205" y="115" font-size="13" fill="#228b22" font-weight="bold">NEUTRO</text>
+        <text x="375" y="115" font-size="13" fill="#1565c0" font-weight="bold">BÁSICO</text>
+    </svg>
+</div>
+
+<section class="conteudo">
+    <h2>Atividades de Fixação — Clique nas alternativas para verificar</h2>
+
+    <!-- Questão 1 -->
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <strong>Questão 1</strong> — Sobre a constante de ionização Kₐ, é correto afirmar que:
+        <p class="clicavel">A) Quanto menor o Kₐ, mais forte é o ácido.</p>
+        <div class="resposta errada">❌ Errado! Quanto <strong>maior</strong> o Kₐ, maior a ionização e mais forte o ácido. Valores pequenos de Kₐ indicam ácidos fracos.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, true)">
+        <p class="clicavel">B) Quanto maior o Kₐ, maior a tendência de ionização do ácido.</p>
+        <div class="resposta correta">✅ Correto! O valor de Kₐ reflete diretamente a capacidade de ionização: quanto maior, mais íons são formados em solução.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <p class="clicavel">C) O Kₐ aumenta quando o ácido é diluído.</p>
+        <div class="resposta errada">❌ Errado! A constante Kₐ só muda com a temperatura. A diluição altera o grau de ionização (α), mas não o valor da constante.</div>
+    </div>
+
+    <!-- Questão 2 -->
+    <div class="questao" onclick="verificarResposta(this, true)">
+        <strong>Questão 2</strong> — A 25 °C, uma solução com pH = 9,0 apresenta características de:
+        <p class="clicavel">A) Meio básico, com [OH⁻] > [H⁺]</p>
+        <div class="resposta correta">✅ Correto! pH > 7 em 25 °C indica meio básico, com excesso de íons OH⁻ em relação aos íons H⁺.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <p class="clicavel">B) Meio ácido, com [H⁺] > [OH⁻]</p>
+        <div class="resposta errada">❌ Errado! pH < 7 é que define meio ácido. pH = 9 é básico.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <p class="clicavel">C) Meio neutro, pois [H⁺] = [OH⁻]</p>
+        <div class="resposta errada">❌ Errado! A solução neutra em 25 °C tem pH = 7,0 e concentrações iguais de íons. pH = 9 é básico.</div>
+    </div>
+
+    <!-- Questão 3 -->
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <strong>Questão 3</strong> — Segundo a Lei da Diluição de Ostwald, ao diluirmos um ácido fraco:
+        <p class="clicavel">A) O grau de ionização diminui e Kₐ permanece o mesmo.</p>
+        <div class="resposta errada">❌ Errado! Ao diluir, o grau de ionização <strong>aumenta</strong>, pois α ≈ √(Kₐ/C). Menor concentração → maior α.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, true)">
+        <p class="clicavel">B) O grau de ionização aumenta e Kₐ permanece o mesmo.</p>
+        <div class="resposta correta">✅ Correto! A diluição favorece a ionização (α aumenta), mas a constante de equilíbrio Kₐ não muda, pois depende apenas da temperatura.</div>
+    </div>
+
+    <div class="questao" onclick="verificarResposta(this, false)">
+        <p class="clicavel">C) Tanto o grau de ionização quanto o valor de Kₐ aumentam.</p>
+        <div class="resposta errada">❌ Errado! O grau de ionização até aumenta, mas a constante Kₐ é independente da concentração e não se altera.</div>
+    </div>
+</section>
+
+<footer>
+    <p>Aula 09 — Potencial Hidrogeniônico | Química em Prática 🧪</p>
+    <p>Conteúdo alinhado com os princípios de equilíbrio químico e propriedades de soluções aquosas.</p>
+</footer>
+
+<script>
+    // Função para exibir feedback ao clicar na alternativa
+    function verificarResposta(elemento, eCorreta) {
+        const todasQuestoes = document.querySelectorAll('.questao');
+        // Oculta todas as respostas abertas antes de mostrar a nova
+        todasQuestoes.forEach(q => {
+            if (q !== elemento) {
+                const resposta = q.querySelector('.resposta');
+                if (resposta) resposta.style.display = 'none';
+            }
+        });
+
+        const resposta = elemento.querySelector('.resposta');
+        if (resposta) {
+            // Alterna exibição: se já visível, oculta; senão, mostra
+            if (resposta.style.display === 'block') {
+                resposta.style.display = 'none';
+            } else {
+                resposta.style.display = 'block';
+            }
+        }
+    }
+</script>
+
+</body>
+</html></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="9">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="9">🏠 Voltar ao Início</button>
@@ -3620,10 +4004,461 @@
   
     <!-- Aula 10 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="10">Aula 10</button>
+        <button class="botao-aula" data-aula="10">Aula 10: Escala de pH e indicadores</button>
         <div class="conteudo-aula" id="aula-10">
-            <h2>Aula 10</h2>
-            <p>Conteúdo da Aula 10...</p>
+            <h2>Aula 10: Escala de pH e indicadores</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 10: Escala de pH e Indicadores</title>
+    <style>
+        /* Estilos gerais e responsivos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 12px;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin: 20px 0 10px;
+            font-size: 1.1rem;
+        }
+
+        .introducao {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .destaque {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-weight: 500;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .ilustracao {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        /* Área de perguntas e respostas interativas */
+        .pergunta {
+            background-color: white;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #9b59b6;
+        }
+
+        .botao-resposta {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px 8px 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .botao-resposta:hover {
+            background-color: #2980b9;
+        }
+
+        .resposta-correta {
+            display: none;
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .resposta-erro {
+            display: none;
+            background-color: #f8d7da;
+            border: 2px solid #dc3545;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>⚗️ Aula 10: Escala de pH e Indicadores Ácido-Base</h1>
+        <p>Compreendendo acidez, basicidade e como identificar o pH na prática</p>
+    </header>
+
+    <!-- Introdução com contexto da chuva ácida -->
+    <section class="introducao">
+        <h2>🌧️ Chuva ácida no campo</h2>
+        <p>Após um período de chuvas intensas, agricultores perceberam que algumas plantas apresentaram dificuldade de crescimento. Um técnico suspeita que o pH do solo havia diminuído devido à chuva ácida.</p>
+        
+        <div class="pergunta">
+            <p><strong>1. Se o pH diminui, o solo fica mais ácido ou mais básico?</strong></p>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'correta')">Mais ácido</button>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'erro')">Mais básico</button>
+            <div class="resposta-correta">✅ <strong>Correto!</strong> Quanto menor o valor do pH, mais ácido é o meio. Valores abaixo de 7 indicam acidez.</div>
+            <div class="resposta-erro">❌ <strong>Atenção:</strong> quanto maior o pH, mais básico o meio. Se o valor diminui, a acidez aumenta!</div>
+        </div>
+
+        <div class="pergunta">
+            <p><strong>2. O que acontece com a concentração de H₃O⁺?</strong></p>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'correta')">Aumenta</button>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'erro')">Diminui</button>
+            <div class="resposta-correta">✅ <strong>Correto!</strong> O pH é definido por pH = -log[H₃O⁺]. Quando o pH diminui, a concentração de íons hidrônio aumenta significativamente.</div>
+            <div class="resposta-erro">❌ <strong>Atenção:</strong> relação é inversa! Menor pH = maior concentração de íons H₃O⁺.</div>
+        </div>
+
+        <div class="pergunta">
+            <p><strong>3. Como identificar, de forma prática, que o pH do solo realmente diminuiu?</strong></p>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'correta')">Usando indicadores ácido-base</button>
+            <button class="botao-resposta" onclick="mostrarResposta(this, 'erro')">Medindo apenas a cor do solo</button>
+            <div class="resposta-correta">✅ <strong>Correto!</strong> Utilizando indicadores como suco de repolho roxo, papel tornassol ou fenolftaleína, é possível observar a mudança de cor e estimar o pH do solo.</div>
+            <div class="resposta-erro">❌ <strong>Atenção:</strong> a cor natural do solo não indica o pH. É preciso usar substâncias que mudam de cor conforme a acidez — os indicadores ácido-base.</div>
+        </div>
+    </section>
+
+    <!-- Ilustração 1: Escala de pH embutida como SVG -->
+    <div class="ilustracao">
+        <h3>📏 Escala de pH de 0 a 14</h3>
+        <svg width="900" height="160" viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Faixa colorida da escala -->
+            <defs>
+                <linearGradient id="gradientePH" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#d32f2f"/>
+                    <stop offset="25%" style="stop-color:#ff9800"/>
+                    <stop offset="50%" style="stop-color:#ffeb3b"/>
+                    <stop offset="75%" style="stop-color:#8bc34a"/>
+                    <stop offset="100%" style="stop-color:#2196f3"/>
+                </linearGradient>
+            </defs>
+            <rect x="30" y="40" width="840" height="45" rx="8" fill="url(#gradientePH)" stroke="#333" stroke-width="2"/>
+            
+            <!-- Marcadores numéricos -->
+            <text x="30" y="105" font-size="16" font-weight="bold" text-anchor="middle">0</text>
+            <text x="150" y="105" font-size="16" font-weight="bold" text-anchor="middle">3</text>
+            <text x="330" y="105" font-size="16" font-weight="bold" text-anchor="middle">6</text>
+            <text x="450" y="105" font-size="18" font-weight="bold" text-anchor="middle">7</text>
+            <text x="570" y="105" font-size="16" font-weight="bold" text-anchor="middle">8</text>
+            <text x="750" y="105" font-size="16" font-weight="bold" text-anchor="middle">11</text>
+            <text x="870" y="105" font-size="16" font-weight="bold" text-anchor="middle">14</text>
+            
+            <!-- Rótulos -->
+            <text x="140" y="135" font-size="15" font-weight="bold" fill="#c62828">ÁCIDO</text>
+            <text x="450" y="135" font-size="15" font-weight="bold" fill="#333">NEUTRO</text>
+            <text x="760" y="135" font-size="15" font-weight="bold" fill="#0d47a1">BÁSICO</text>
+            
+            <!-- Título -->
+            <text x="450" y="25" font-size="18" font-weight="bold" text-anchor="middle">pH = -log [H₃O⁺]</text>
+        </svg>
+    </div>
+
+    <!-- Produto iônico da água -->
+    <section>
+        <h2>💧 Produto Iônico da Água (Kw)</h2>
+        <p>A água sofre autoionização, formando íons hidrônio e hidróxido:</p>
+        <div class="destaque">2 H₂O(l) ⇄ H₃O⁺(aq) + OH⁻(aq)</div>
+        <p>O produto das concentrações desses íons é constante a 25 °C:</p>
+        <div class="destaque">Kw = [H₃O⁺] · [OH⁻] = 1,0 × 10⁻¹⁴</div>
+        <p>Em solução neutra:</p>
+        <div class="destaque">[H₃O⁺] = [OH⁻] = 1,0 × 10⁻⁷ mol/L</div>
+        <p>Como Kw é constante a 25 °C, o aumento de [H₃O⁺] provoca diminuição de [OH⁻], e vice-versa.</p>
+    </section>
+
+    <!-- Interpretação da escala de pH -->
+    <section>
+        <h2>📊 Interpretação da Escala de pH</h2>
+        <p><strong>Definição:</strong> O pH indica a acidez ou basicidade de uma solução.</p>
+        <ul style="margin:15px 25px;">
+            <li><strong>pH &lt; 7</strong> → meio ácido</li>
+            <li><strong>pH = 7</strong> → meio neutro</li>
+            <li><strong>pH &gt; 7</strong> → meio básico (alcalino)</li>
+        </ul>
+        <div class="destaque">
+            ✔ Quanto menor o pH → maior a concentração de H₃O⁺.<br>
+            ✔ Cada unidade de pH representa uma variação de 10 vezes na acidez.
+        </div>
+        <p><strong>Relação com Kw:</strong> se [H₃O⁺] aumenta → [OH⁻] diminui (pois Kw permanece constante a 25 °C).</p>
+    </section>
+
+    <!-- Tabela de relação pH e pOH -->
+    <section>
+        <h2>📋 Relação entre pH, pOH e Força de Ácidos e Bases</h2>
+        <div class="destaque">pH + pOH = 14 (a 25 °C)</div>
+        <table>
+            <tr>
+                <th>Situação</th>
+                <th>pH</th>
+                <th>pOH</th>
+                <th>Espécie predominante</th>
+                <th>Exemplo</th>
+            </tr>
+            <tr>
+                <td>Chuva ácida</td>
+                <td>4 – 5</td>
+                <td>9 – 10</td>
+                <td>H₃O⁺ ↑</td>
+                <td>Água da chuva poluída</td>
+            </tr>
+            <tr>
+                <td>Meio ácido</td>
+                <td>&lt; 7</td>
+                <td>&gt; 7</td>
+                <td>H₃O⁺</td>
+                <td>Suco de limão</td>
+            </tr>
+            <tr>
+                <td>Meio neutro</td>
+                <td>= 7</td>
+                <td>= 7</td>
+                <td>H₃O⁺ = OH⁻</td>
+                <td>Água pura</td>
+            </tr>
+            <tr>
+                <td>Meio básico</td>
+                <td>&gt; 7</td>
+                <td>&lt; 7</td>
+                <td>OH⁻</td>
+                <td>Água sanitária</td>
+            </tr>
+        </table>
+        <div class="destaque">
+            Ácido mais forte → maior ionização → maior [H₃O⁺] → menor pH<br>
+            Base mais forte → maior dissociação → maior [OH⁻] → maior pH
+        </div>
+    </section>
+
+    <!-- Ilustração 2: Indicadores embutida como SVG -->
+    <div class="ilustracao">
+        <h3>🎨 Como funcionam os indicadores ácido-base</h3>
+        <svg width="800" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Caixa Ácido -->
+            <rect x="40" y="60" width="180" height="120" rx="12" fill="#ffcdd2" stroke="#c62828" stroke-width="3"/>
+            <text x="130" y="100" font-size="18" font-weight="bold" text-anchor="middle" fill="#b71c1c">MEIO ÁCIDO</text>
+            <text x="130" y="135" font-size="14" text-anchor="middle">Indicador na forma</text>
+            <text x="130" y="158" font-size="16" font-weight="bold" text-anchor="middle">HInd ← Protonada</text>
+            
+            <!-- Seta -->
+            <path d="M240 120 L340 120" stroke="#333" stroke-width="4" marker-end="url(#seta)"/>
+            <text x="290" y="100" font-size="13" text-anchor="middle">perde H⁺</text>
+            <text x="290" y="170" font-size="13" text-anchor="middle">ganha H⁺</text>
+            <path d="M340 130 L240 130" stroke="#333" stroke-width="4" marker-end="url(#seta)"/>
+            
+            <!-- Caixa Básico -->
+            <rect x="380" y="60" width="180" height="120" rx="12" fill="#bbdefb" stroke="#1565c0" stroke-width="3"/>
+            <text x="470" y="100" font-size="18" font-weight="bold" text-anchor="middle" fill="#0d47a1">MEIO BÁSICO</text>
+            <text x="470" y="135" font-size="14" text-anchor="middle">Indicador na forma</text>
+            <text x="470" y="158" font-size="16" font-weight="bold" text-anchor="middle">Ind⁻ ← Desprotonada</text>
+            
+            <!-- Equilíbrio -->
+            <text x="650" y="125" font-size="18" font-weight="bold" text-anchor="middle">HInd ⇄ H⁺ + Ind⁻</text>
+            
+            <!-- Ponta de seta -->
+            <defs>
+                <marker id="seta" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#333" />
+                </marker>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- Indicadores ácido-base -->
+    <section>
+        <h2>🧪 Indicadores Ácido-Base</h2>
+        <p>São substâncias que apresentam cores diferentes em suas formas protonada e desprotonada, variando conforme o pH do meio.</p>
+        <div class="destaque">HInd(aq) ⇄ H⁺(aq) + Ind⁻(aq)</div>
+        <ul style="margin:15px 25px;">
+            <li><strong>HInd</strong> → forma protonada (uma cor)</li>
+            <li><strong>Ind⁻</strong> → forma desprotonada (outra cor)</li>
+        </ul>
+        <p><strong>Função:</strong> identificar qualitativamente se o meio é ácido, neutro ou básico; estimar o pH dentro de uma faixa de viragem; auxiliar em análises como titulações.</p>
+        <div class="destaque">A mudança de cor ocorre em uma faixa de pH característica do indicador, relacionada ao seu pKa.</div>
+    </section>
+
+    <!-- Tabela de indicadores -->
+    <section>
+        <h2>📑 Exemplos de Indicadores Ácido-Base</h2>
+        <table>
+            <tr>
+                <th>Indicador</th>
+                <th>Faixa de viragem (pH)</th>
+                <th>Cor em meio ácido</th>
+                <th>Cor em meio básico</th>
+                <th>Observação</th>
+            </tr>
+            <tr>
+                <td>Fenolftaleína</td>
+                <td>8,2 – 10,0</td>
+                <td>Incolor</td>
+                <td>Rosa</td>
+                <td>Muito usada em titulações</td>
+            </tr>
+            <tr>
+                <td>Alaranjado de metila</td>
+                <td>3,1 – 4,4</td>
+                <td>Vermelho</td>
+                <td>Amarelo</td>
+                <td>Para meio mais ácido</td>
+            </tr>
+            <tr>
+                <td>Azul de bromotimol</td>
+                <td>6,0 – 7,6</td>
+                <td>Amarelo</td>
+                <td>Azul</td>
+                <td>Próximo à neutralidade</td>
+            </tr>
+            <tr>
+                <td>Papel tornassol</td>
+                <td>~4,5 – 8,3</td>
+                <td>Vermelho</td>
+                <td>Azul</td>
+                <td>Indica apenas ácido/básico</td>
+            </tr>
+            <tr>
+                <td>Repolho roxo</td>
+                <td>~2 – 11</td>
+                <td>Vermelho/Rosa</td>
+                <td>Verde/Amarelo</td>
+                <td>Indicador natural</td>
+            </tr>
+        </table>
+        <div class="destaque">Cada indicador muda de cor em uma faixa específica. A escolha depende do pH esperado no experimento!</div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Aula 10: Escala de pH e Indicadores Ácido-Base | Química — Ensino Médio</p>
+        <p style="margin-top:8px; font-size:0.85rem;">Conteúdo totalmente offline — todas as ilustrações são SVG embutidas no próprio código</p>
+    </footer>
+
+    <!-- Script para exibir respostas com feedback -->
+    <script>
+        function mostrarResposta(botao, tipo) {
+            // Seleciona os elementos de resposta
+            const blocoPergunta = botao.parentElement;
+            const respostaCorreta = blocoPergunta.querySelector('.resposta-correta');
+            const respostaErro = blocoPergunta.querySelector('.resposta-erro');
+            
+            // Oculta ambas inicialmente
+            respostaCorreta.style.display = 'none';
+            respostaErro.style.display = 'none';
+            
+            // Exibe conforme o tipo escolhido
+            if (tipo === 'correta') {
+                respostaCorreta.style.display = 'block';
+            } else {
+                respostaErro.style.display = 'block';
+            }
+            
+            // Desabilita os botões após a escolha
+            const botoes = blocoPergunta.querySelectorAll('.botao-resposta');
+            botoes.forEach(btn => btn.disabled = true);
+        }
+    </script>
+
+</body>
+</html></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="10">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="10">🏠 Voltar ao Início</button>
