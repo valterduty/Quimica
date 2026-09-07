@@ -4599,10 +4599,415 @@
   
     <!-- Aula 11 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="11">Aula 11</button>
+        <button class="botao-aula" data-aula="11">Aula 11: Determinação do pH e pOH nas soluções</button>
         <div class="conteudo-aula" id="aula-11">
-            <h2>Aula 11</h2>
-            <p>Conteúdo da Aula 11...</p>
+            <h2>Aula 11: Determinação do pH e pOH nas soluções</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química - Aula 11: Determinação do pH e pOH nas Soluções</title>
+    <style>
+        /* Estilos gerais e responsivos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f7ff;
+            color: #222;
+            line-height: 1.6;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: #16a085;
+            margin: 20px 0 10px;
+            font-size: 1.15rem;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .ilustracao {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .ilustracao svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background: #f8fbff;
+            padding: 10px;
+        }
+
+        /* Caixa de pergunta interativa */
+        .pergunta {
+            background: #eaf4fe;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pergunta:hover {
+            background: #d4e9fc;
+        }
+
+        .pergunta-texto {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .resposta {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 5px;
+            display: none;
+            animation: aparecer 0.4s ease-out;
+        }
+
+        .resposta.correta {
+            background: #e8f8f5;
+            border-left: 4px solid #27ae60;
+            color: #1e7a4a;
+        }
+
+        .resposta.errada {
+            background: #fdedeb;
+            border-left: 4px solid #e74c3c;
+            color: #b03a2e;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Caixas de destaque e fórmulas */
+        .destaque {
+            background: #fff9e6;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+
+        .formula {
+            font-family: 'Courier New', monospace;
+            background: #eef2f5;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin: 12px 0;
+            font-size: 1.05rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f9ff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 2px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Cores de classificação de pH */
+        .acido { color: #e74c3c; font-weight: bold; }
+        .neutro { color: #7f8c8d; font-weight: bold; }
+        .basico { color: #2980b9; font-weight: bold; }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.15rem; }
+            .formula { font-size: 0.95rem; }
+            table { font-size: 0.85rem; }
+            th, td { padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔬 Aula 11: Determinação do pH e pOH nas Soluções</h1>
+
+    <!-- Ilustração 1: Sangue e equilíbrio ácido-base (SVG inline) -->
+    <div class="ilustracao">
+        <svg width="480" height="220" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundo -->
+            <rect width="480" height="220" fill="#f0f7ff" rx="10"/>
+            <!-- Vasos sanguíneos -->
+            <path d="M0,110 Q80,70 160,110 Q240,150 320,110 Q400,70 480,110" 
+                  stroke="#c0392b" stroke-width="28" fill="none" opacity="0.25"/>
+            <path d="M0,110 Q80,70 160,110 Q240,150 320,110 Q400,70 480,110" 
+                  stroke="#e74c3c" stroke-width="18" fill="none"/>
+            <!-- Glóbulos vermelhos -->
+            <ellipse cx="70" cy="95" rx="18" ry="11" fill="#c0392b"/>
+            <ellipse cx="130" cy="125" rx="18" ry="11" fill="#e74c3c"/>
+            <ellipse cx="200" cy="90" rx="18" ry="11" fill="#c0392b"/>
+            <ellipse cx="270" cy="120" rx="18" ry="11" fill="#e74c3c"/>
+            <ellipse cx="340" cy="98" rx="18" ry="11" fill="#c0392b"/>
+            <ellipse cx="410" cy="115" rx="18" ry="11" fill="#e74c3c"/>
+            <!-- Balança de pH -->
+            <g transform="translate(380, 40)">
+                <line x1="40" y1="5" x2="40" y2="45" stroke="#555" stroke-width="3"/>
+                <rect x="32" y="45" width="16" height="10" fill="#555"/>
+                <path d="M5,5 L75,5" stroke="#555" stroke-width="3"/>
+                <rect x="-5" y="-8" width="25" height="18" fill="#e74c3c" rx="3" opacity="0.85"/>
+                <rect x="50" y="-8" width="25" height="18" fill="#3498db" rx="3" opacity="0.85"/>
+                <text x="7" y="6" font-size="9" fill="#fff">H⁺</text>
+                <text x="52" y="6" font-size="9" fill="#fff">OH⁻</text>
+            </g>
+            <!-- Título -->
+            <text x="240" y="200" text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="bold">
+                Equilíbrio ácido-base no sangue: pH ≈ 7,4
+            </text>
+        </svg>
+    </div>
+
+    <h2>🩸 Introdução: Por que estudar pH?</h2>
+    <p>Glóbulos vermelhos fluem através da corrente sanguínea. Para que esse sistema funcione adequadamente, é preciso manter o pH do sangue dentro de uma faixa adequada, principalmente por volta de <strong>7,4</strong>. Esse equilíbrio é chamado de <em>equilíbrio ácido-base</em>.</p>
+
+    <!-- Pergunta interativa 1 -->
+    <div class="pergunta" onclick="mostrarResposta(this, 0)">
+        <div class="pergunta-texto">O que significa o sangue ter pH aproximadamente 7,4? 👆 Clique para ver</div>
+        <div class="resposta correta">✅ Significa que o sangue é <strong>levemente básico (alcalino)</strong>. O pH indica a quantidade de íons H⁺ presentes em uma solução.</div>
+    </div>
+
+    <!-- Pergunta interativa 2 -->
+    <div class="pergunta" onclick="mostrarResposta(this, 1)">
+        <div class="pergunta-texto">Se o pH diminui, os íons H⁺ aumentam ou diminuem? 👆 Clique para ver</div>
+        <div class="resposta correta">✅ <strong>Aumentam.</strong> Quanto maior a quantidade de H⁺, menor é o pH.<br>📌 <code>pH ↓ = H⁺ ↑</code></div>
+    </div>
+
+    <!-- Pergunta interativa 3 -->
+    <div class="pergunta" onclick="mostrarResposta(this, 2)">
+        <div class="pergunta-texto">Por que pequenas variações no pH podem ser prejudiciais ao organismo? 👆 Clique para ver</div>
+        <div class="resposta correta">✅ Porque as células e as enzimas funcionam melhor em uma faixa de pH específica. Alterações no pH podem atrapalhar reações químicas, o funcionamento das enzimas e das células, prejudicando o organismo.<br><br>📌 <strong>Resumo:</strong> Muito H⁺ → pH baixo → pode prejudicar o corpo.</div>
+    </div>
+
+    <h2>📐 Cálculo de íons em soluções aquosas</h2>
+
+    <h3>1. Autoionização da água</h3>
+    <p>A água pode reagir com outra molécula de água:</p>
+    <div class="formula">2 H₂O ⇄ H₃O⁺ + OH⁻</div>
+    <ul style="margin:10px 25px;">
+        <li><strong>H₂O</strong> → água</li>
+        <li><strong>H₃O⁺</strong> → íon hidrônio (relacionado à acidez)</li>
+        <li><strong>OH⁻</strong> → íon hidróxido (relacionado à basicidade)</li>
+    </ul>
+    <p>📌 Nos exercícios usamos: <code>[H⁺] ≈ [H₃O⁺]</code></p>
+
+    <h3>2. Produto iônico da água</h3>
+    <div class="formula">Kw = [H₃O⁺] · [OH⁻] = 1,0 × 10⁻¹⁴</div>
+    <p>Isso significa: se um íon aumenta, o outro diminui, sempre mantendo o produto constante.</p>
+
+    <h3>3. Classificação das soluções (a 25 °C)</h3>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Concentrações</th>
+            <th>pH</th>
+        </tr>
+        <tr>
+            <td>Neutra</td>
+            <td>[H⁺] = [OH⁻] = 10⁻⁷ mol/L</td>
+            <td class="neutro">= 7 ⚪</td>
+        </tr>
+        <tr>
+            <td>Ácida</td>
+            <td>[H⁺] > [OH⁻]</td>
+            <td class="acido">< 7 🔴</td>
+        </tr>
+        <tr>
+            <td>Básica</td>
+            <td>[OH⁻] > [H⁺]</td>
+            <td class="basico">> 7 🔵</td>
+        </tr>
+    </table>
+
+
+  
+    <div class="destaque">
+        <strong>🧠 Macete:</strong><br>
+        • H⁺ = íon hidrônio = caráter ácido<br>
+        • OH⁻ = íon hidróxido = caráter básico<br>
+        • Sempre que souber um íon, calcule o outro com: [H⁺] × [OH⁻] = 10⁻¹⁴
+    </div>
+
+
+
+ <!-- Ilustração 2: Escala de pH (SVG inline) -->
+    <div class="ilustracao">
+        <svg width="480" height="180" viewBox="0 0 480 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- Barra da escala -->
+            <defs>
+                <linearGradient id="gradpH" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#c0392b"/>
+                    <stop offset="30%" stop-color="#e67e22"/>
+                    <stop offset="50%" stop-color="#f1c40f"/>
+                    <stop offset="70%" stop-color="#3498db"/>
+                    <stop offset="100%" stop-color="#2980b9"/>
+                </linearGradient>
+            </defs>
+            <rect x="20" y="40" width="440" height="35" rx="8" fill="url(#gradpH)" stroke="#333" stroke-width="2"/>
+            <!-- Marcadores -->
+            <line x1="240" y1="40" x2="240" y2="75" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="240" y="95" text-anchor="middle" font-size="13" font-weight="bold">7</text>
+            <text x="240" y="115" text-anchor="middle" font-size="11">Neutro</text>
+            <text x="100" y="95" text-anchor="middle" font-size="13">0 — 6</text>
+            <text x="100" y="115" text-anchor="middle" font-size="11">Ácido</text>
+            <text x="360" y="95" text-anchor="middle" font-size="13">8 — 14</text>
+            <text x="360" y="115" text-anchor="middle" font-size="11">Básico</text>
+            <!-- Exemplos -->
+            <text x="60" y="150" text-anchor="middle" font-size="10">🍋 Suco 2–3</text>
+            <text x="255" y="150" text-anchor="middle" font-size="10">🩸 Sangue ≈7,4</text>
+            <text x="400" y="150" text-anchor="middle" font-size="10">🧴 Limpeza 11–13</text>
+            <!-- Título -->
+            <text x="240" y="25" text-anchor="middle" font-size="15" fill="#2c3e50" font-weight="bold">Escala de pH (0 a 14)</text>
+        </svg>
+    </div>
+
+
+
+
+  
+    <h2>📝 Exemplo Prático: Produto de limpeza com NaOH</h2>
+    <p>Um produto de limpeza contém hidróxido de sódio (NaOH) com concentração de <strong>2,0 × 10⁻³ mol/L</strong>. Dados: Kw = 1,0 × 10⁻¹⁴; pH = −log[H⁺]. Resolva clicando nas perguntas abaixo:</p>
+
+    <!-- Pergunta a -->
+    <div class="pergunta" onclick="mostrarResposta(this, 3)">
+        <div class="pergunta-texto">a) Qual a concentração de íons hidróxido [OH⁻]? 👆 Clique</div>
+        <div class="resposta correta">✅ Como o NaOH é base forte, se ioniza completamente: NaOH → Na⁺ + OH⁻<br>→ [OH⁻] = 2,0 × 10⁻³ mol/L</div>
+    </div>
+
+    <!-- Pergunta b -->
+    <div class="pergunta" onclick="mostrarResposta(this, 4)">
+        <div class="pergunta-texto">b) Qual a concentração de íons hidrogênio [H⁺]? 👆 Clique</div>
+        <div class="resposta correta">✅ Usamos: [H⁺] = Kw ÷ [OH⁻]<br>→ [H⁺] = (1,0×10⁻¹⁴) ÷ (2,0×10⁻³) = 0,5 × 10⁻¹¹ = <strong>5,0 × 10⁻¹² mol/L</strong></div>
+    </div>
+
+    <!-- Pergunta c -->
+    <div class="pergunta" onclick="mostrarResposta(this, 5)">
+        <div class="pergunta-texto">c) Qual o valor do pH? 👆 Clique</div>
+        <div class="resposta correta">✅ pH = −log(5,0 × 10⁻¹²) ≈ <strong>11,3</strong></div>
+    </div>
+
+    <!-- Pergunta d -->
+    <div class="pergunta" onclick="mostrarResposta(this, 6)">
+        <div class="pergunta-texto">d) O meio é ácido, básico ou neutro? Por que evitar contato com a pele? 👆 Clique</div>
+        <div class="resposta correta">✅ pH ≈ 11,3 → <strong>meio básico 🔵</strong><br>⚠️ Recomendação: o produto é fortemente básico, com alta concentração de OH⁻. Pode causar irritação e lesões químicas na pele, por isso deve-se evitar o contato.</div>
+    </div>
+
+    <h2>📊 Resumo para estudar</h2>
+    <table>
+        <tr>
+            <th>Solução</th>
+            <th>Íon predominante</th>
+            <th>Faixa de pH</th>
+        </tr>
+        <tr>
+            <td>Ácida</td>
+            <td>H⁺ (hidrônio)</td>
+            <td class="acido">&lt; 7</td>
+        </tr>
+        <tr>
+            <td>Neutra</td>
+            <td>[H⁺] = [OH⁻]</td>
+            <td class="neutro">= 7</td>
+        </tr>
+        <tr>
+            <td>Básica</td>
+            <td>OH⁻ (hidróxido)</td>
+            <td class="basico">&gt; 7</td>
+        </tr>
+    </table>
+
+    <div class="destaque">
+        <strong>📌 Fórmulas-chave:</strong><br>
+        • [H⁺] × [OH⁻] = 1,0 × 10⁻¹⁴<br>
+        • pH = −log[H⁺]<br>
+        • pH ↓ → H⁺ ↑ → mais ácido<br>
+        • pH ↑ → OH⁻ ↑ → mais básico
+    </div>
+
+    <footer>
+        Química — Aula 11: Determinação do pH e pOH nas Soluções<br>
+        Página interativa — Clique nas perguntas para ver as respostas ✅
+    </footer>
+</div>
+
+<script>
+    // Script para mostrar resposta ao clique
+    function mostrarResposta(elemento, indice) {
+        const resposta = elemento.querySelector('.resposta');
+        if (resposta.style.display === 'block') {
+            resposta.style.display = 'none';
+        } else {
+            resposta.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="11">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="11">🏠 Voltar ao Início</button>
@@ -4619,10 +5024,730 @@
   
     <!-- Aula 12 -->
     <div class="item-aula">
-        <button class="botao-aula" data-aula="12">Aula 12</button>
+        <button class="botao-aula" data-aula="12">Aula 12:  pH e pOH em soluções - química em prática</button>
         <div class="conteudo-aula" id="aula-12">
-            <h2>Aula 12</h2>
-            <p>Conteúdo da Aula 12...</p>
+            <h2>Aula 12:  pH e pOH em soluções - química em prática</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 12: pH e pOH em Soluções — Química em Prática</title>
+    <style>
+        /* ========== ESTILOS GERAIS ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #f3e5f5 100%);
+            min-height: 100vh;
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.15);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
+            color: white;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.85rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+        }
+
+        main {
+            padding: 35px;
+        }
+
+        section {
+            margin-bottom: 45px;
+            animation: surgir 0.6s ease-out both;
+        }
+
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #0d47a1;
+            font-size: 1.45rem;
+            margin-bottom: 22px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(to right, #1976d2, #4caf50) 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: #2e7d32;
+            font-size: 1.2rem;
+            margin: 20px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #37474f;
+            font-size: 1.02rem;
+        }
+
+        /* ========== ILUSTRAÇÕES SVG ========== */
+        .ilustracao {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .ilustracao svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #f5faff 0%, #eaf4ff 100%);
+            padding: 15px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .legenda {
+            font-size: 0.92rem;
+            color: #546e7a;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ========== TABELA ========== */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            background: #fafbfc;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e8ecef;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #f0f7ff; }
+
+        /* ========== CAIXA DE QUESTÃO ========== */
+        .caixa-questao {
+            background: linear-gradient(135deg, #f5f9ff 0%, #f0f4ff 100%);
+            border-left: 5px solid #1976d2;
+            padding: 25px;
+            margin: 28px 0;
+            border-radius: 0 14px 14px 0;
+            box-shadow: 0 3px 10px rgba(25, 118, 210, 0.08);
+        }
+
+        .enunciado {
+            font-weight: 500;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #263238;
+            line-height: 1.8;
+        }
+
+        /* ========== ALTERNATIVAS ========== */
+        .alternativa {
+            display: block;
+            padding: 14px 18px;
+            margin: 10px 0;
+            background: #ffffff;
+            border: 2px solid #dde3e8;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            position: relative;
+            padding-left: 44px;
+        }
+
+        .alternativa::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #b0bec5;
+            transition: all 0.3s;
+        }
+
+        .alternativa:hover {
+            border-color: #1976d2;
+            background: #eaf4ff;
+            transform: translateX(6px);
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+        }
+
+        .alternativa:hover::before { background: #1976d2; }
+
+        /* ✅ RESPOSTA CORRETA */
+        .alternativa.resposta-correta {
+            border-color: #2e7d32;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #1b5e20;
+            font-weight: 600;
+            transform: scale(1.01);
+            box-shadow: 0 4px 14px rgba(46, 125, 50, 0.2);
+            cursor: default;
+        }
+
+        .alternativa.resposta-correta::before {
+            background: #4caf50;
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+        }
+
+        /* ❌ RESPOSTA ERRADA */
+        .alternativa.resposta-errada {
+            border-color: #c62828;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            color: #b71c1c;
+            text-decoration: line-through rgba(198, 40, 40, 0.55);
+            cursor: default;
+        }
+
+        .alternativa.resposta-errada::before {
+            background: #e53935;
+            box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.18);
+        }
+
+        /* ========== FEEDBACK ========== */
+        .feedback {
+            margin-top: 18px;
+            padding: 18px 22px;
+            border-radius: 14px;
+            display: none;
+            animation: feedbackEntrar 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes feedbackEntrar {
+            0% { opacity: 0; transform: translateY(-12px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .feedback.correto {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            color: #1b5e20;
+        }
+
+        .feedback.correto::before {
+            content: '✅';
+            font-size: 1.4rem;
+            position: absolute;
+            top: 14px;
+            left: 16px;
+        }
+
+        .feedback .feedback-conteudo { margin-left: 40px; }
+
+        .feedback.errado {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #e53935;
+            color: #b71c1c;
+        }
+
+        .feedback.errado::before {
+            content: '❌';
+            font-size: 1.4rem;
+            position: absolute;
+            top: 14px;
+            left: 16px;
+        }
+
+        .feedback strong {
+            font-size: 1.08rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* ========== BOTÃO VER RESOLUÇÃO ========== */
+        .btn-mostrar {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(255, 152, 0, 0.25);
+        }
+
+        .btn-mostrar:hover {
+            background: linear-gradient(135deg, #fb8c00 0%, #ef6c00 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(255, 152, 0, 0.35);
+        }
+
+        /* ========== CAIXA DE RESOLUÇÃO — ESCONDIDA POR PADRÃO ========== */
+        .resolucao {
+            margin-top: 20px;
+            padding: 22px 25px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 14px;
+            border-left: 5px solid #ff9800;
+            display: none; /* 🔴 ESCONDIDA ATÉ SER CLICADA */
+            animation: resolucaoEntrar 0.5s ease-out both;
+            box-shadow: 0 3px 10px rgba(255, 152, 0, 0.12);
+        }
+
+        @keyframes resolucaoEntrar {
+            from { opacity: 0; transform: translateY(-8px); max-height: 0; }
+            to { opacity: 1; transform: translateY(0); max-height: 3000px; }
+        }
+
+        .formula {
+            font-family: 'Consolas', 'Courier New', monospace;
+            background: rgba(25, 118, 210, 0.08);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #0d47a1;
+            display: inline-block;
+            margin: 4px 0;
+        }
+
+        .resolucao p {
+            margin: 8px 0;
+        }
+
+        .resposta-final {
+            margin-top: 15px;
+            padding: 12px 15px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            font-weight: 600;
+            color: #1b5e20;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #607d8b;
+            font-size: 0.9rem;
+            border-top: 1px solid #eceff1;
+            margin-top: 30px;
+            background: #fafafa;
+        }
+
+        /* ========== RESPONSIVIDADE ========== */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.45rem; }
+            main { padding: 22px 18px; }
+            .caixa-questao { padding: 18px; }
+            th, td { padding: 10px 12px; font-size: 0.92rem; }
+            .alternativa { padding: 12px 14px 12px 42px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>🧪 Aula 12: pH e pOH em Soluções</h1>
+        <p>Química em Prática — Exercícios com Resolução Escondida</p>
+    </header>
+
+    <main>
+        <!-- INTRODUÇÃO -->
+        <section>
+            <h2>📘 Conceitos Fundamentais</h2>
+            <p>O <strong>pH</strong> mede a concentração de íons H⁺ em solução e indica o grau de acidez. O <strong>pOH</strong> reflete a concentração de íons OH⁻. A 25°C, vale sempre: <span class="formula">pH + pOH = 14</span>.</p>
+            <p>Clique nas alternativas para verificar sua resposta. A resolução completa só aparecerá quando você clicar no botão.</p>
+
+            <!-- ILUSTRAÇÃO 1: Escala de pH -->
+            <div class="ilustracao">
+                <svg width="750" height="180" viewBox="0 0 750 180" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradPH" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#c62828"/>
+                            <stop offset="20%" stop-color="#ef6c00"/>
+                            <stop offset="40%" stop-color="#fdd835"/>
+                            <stop offset="50%" stop-color="#81c784"/>
+                            <stop offset="70%" stop-color="#4fc3f7"/>
+                            <stop offset="100%" stop-color="#5c6bc0"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="25" y="60" width="700" height="50" rx="10" fill="url(#gradPH)" stroke="#333" stroke-width="2"/>
+                    
+                    <g font-family="Arial" font-size="14" text-anchor="middle" fill="#263238" font-weight="600">
+                        <text x="25" y="130">0</text>
+                        <text x="107" y="130">2</text>
+                        <text x="190" y="130">4</text>
+                        <text x="272" y="130">6</text>
+                        <text x="375" y="130">7</text>
+                        <text x="477" y="130">8</text>
+                        <text x="560" y="130">10</text>
+                        <text x="642" y="130">12</text>
+                        <text x="725" y="130">14</text>
+                    </g>
+                    
+                    <g font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff">
+                        <text x="130" y="40">🔴 ÁCIDO</text>
+                        <text x="375" y="40">🟢 NEUTRO</text>
+                        <text x="620" y="40">🔵 BÁSICO</text>
+                    </g>
+                    
+                    <text x="375" y="20" font-family="Arial" font-size="19" font-weight="bold" text-anchor="middle" fill="#0d47a1">Escala de pH (0 a 14)</text>
+                </svg>
+                <p class="legenda">Ilustração 1 — A cor muda conforme o pH da solução</p>
+            </div>
+        </section>
+
+        <!-- QUESTÃO 1 -->
+        <section>
+            <h2>📝 Questão 1 — UNESP 2017</h2>
+            <p>Considere a tabela de indicadores ácido-base e seus intervalos de viragem de cor:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Intervalo de pH</th>
+                        <th>Mudança de cor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. Púrpura de m-cresol</td><td>1,2 – 2,8</td><td>vermelho → amarelo</td></tr>
+                    <tr><td>2. Vermelho de metila</td><td>4,4 – 6,2</td><td>vermelho → alaranjado</td></tr>
+                    <tr><td>3. Tornassol</td><td>5,0 – 8,0</td><td>vermelho → azul</td></tr>
+                    <tr><td>4. Timolftaleína</td><td>9,3 – 10,5</td><td>incolor → azul</td></tr>
+                    <tr><td>5. Azul de épsilon</td><td>11,6 – 13,0</td><td>alaranjado → violeta</td></tr>
+                </tbody>
+            </table>
+
+            <div class="caixa-questao">
+                <p class="enunciado"><strong>Enunciado:</strong> Deve-se escolher qual indicador para distinguir uma solução 0,0001 mol/L de HNO₃ de outra solução 0,1 mol/L do mesmo ácido?</p>
+
+                <label class="alternativa" onclick="verificarResposta(this, 1, 'q1')">
+                    1. Púrpura de m-cresol
+                </label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q1')">
+                    2. Vermelho de metila
+                </label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q1')">
+                    3. Tornassol
+                </label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q1')">
+                    4. Timolftaleína
+                </label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q1')">
+                    5. Azul de épsilon
+                </label>
+
+                <div class="feedback correto" id="q1-correto">
+                    <div class="feedback-conteudo">
+                        <strong>Parabéns! Você acertou! 🎉</strong>
+                        A púrpura de m-cresol é o único indicador cujo intervalo de viragem está entre os valores de pH das duas soluções.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q1')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+                <div class="feedback errado" id="q1-errado">
+                    <div class="feedback-conteudo">
+                        <strong>Ops! Essa não é a resposta correta 😅</strong>
+                        Tente calcular o pH de cada solução e veja qual indicador muda de cor entre esses valores.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q1')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+
+                <div class="resolucao" id="q1-resolucao">
+                    <h3>📐 Resolução Passo a Passo</h3>
+                    <p><strong>1.</strong> HNO₃ é ácido forte → ioniza completamente: <span class="formula">[H⁺] = [HNO₃]</span></p>
+                    <p><strong>2.</strong> Cálculo dos pH:</p>
+                    <p>• Solução 0,1 mol/L → pH = −log(0,1) = <strong>1</strong></p>
+                    <p>• Solução 0,0001 mol/L = 10⁻⁴ → pH = −log(10⁻⁴) = <strong>4</strong></p>
+                    <p><strong>3.</strong> Precisamos de indicador cujo intervalo de viragem fique entre pH = 1 e pH = 4.</p>
+                    <p>✅ <strong>Púrpura de m-cresol:</strong> vira entre 1,2 e 2,8 → está entre os dois pHs → muda de cor entre as soluções.</p>
+                    <p>❌ Os demais têm intervalos acima de pH = 4 e não conseguem diferenciar as soluções.</p>
+                    <div class="resposta-final">✅ Resposta correta: Alternativa 1 — Púrpura de m-cresol</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ILUSTRAÇÃO 2 -->
+        <div class="ilustracao">
+            <svg width="650" height="220" viewBox="0 0 650 220" xmlns="http://www.w3.org/2000/svg">
+                <text x="325" y="30" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#0d47a1">Cores de um indicador conforme o pH</text>
+                <g stroke="#37474f" stroke-width="2.5" fill="none">
+                    <path d="M70 50 L70 160 Q70 185 95 190 Q120 185 120 160 L120 50 Z" fill="#ef5350"/>
+                    <path d="M190 50 L190 160 Q190 185 215 190 Q240 185 240 160 L240 50 Z" fill="#ffcc80"/>
+                    <path d="M310 50 L310 160 Q310 185 335 190 Q360 185 360 160 L360 50 Z" fill="#fff176"/>
+                    <path d="M430 50 L430 160 Q430 185 455 190 Q480 185 480 160 L480 50 Z" fill="#90caf9"/>
+                    <path d="M550 50 L550 160 Q550 185 575 190 Q600 185 600 160 L600 50 Z" fill="#7986cb"/>
+                </g>
+                <g font-family="Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#37474f">
+                    <text x="95" y="210">pH 1,5</text>
+                    <text x="215" y="210">pH 3</text>
+                    <text x="335" y="210">pH 5</text>
+                    <text x="455" y="210">pH 9</text>
+                    <text x="575" y="210">pH 12</text>
+                </g>
+            </svg>
+            <p class="legenda">Ilustração 2 — A cor muda à medida que o pH aumenta</p>
+        </div>
+
+        <!-- QUESTÃO 2 -->
+        <section>
+            <h2>📝 Questão 2 — ENEM 2014</h2>
+            <p>A legislação brasileira exige pH entre 5,0 e 9,0 para lançamento de resíduos em corpos d'água. Um resíduo industrial tem [OH⁻] = 1,0 × 10⁻¹⁰ mol/L. Qual substância ajusta o pH adequadamente?</p>
+
+            <div class="caixa-questao">
+                <p class="enunciado"><strong>Substâncias disponíveis:</strong> CH₃COOH, Na₂SO₄, CH₃OH, K₂CO₃ e NH₄Cl.</p>
+
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q2')">A) CH₃COOH</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q2')">B) Na₂SO₄</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q2')">C) CH₃OH</label>
+                <label class="alternativa" onclick="verificarResposta(this, 1, 'q2')">D) K₂CO₃</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q2')">E) NH₄Cl</label>
+
+                <div class="feedback correto" id="q2-correto">
+                    <div class="feedback-conteudo">
+                        <strong>Parabéns! Você acertou! 🎉</strong>
+                        O K₂CO₃ é a única substância de caráter básico, capaz de elevar o pH para dentro do intervalo permitido pela legislação.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q2')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+                <div class="feedback errado" id="q2-errado">
+                    <div class="feedback-conteudo">
+                        <strong>Ops! Essa não é a resposta correta 😅</strong>
+                        Calcule primeiro o pH do resíduo e depois identifique qual substância pode aumentar o valor do pH.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q2')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+
+                <div class="resolucao" id="q2-resolucao">
+                    <h3>📐 Resolução Passo a Passo</h3>
+                    <p><strong>1.</strong> Calcular [H⁺] a partir de [OH⁻]:</p>
+                    <p class="formula">[H⁺] = Kw ÷ [OH⁻] = (1,0×10⁻¹⁴) ÷ (1,0×10⁻¹⁰) = 1,0×10⁻⁴ mol/L</p>
+                    <p><strong>2.</strong> Calcular o pH:</p>
+                    <p class="formula">pH = −log(1,0×10⁻⁴) = <strong>4</strong></p>
+                    <p>→ O resíduo está muito ácido! Precisa <strong>aumentar o pH</strong>.</p>
+                    <p><strong>3.</strong> Análise das substâncias:</p>
+                    <p>• CH₃COOH → ácido → diminui ainda mais o pH ❌</p>
+                    <p>• Na₂SO₄ → sal neutro → não altera o pH ❌</p>
+                    <p>• CH₃OH → álcool, praticamente neutro ❌</p>
+                    <p>• K₂CO₃ → sal de base forte + ácido fraco → <strong>básico ✅</strong></p>
+                    <p>• NH₄Cl → sal ácido → diminui o pH ❌</p>
+                    <div class="resposta-final">✅ Resposta correta: Alternativa D — K₂CO₃</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTÃO 3 -->
+        <section>
+            <h2>📝 Questão 3 — ENEM 2014 (Adubo NPK e pH do Solo)</h2>
+            <p>Adubo NPK contém: NH₄NO₃, ureia, KNO₃, Na₃PO₄ e KCl. A aplicação diminuiu o pH do solo. Qual substância causou isso?</p>
+
+            <div class="caixa-questao">
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q3')">A) ureia</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q3')">B) fosfato de sódio</label>
+                <label class="alternativa" onclick="verificarResposta(this, 1, 'q3')">C) nitrato de amônio</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q3')">D) nitrato de potássio</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q3')">E) cloreto de potássio</label>
+
+                <div class="feedback correto" id="q3-correto">
+                    <div class="feedback-conteudo">
+                        <strong>Parabéns! Você acertou! 🎉</strong>
+                        O nitrato de amônio libera íons H₃O⁺ em solução, tornando o meio mais ácido e reduzindo o pH.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q3')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+                <div class="feedback errado" id="q3-errado">
+                    <div class="feedback-conteudo">
+                        <strong>Ops! Essa não é a resposta correta 😅</strong>
+                        Procure qual substância, ao se dissolver, gera íons H⁺ em solução.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q3')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+
+                <div class="resolucao" id="q3-resolucao">
+                    <h3>📐 Resolução Passo a Passo</h3>
+                    <p><strong>Chave:</strong> Diminuição do pH = aumento da acidez = formação de íons H₃O⁺.</p>
+                    <p><strong>NH₄NO₃</strong> → se dissocia em NH₄⁺ e NO₃⁻.</p>
+                    <p>• NO₃⁻ → base conjugada de ácido forte → não hidrolisa.</p>
+                    <p>• NH₄⁺ → ácido conjugado de base fraca → sofre hidrólise:</p>
+                    <p class="formula">NH₄⁺ + H₂O ⇄ NH₃ + H₃O⁺</p>
+                    <p>→ Libera H₃O⁺ → <strong>aumenta a acidez e diminui o pH ✅</strong></p>
+                    <p>Os demais: ureia (efeito indireto), fosfato de sódio (básico), KNO₃ e KCl (neutros).</p>
+                    <div class="resposta-final">✅ Resposta correta: Alternativa C — nitrato de amônio</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTÃO 4 -->
+        <section>
+            <h2>📝 Questão 4 — ENEM 2012 (Ácido Muriático)</h2>
+            <p>Ácido muriático (HCl) reage com CaCO₃ liberando um gás. Fórmula do gás e teste para confirmá-lo:</p>
+
+            <div class="caixa-questao">
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q4')">A) CO₂ e borbulhar em solução de KCl</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q4')">B) CO₂ e borbulhar em solução de HNO₃</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q4')">C) H₂ e borbulhar em solução de NaOH</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q4')">D) H₂ e borbulhar em solução de H₂SO₄</label>
+                <label class="alternativa" onclick="verificarResposta(this, 1, 'q4')">E) CO₂ e borbulhar em solução de Ba(OH)₂</label>
+
+                <div class="feedback correto" id="q4-correto">
+                    <div class="feedback-conteudo">
+                        <strong>Parabéns! Você acertou! 🎉</strong>
+                        O gás liberado é CO₂, que ao reagir com Ba(OH)₂ forma um precipitado branco característico.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q4')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+                <div class="feedback errado" id="q4-errado">
+                    <div class="feedback-conteudo">
+                        <strong>Ops! Essa não é a resposta correta 😅</strong>
+                        Reação de ácido com carbonato libera qual gás? E qual teste o confirma visualmente?
+                        <button class="btn-mostrar" onclick="alternarResolucao('q4')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+
+                <div class="resolucao" id="q4-resolucao">
+                    <h3>📐 Resolução Passo a Passo</h3>
+                    <p><strong>1.</strong> Reação ácido + carbonato:</p>
+                    <p class="formula">CaCO₃ + 2 HCl → CaCl₂ + H₂O + CO₂ ↑</p>
+                    <p>→ Gás liberado: <strong>CO₂</strong></p>
+                    <p><strong>2.</strong> Teste clássico: borbulhar em água de barita (Ba(OH)₂):</p>
+                    <p class="formula">CO₂ + Ba(OH)₂ → BaCO₃↓ + H₂O</p>
+                    <p>→ Forma <strong>precipitado branco</strong> que confirma a presença de CO₂ ✅</p>
+                    <div class="resposta-final">✅ Resposta correta: Alternativa E — CO₂ e borbulhar em solução de Ba(OH)₂</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUESTÃO 5 -->
+        <section>
+            <h2>📝 Questão 5 — ENEM 2016 (Sulfato de Bário)</h2>
+            <p>Teste para detectar íons Ba²⁺ solúveis: tratar com HCl, filtrar e adicionar H₂SO₄. A presença de Ba²⁺ é indicada por qual evidência?</p>
+
+            <div class="caixa-questao">
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q5')">A) liberação de calor</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q5')">B) alteração da cor para rosa</label>
+                <label class="alternativa" onclick="verificarResposta(this, 1, 'q5')">C) precipitação de um sólido branco</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q5')">D) formação de gás hidrogênio</label>
+                <label class="alternativa" onclick="verificarResposta(this, 0, 'q5')">E) volatilização de gás cloro</label>
+
+                <div class="feedback correto" id="q5-correto">
+                    <div class="feedback-conteudo">
+                        <strong>Parabéns! Você acertou! 🎉</strong>
+                        Os íons Ba²⁺ reagem com SO₄²⁻ formando BaSO₄, um sal muito insolúvel que aparece como sólido branco.
+                        <button class="btn-mostrar" onclick="alternarResolucao('q5')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+                <div class="feedback errado" id="q5-errado">
+                    <div class="feedback-conteudo">
+                        <strong>Ops! Essa não é a resposta correta 😅</strong>
+                        Pense: qual produto se forma quando Ba²⁺ encontra íons sulfato?
+                        <button class="btn-mostrar" onclick="alternarResolucao('q5')">📐 Ver resolução completa</button>
+                    </div>
+                </div>
+
+                <div class="resolucao" id="q5-resolucao">
+                    <h3>📐 Resolução Passo a Passo</h3>
+                    <p><strong>1.</strong> Carbonato de bário reage com HCl:</p>
+                    <p class="formula">BaCO₃ + 2 HCl → BaCl₂(aq) + CO₂↑ + H₂O</p>
+                    <p>→ Os íons Ba²⁺ passam para a solução.</p>
+                    <p><strong>2.</strong> Adição de H₂SO₄ fornece íons SO₄²⁻:</p>
+                    <p class="formula">Ba²⁺(aq) + SO₄²⁻(aq) → <strong>BaSO₄(s) ↓</strong></p>
+                    <p>→ Forma-se <strong>precipitado branco</strong> de sulfato de bário, que é praticamente insolúvel ✅</p>
+                    <div class="resposta-final">✅ Resposta correta: Alternativa C — precipitação de um sólido branco</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>Aula 12 — pH e pOH em Soluções | Química em Prática | Resolução aparece ao clicar</p>
+    </footer>
+</div>
+
+<!-- SCRIPT DE INTERATIVIDADE -->
+<script>
+    // Verifica a resposta e mostra feedback
+    function verificarResposta(elemento, ehCorreta, questaoId) {
+        const caixa = elemento.closest('.caixa-questao');
+        const alternativas = caixa.querySelectorAll('.alternativa');
+        
+        // Remove marcações e bloqueia cliques
+        alternativas.forEach(alt => {
+            alt.classList.remove('resposta-correta', 'resposta-errada');
+            alt.style.pointerEvents = 'none';
+        });
+
+        // Oculta qualquer feedback anterior
+        document.getElementById(`${questaoId}-correto`).style.display = 'none';
+        document.getElementById(`${questaoId}-errado`).style.display = 'none';
+        document.getElementById(`${questaoId}-resolucao`).style.display = 'none';
+
+        // Mostra o feedback correspondente
+        if (ehCorreta) {
+            elemento.classList.add('resposta-correta');
+            document.getElementById(`${questaoId}-correto`).style.display = 'block';
+        } else {
+            elemento.classList.add('resposta-errada');
+            document.getElementById(`${questaoId}-errado`).style.display = 'block';
+        }
+    }
+
+    // Mostra/esconde a resolução ao clicar no botão
+    function alternarResolucao(questaoId) {
+        const resolucao = document.getElementById(`${questaoId}-resolucao`);
+        if (resolucao.style.display === 'block') {
+            resolucao.style.display = 'none';
+        } else {
+            resolucao.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html></p>
             <div class="navegacao">
                 <button class="botao-nav btn-anterior" data-ref="12">⬅ Aula Anterior</button>
                 <button class="botao-nav btn-inicio" data-ref="12">🏠 Voltar ao Início</button>
@@ -4632,6 +5757,12 @@
         </div>
     </div>
 
+
+
+
+
+
+  
     <!-- Aula 13 -->
     <div class="item-aula">
         <button class="botao-aula" data-aula="13">Aula 13</button>
